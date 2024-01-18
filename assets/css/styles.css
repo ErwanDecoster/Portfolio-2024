@@ -20,70 +20,50 @@ body {
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #000;
+  @apply bg-black dark:bg-white;
   border-radius: 6px;
 }
 *::-webkit-scrollbar-track {
-  background: #fff;
+  @apply bg-white dark:bg-black;
 }
 
 *::selection {
-  @apply bg-black text-white;
+  @apply bg-black text-white dark:bg-white dark:text-black;
 }
 
 .__invert-select *::selection {
-  @apply bg-white text-black;
-}
-
-@media (prefers-color-scheme: dark) {
-  .__backdrop-unblur {
-    background-image: url(/images/background_dark.png);
-  }
-  #__blury-bg {
-    background-image: url(/images/background_dark.png);
-  }
-  *::-webkit-scrollbar-thumb {
-    background: #fff;
-    border-radius: 6px;
-  }
-  *::-webkit-scrollbar-track {
-    background: #000;
-  }
-  *::selection {
-    @apply bg-white text-black;
-  }
-  
-  .__invert-select *::selection {
-    @apply bg-black text-white;
-  }
+  @apply bg-white text-black dark:bg-black dark:text-white;
 }
 
 .__invert-scroll-bar *::-webkit-scrollbar-thumb {
-  background: #000;
+  @apply bg-white dark:bg-black;
   border-radius: 6px;
 }
 .__invert-scroll-bar *::-webkit-scrollbar-track {
-  background: #fff;
+  @apply bg-black dark:bg-white;
 }
 
 @layer components {
 	label, p {
-		@apply first-letter:capitalize
+		@apply first-letter:capitalize;
 	}
 	h1, h2, h3, h4, h5, h6 {
-		@apply capitalize
+		@apply capitalize;
 	}
 }
 
-*, button, button:disabled{
-  cursor: none;
+@media screen and (min-width: 640px) {
+  *, button, button:disabled {
+    cursor: none;
+  }
 }
 
+
 #__blury-bg {
+  @apply bg-light dark:bg-dark;
   position: fixed;
   inset: 40vh 0px 0px 0px;
   z-index: -50;
-  background-image: url(/images/background_light.png);
   background-position: bottom; 
   background-size: 1500px;
   background-attachment: fixed;
@@ -91,20 +71,11 @@ body {
 }
 
 .__backdrop-unblur {
-  background-image: url(/images/background_light.png);
+  @apply bg-light bg-white dark:bg-dark dark:bg-black;
   background-position: bottom; 
   background-size: 1500px;
   background-attachment: fixed;
   background-repeat: repeat-x;
-}
-
-@media (prefers-color-scheme: dark) {
-  .__backdrop-unblur {
-    background-image: url(/images/background_dark.png);
-  }
-  #__blury-bg {
-    background-image: url(/images/background_dark.png);
-  }
 }
 
 #__blury-bg #__blury-filter {
@@ -133,7 +104,7 @@ body {
 }
 #__cursor-wraper #__cursor span {
   display: block;
-  background: #fff;
+  @apply bg-black dark:bg-white;
   border-radius: 50%;
   transition: .2s;
   width: 100%;

@@ -70,8 +70,8 @@ const SendEmail = (() => {
   } else if (CheckForm() && !waiting.value) {
     messages.value = [];
     waiting.value = true;
-    // const url = 'https://erwan-decoster.com/api/contact'
-    const url = 'http://localhost:3000/api/contact'
+    const url = 'https://erwan-decoster.com/api/contact'
+    // const url = 'http://localhost:3000/api/contact'
     const response: any = $fetch(url, {
       method: 'POST',
       headers: {
@@ -97,7 +97,7 @@ const SendForm = (() => {
 </script>
 
 <template>
-  <div class="grid grid-cols-2 gap-2 pb-20">
+  <div id="contact" class="grid sm:grid-cols-2 gap-2 pb-20 scroll-m-28">
     <div class="relative text-white border dark:border-black h-full p-9 rounded-2xl flex justify-end overflow-hidden">
       <div class="__backdrop-unblur absolute bg-white dark:bg-black inset-0" />
       <ButtonBig 
@@ -107,7 +107,7 @@ const SendForm = (() => {
         E-mail
       </ButtonBig>
     </div>
-    <div class="p-16 border rounded-2xl text-2xl">
+    <div class="p-8 sm:p-16 border rounded-2xl text-2xl">
       <form class="grid gap-8" @submit.prevent="SendForm()">
         <div class="grid gap-1">
           <p 

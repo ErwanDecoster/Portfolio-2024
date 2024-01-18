@@ -1,12 +1,5 @@
 <script setup lang="ts">
 
-interface project {
-  title: string;
-  date?: number;
-  desc?: string;
-  technos?: string[];
-  imgUrl?: string;
-}
 const props = defineProps<{
   projects: project[]
 }>()
@@ -27,14 +20,14 @@ onMounted(() => {
 
   window.addEventListener("mousemove", (event) => {
     const mousePos = { x: event.clientX, y: event.clientY }
-    img.style.transform = `translate(${mousePos.x / 8}px, calc(-50% + ${mousePos.y / 8}px))`
+    img.style.transform = `translate(calc(-25% + ${mousePos.x / 8}px), calc(-15% + ${mousePos.y / 8}px))`
   })
 })
 
 </script>
 
 <template>
-  <div class="h-[50vh] max-h-[500px] grid grid-cols-2 gap-14 items-center overflow-x-hidden">
+  <div class="grid sm:grid-cols-2 gap-8 md:gap-14 items-center overflow-x-hidden">
     <div class="relative border h-full p-9 rounded-2xl flex justify-end overflow-hidden">
       <div class="__backdrop-unblur absolute bg-black inset-0" />
       <ButtonBig 
@@ -47,19 +40,19 @@ onMounted(() => {
     <div class="relative">
       <img 
         id="__appear-img"
-        class="absolute w-96 opacity-0 -translate-y-1/2 transition-opacity pointer-events-none" 
+        class="absolute hidden sm:block w-96 opacity-0 -translate-y-1/2 transition-opacity z-10 pointer-events-none" 
         src="/images/img1.png"
       >
       <div class="grid">
         <NuxtLink 
           v-for="(project, index) in projects"
-          :key="project.date"
+          :key="project.publishDate.toString()"
           to="/projects/"
-          class="__appear-button relative text-2xl uppercase py-6"
-          :data-img="project.imgUrl"
+          class="__appear-button relative group text-2xl uppercase py-6 duration-150 hover:tracking-widest hover:z-10 hover:font-bold"
+          :data-img="project.img"
         >
           {{ project.title }}
-          <span v-if="index" class="block border-b absolute -z-20 inset-x-0 top-0" />
+          <span v-if="index" class="block border-b absolute -z-20 inset-x-0 top-0 duration-50 group-hover:opacity-0" />
         </NuxtLink>
       </div>
     </div>

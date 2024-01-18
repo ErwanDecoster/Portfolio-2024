@@ -37,8 +37,13 @@ module.exports = {
       },
       scale: {
         '200': '2',
+      },
+      backgroundImage: {
+        'light': "url('/images/background_light.png')",
+        'dark': "url('/images/background_dark.png')",
       }
     }
   },
+  darkMode: ['class', '[data-theme="dark"]'],
   plugins: [],
 }

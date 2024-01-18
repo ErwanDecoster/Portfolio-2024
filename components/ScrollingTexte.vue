@@ -23,7 +23,7 @@
 <style lang="css">
 .__srolling {
   transform: translateX(0%);
-  animation: scroll 4s linear infinite;
+  animation: scroll 5s linear infinite;
 }
 
 @keyframes scroll {

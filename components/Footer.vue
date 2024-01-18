@@ -1,13 +1,15 @@
 <script setup lang="ts">
 
-
+const toTop = () => {
+  window.scrollTo(0, 0)
+}
 </script>
 
 <template>
   <footer class="max-w-screen-4xl mx-auto h-96 p-7 gap-2 flex flex-col relative">
-    <div class="flex justify-between mt-auto mr-32 items-baseline">
-      <p class="text-8xl">Erwan Decoster</p>
-      <div class="flex gap-2">
+    <div class="flex flex-wrap-reverse justify-between items-baseline mt-auto mr-32 gap-4 sm:gap-0">
+      <p class="text-4xl sm:text-6xl md:text-8xl">Erwan Decoster</p>
+      <div class="flex flex-wrap-reverse sm:justify-end gap-2">
         <ButtonDefault to="https://twitter.com/erwan_decoster">
           X
         </ButtonDefault>
@@ -22,7 +24,7 @@
         </ButtonDefault>
       </div>
     </div>
-    <div class="flex gap-10 items-center">
+    <div class="flex flex-wrap gap-x-1 sm:gap-10 items-center">
       <p class="text-lg">
         Design : 
         <ButtonInline to="https://linkedin.com/in/amandine-reynaud">
@@ -33,7 +35,7 @@
         Mentions légales
       </ButtonInline>
     </div>
-    <NuxtLink class="absolute group flex flex-col items-center gap-4 bottom-7 right-7" to="/">
+    <NuxtLink class="absolute group flex flex-col items-center gap-4 top-7 sm:bottom-7 right-7 sm:top-auto" @click="toTop()">
       <div class="relative size-20 border-2 p-4 dark:border-white rounded-full">
         <span class="absolute inset-y-0 inset-x-5 overflow-hidden">
           <span class="absolute py-5 group-hover:-translate-y-1/2 duration-200">

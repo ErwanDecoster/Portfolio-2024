@@ -1,34 +1,103 @@
 <script setup lang="ts">
 
+useHead({
+     script: [ {children: `if (localStorage.theme === "dark" || (!('theme' in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.setAttribute("data-theme", "dark")
+    } else {
+      document.documentElement.removeAttribute("data-theme")
+    }`} ]
+})
+
+const enabled = useState<boolean | null>('theme', ()=>null)
+
+onMounted(()=>{
+  enabled.value = localStorage.getItem("theme") === "dark" ? false : true
+})
+
+const toggleTheme = () => {
+  enabled.value = !enabled.value
+  localStorage.setItem("theme", enabled.value ? "light" : "dark")
+  setTheme()
+}
+
+const setTheme = () => {
+  const theme = localStorage.getItem("theme")
+  if (theme === "dark" || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    document.documentElement.setAttribute("data-theme", "dark")
+  //   enabled.value = true
+  } else {
+    document.documentElement.removeAttribute("data-theme")
+  //   enabled.value = false
+  }
+}
+
+let visible = ref(false)
+
 </script>
 
 <template>
-  <div class="border-b-2 fixed z-30 inset-x-0 top-0 backdrop-blur-lg">
-    <nav class="max-w-screen-4xl mx-auto grid grid-cols-5">
-      <div class="flex justify-center items-center">
+  <div 
+    class="sm:border-b-2 fixed z-40 inset-x-0 top-0 bg-white dark:bg-black backdrop-blur-lg duration-200"
+    :class="{ 'h-screen sm:h-auto': visible, 'h-0 sm:h-auto': !visible }"
+  >
+    <button 
+      @click="visible = !visible"
+      class="sm:hidden fixed top-6 pl-4 py-4 right-6 w-14 h-16 flex flex-col justify-between"
+    >
+      <span 
+        class="block h-1 rounded-full w-full bg-black dark:bg-white origin-top-left duration-200" 
+        :class="{ 'rotate-45 delay-150': visible }"
+      />
+      <span 
+        class="block h-1 rounded-full w-full bg-black dark:bg-white origin-top-left duration-200 delay-150" 
+        :class="{ 'scale-x-0 delay-0': visible }"
+      />
+      <span 
+        class="block h-1 rounded-full w-full bg-black dark:bg-white origin-bottom-left duration-200 " 
+        :class="{ '-rotate-45 delay-150': visible }"
+      />
+    </button>
+    <nav 
+      class="sm:grid max-w-screen-4xl mx-auto grid-cols-5 h-full"
+      :class="{ 'flex flex-col justify-evenly': visible, 'hidden': !visible }"
+    >
+      <div 
+        class="hidden md:flex justify-center items-center"
+        :class="{ 'hidden': visible }"
+      >
         <ButtonInline to="/">
           Erwan Decoster
         </ButtonInline> 
       </div>
-      <div class="col-span-3 border-x py-5 flex justify-center items-center gap-11">
+      <div 
+        class="col-span-4 md:col-span-3 sm:border-x-2 py-5 flex justify-center items-center gap-y-6 lg:gap-x-11"
+        :class="{ 'flex-col sm:flex-row': visible }"
+      >
         <ButtonInline to="/">
           Accueil
         </ButtonInline> 
-        <ButtonInline to="/">
+        <ButtonInline to="/#about">
           À propos
         </ButtonInline> 
-        <ButtonInline to="/">
+        <ButtonInline to="/projects">
           Projets
         </ButtonInline> 
-        <ButtonInline to="/">
+        <ButtonInline to="/#contact">
           Contact
         </ButtonInline> 
       </div>
       <div class="flex justify-center items-center">
         <form action="">
-          <label class="relative h-8 w-24 block rounded-full border-2 overflow-hidden" for="toggle-theme">
-            <input class="opacity-0 h-0 w-0 peer" type="checkbox" name="toggle-theme" id="toggle-theme">
-            <span class="absolute cursor-pointer inset-0 bg-white duration-300 
+          <label  class="relative h-8 w-24 block rounded-full border-2 overflow-hidden" for="toggle-theme">
+            <input 
+              v-model="enabled" 
+              @click="toggleTheme()" 
+              class="opacity-0 h-0 w-0 peer" 
+              type="checkbox" 
+              name="toggle-theme" 
+              id="toggle-theme"
+            >
+            <span class="absolute inset-0 bg-white duration-300 
                         before:absolute before:h-full before:w-1/2 before:bg-black before:rounded-full before:duration-300
                         before:peer-checked:translate-x-full">
             </span>
