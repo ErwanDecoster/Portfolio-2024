@@ -4,11 +4,12 @@ const projet = getProject((route.params.id as string))
 definePageMeta({
   layout: 'custom'
 })
+const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
 </script>
 
 <template>
   <div>
-    <div class="pt-48 grid gap-16 sm:gap-32">
+    <div class="pt-48 grid gap-16 sm:gap-32 max-w-screen-2xl mx-auto">
       <h1 class="py-5 sm:py-11 border-y mx-auto w-4/5 text-5xl sm:text-8xl flex justify-center items-center text-center">
         {{ projet?.title }}
       </h1>
@@ -29,7 +30,7 @@ definePageMeta({
               <h3 v-else>Date clés</h3>
               <div class="grid gap-1">
                 <p v-if="projet?.publishDate" class="opacity-50 text-base">Publication : {{ formatDate(projet?.publishDate) }}</p>
-                <p v-if="projet?.lastUpdateDate" class="opacity-50 text-base">Dernière mise a jour : {{ formatDate(projet?.lastUpdateDate) }}</p>
+                <p v-if="projet?.lastUpdateDate" class="opacity-50 text-base">Dernière mise à jour : {{ formatDate(projet?.lastUpdateDate) }}</p>
               </div>
             </div>
             <div class="grid gap-2" v-if="projet?.customer">
@@ -59,16 +60,31 @@ definePageMeta({
                 </p>
               </div>
             </div>
-            <ButtonBig class="sm:col-span-2">Site web</ButtonBig>
+            <ButtonBig 
+              v-if="projet?.url"
+              :to="projet.url"
+              target="_blank"
+              class="sm:col-span-2"
+            >
+              Site web
+            </ButtonBig>
           </div>
         </div>
       </div>
-      <div class="grid gap-12" v-for="screen in projet?.screens" :key="screen.name">
+      <div class="grid gap-12" v-for="screen in projet?.screens.desktop" :key="screen.name">
         <div>
           <h3>{{ screen.name }}</h3>
-          <p class="opacity-50">{{ screen.format }}</p>
+          <p class="opacity-50 uppercase">desktop</p>
         </div>
         <img class="border-2 border-black dark:border-white" :src="screen.asset" alt="">
+      </div>
+    </div>
+    <div class="bg-black dark:bg-white mt-24 text-white dark:text-black py-36 __invert-select __invert-scroll-bar relative rounded-t-[40px] sm:rounded-t-[75px]">
+      <div class="grid justify-center place-items-center gap-4">
+        <p class="text-2xl font-medium text-center">Prochain projet</p>
+        <NuxtLink 
+          :to="`/projects/${toSlug(nextProjectTitle as string)}`"
+          class="text-5xl sm:text-6xl md:text-8xl md:mx-36 text-balance font-bold uppercase underline text-center">{{ nextProjectTitle }}</NuxtLink>
       </div>
     </div>
   </div>

@@ -23,7 +23,7 @@ onMounted(() => {
 <template>
   <div 
     id="__index-page"
-    class="grid gap-24"  
+    class="grid gap-24 max-w-screen-2xl mx-auto"  
   >
     <header
       id="__header"

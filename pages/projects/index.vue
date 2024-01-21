@@ -10,7 +10,7 @@ const isBig = ((index: number) => {
 
 <template>
   <div>
-    <div class="pt-48 grid gap-32">
+    <div class="pt-48 grid gap-32 max-w-screen-2xl mx-auto">
       <h1 class="py-5 sm:py-11 border-y mx-auto w-4/5 text-5xl sm:text-8xl flex justify-center items-center text-center">
         Tous les projets
       </h1>

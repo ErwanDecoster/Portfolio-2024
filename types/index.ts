@@ -9,7 +9,6 @@ declare global {
   
   interface screen {
     name: string;
-    format: string;
     asset: string;
   }
   
@@ -26,6 +25,9 @@ declare global {
     industry: string | null;
     collaborators: collaborator[];
     technos: string[];
-    screens: screen[];
+    screens: {
+      desktop: screen[];
+      mobile: screen[];
+    };
   }
 }

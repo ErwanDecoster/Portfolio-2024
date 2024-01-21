@@ -41,13 +41,13 @@ onMounted(() => {
       <img 
         id="__appear-img"
         class="absolute hidden sm:block w-96 opacity-0 -translate-y-1/2 transition-opacity z-10 pointer-events-none" 
-        src="/images/img1.png"
+        src=""
       >
       <div class="grid">
         <NuxtLink 
           v-for="(project, index) in projects"
           :key="project.publishDate.toString()"
-          to="/projects/"
+          :to="`/projects/${toSlug(project.title)}`"
           class="__appear-button relative group text-2xl uppercase py-6 duration-150 hover:tracking-widest hover:z-10 hover:font-bold"
           :data-img="project.img"
         >

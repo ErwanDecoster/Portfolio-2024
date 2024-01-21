@@ -48,7 +48,9 @@
     })
     document.addEventListener('scroll', (event) => {
       const bluryCalque = (document.querySelector('#__blury-filter') as HTMLElement)
-      bluryCalque.style.opacity = (scrollY / 750).toString()
+      if (bluryCalque) {
+        bluryCalque.style.opacity = (scrollY / 750).toString()
+      }
     })
   })
 
@@ -57,7 +59,7 @@
 <template>
   <div class="dark:text-white">
     <Navbar />
-    <div class="px-2 sm:px-8 max-w-screen-2xl mx-auto">
+    <div class="px-2 sm:px-8">
       <slot />
     </div>
     <div class="bg-black dark:bg-white mt-24 text-white dark:text-black __invert-select __invert-scroll-bar relative rounded-t-[40px] sm:rounded-t-[75px]">

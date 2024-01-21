@@ -46,18 +46,14 @@
       slowCursor!.style.transform = `translate(${mousePos.x - 32}px, ${mousePos.y - 32}px) scale(${slowCursorScale})`
       cursorSpan!.style.transform = `scale(${cursorScale})`
     })
-    document.addEventListener('scroll', (event) => {
-      const bluryCalque = (document.querySelector('#__blury-filter') as HTMLElement)
-      bluryCalque.style.opacity = (scrollY / 750).toString()
-    })
   })
-
+  
 </script>
 
 <template>
   <div class="dark:text-white">
     <Navbar />
-    <div class="px-2 sm:px-8 max-w-screen-2xl mx-auto">
+    <div class="px-2 sm:px-8">
       <slot />
     </div>
     <Footer />
