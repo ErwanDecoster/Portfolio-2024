@@ -5,7 +5,7 @@ export const projects: project[] = [
     title: "Message App",
     img: "",
     publishDate: new Date('11/01/2023'),
-    lastUpdateDate: null,
+    lastUpdateDate: new Date('11/01/2023'),
     url: "https://messages-app-beta.vercel.app/",
     github: "https://github.com/ErwanDecoster/MessagesApp",
     shortDesc: "Développement d'un site d'échange de messages instantanés.",
@@ -82,7 +82,7 @@ export const projects: project[] = [
     title: "42 So-long",
     img: "/images/so_long.webp",
     publishDate: new Date('05/01/2023'),
-    lastUpdateDate: null,
+    lastUpdateDate: new Date('05/01/2023'),
     url: "",
     github: "https://github.com/ErwanDecoster/42_so_long",
     shortDesc: "Création d'un jeu 2D au sein de l'école 42 Lyon",
@@ -233,7 +233,7 @@ export const projects: project[] = [
     title: "Notes",
     img: "/images/notes_mockup_2.png",
     publishDate: new Date('03/07/2023'),
-    lastUpdateDate: null,
+    lastUpdateDate: new Date('03/07/2023'),
     url: "https://notes-tawny-delta.vercel.app/",
     github: "https://github.com/ErwanDecoster/Notes",
     shortDesc: "Développement d'un site de prise de notes.",
@@ -281,6 +281,7 @@ export const projects: project[] = [
         {
           name: "Notes",
           asset: "/images/m_notes_notes.png",
+          
         },
       ],
     }
@@ -367,7 +368,7 @@ export const projects: project[] = [
     title: "Phoenix Vêtements et Protection",
     img: "/images/phoenix_vetements_mockup_1.webp",
     publishDate: new Date('08/26/2022'),
-    lastUpdateDate: null,
+    lastUpdateDate: new Date('08/26/2022'),
     url: "https://www.phoenix-vetements.com/",
     github: "https://github.com/ErwanDecoster/Phoenix-Vetements-et-Protection",
     shortDesc: "Création de l'identité visuelle et développement du site vitrine de l'entreprise Phoenix Vêtements et Protection",

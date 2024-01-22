@@ -58,7 +58,6 @@
 
 <template>
   <div class="dark:text-white">
-    <Navbar />
     <div class="px-2 sm:px-8">
       <slot />
     </div>
@@ -77,8 +76,8 @@
       </div>
     </div>
     <Footer />
-    <div id="__blury-bg">
+    <!-- <div id="__blury-bg">
       <div id="__blury-filter"></div>
-    </div>
+    </div> -->
   </div>
 </template>

@@ -13,8 +13,13 @@
     "@nuxtjs/tailwindcss": "^6.10.4",
     "nodemailer": "^6.9.8",
     "nuxt": "^3.9.0",
+    "nuxt-security": "^1.0.1",
     "validator": "^13.11.0",
     "vue": "^3.4.6",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@studio-freight/lenis": "^1.0.34",
+    "gsap": "^3.12.5"
   }
 }

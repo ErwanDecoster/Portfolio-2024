@@ -15,10 +15,10 @@ const props = defineProps<{
 <template>
   <NuxtLink 
     :to="`/projects/${toSlug(title)}`"
-    class="__project-card relative snap-start flex flex-col text-white justify-end overflow-hidden rounded-2xl aspect-4/3 duration-100"
-    :class="{ 'sm:text-2xl sm:max-h-[80vh] sm:aspect-video': size == 1}"
+    class="__project-card group relative snap-start flex flex-col text-white justify-end overflow-hidden rounded-2xl aspect-4/3 duration-100"
+    :class="{ 'sm:text-2xl sm:aspect-video': size == 1}"
   >
-    <img class="absolute z-0 inset-0 w-full h-full bg-navy-blue object-cover" :src="imgUrl" alt="">
+    <img class="absolute z-0 inset-0 w-full h-full bg-navy-blue object-cover duration-300 group-hover:scale-105" :src="imgUrl" alt="">
     <div 
       class="sticky w-full z-10 p-4 sm:p-7 bg-gradient-to-t from-[#000000ef]"
       :class="{ 'md:p-12': size == 1}"

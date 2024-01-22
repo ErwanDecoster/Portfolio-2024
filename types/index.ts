@@ -16,7 +16,7 @@ declare global {
     title: string;
     img: string;
     publishDate: Date;
-    lastUpdateDate: Date | null;
+    lastUpdateDate: Date;
     url: string;
     github: string
     shortDesc: string

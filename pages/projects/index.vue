@@ -1,4 +1,35 @@
 <script setup lang="ts">
+const route = useRoute()
+const runtimeConfig = useRuntimeConfig()
+
+const title = "Projets - Erwan Decoster";
+const desc = ""
+const img = ""
+const url = runtimeConfig.public.c + route.path
+useHead({
+  link: [
+    {
+      hid: 'canonical',
+      rel: 'canonical',
+      href: url,
+    },
+  ],
+})
+useSeoMeta({
+  title: title,
+  description: desc,
+  ogDescription: desc,
+  ogTitle: title,
+  ogUrl: url,
+  ogType: 'article',
+  ogImage: img,
+  twitterCard: 'summary_large_image',
+  twitterSite: '@erwan_decoster',
+  twitterCreator: '@erwan_decoster',
+  twitterTitle: title,
+  twitterDescription: desc,
+  twitterImage: img,
+})
 
 const isBig = ((index: number) => {
   if (index == 2)

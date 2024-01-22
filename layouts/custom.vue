@@ -52,8 +52,7 @@
 
 <template>
   <div class="dark:text-white">
-    <Navbar />
-    <div class="px-2 sm:px-8">
+    <div>
       <slot />
     </div>
     <Footer />
