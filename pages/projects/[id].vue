@@ -5,9 +5,9 @@ const runtimeConfig = useRuntimeConfig()
 const project = getProject((route.params.id as string))
 
 const title = project?.title + " - Erwan Decoster";
-const desc = project?.shortDesc
-const img = runtimeConfig.public.c + project?.img
-const url = runtimeConfig.public.c + route.path
+const desc = project?.shortDesc;
+const img = runtimeConfig.public.siteUrl + project?.img;
+const url = runtimeConfig.public.siteUrl + route.path;
 useHead({
   link: [
     {

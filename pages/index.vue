@@ -36,7 +36,9 @@ onMounted(() => {
   const divider = 2
   document.addEventListener('scroll', () => {
     if (window.scrollY > window.screen.height / divider) {
-      header.style.transform = `translateY(-${window.scrollY - window.screen.height / divider}px)`
+      if (header) {
+        header.style.transform = `translateY(-${window.scrollY - window.screen.height / divider}px)`
+      }
     }
   })
 })

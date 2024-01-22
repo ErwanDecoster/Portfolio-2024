@@ -11,7 +11,6 @@ export default defineNuxtConfig({
   },
   security: {
     headers: {
-      xContentTypeOptions: 'nosniff',
       xFrameOptions: 'DENY',
     },
   },
