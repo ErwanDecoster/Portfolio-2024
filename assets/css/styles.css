@@ -85,36 +85,3 @@ body {
   backdrop-filter: blur(30px);
 }
 
-#__cursor-wraper {
-  display: none;
-  inset: 0;
-  z-index: 9999;
-  position: fixed;
-  mix-blend-mode: difference;
-  pointer-events: none;
-}
-#__cursor-wraper #__cursor {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 8px;
-  height: 8px;
-  transition: .05s;
-  pointer-events: none;
-}
-#__cursor-wraper #__cursor span {
-  display: block;
-  @apply bg-black dark:bg-white;
-  border-radius: 50%;
-  transition: .2s;
-  width: 100%;
-  height: 100%;
-  mix-blend-mode: difference;
-}
-#__cursor-wraper #__slow-cursor {
-  transition: .15s;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  border: 1px solid #aaa;
-}

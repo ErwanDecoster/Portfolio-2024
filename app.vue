@@ -1,8 +1,53 @@
 <script setup lang="ts">
+onMounted(() => {
+  const cursor = document.getElementById('__cursor');
+  const slowCursor = document.getElementById('__slow-cursor');
+  const cursorSpan = cursor!.querySelector('span');
+  let cursorScale = 1;
+  let slowCursorScale = 1;
+  let mousePos = { x: 0, y: 0 };
+
+  document.querySelectorAll('a, button, input, textarea, label, .__pointer').forEach(actionElement => {
+    actionElement.addEventListener('mouseenter', () => {
+      if ((actionElement as HTMLButtonElement).disabled != true) {
+        cursorScale = 6
+        slowCursorScale = 0.8
+      } else {
+
+      }
+    })
+    actionElement.addEventListener('mouseleave', () => {
+      if ((actionElement as HTMLButtonElement).disabled != true) {
+        cursorScale = 1
+        slowCursorScale = 1
+      }
+    })
+  });
+  
+  document.addEventListener('click', (event) => {
+    cursorScale = 1
+    slowCursorScale = 0.2
+    slowCursor!.style.transform = `translate(${mousePos.x - 32}px, ${mousePos.y - 32}px) scale(${slowCursorScale})`
+    cursorSpan!.style.transform = `scale(${cursorScale})`
+    setTimeout(() => {
+      slowCursorScale = 1
+      cursorScale = 1
+      cursorSpan!.style.transform = `scale(${cursorScale})`
+      slowCursor!.style.transform = `translate(${mousePos.x - 32}px, ${mousePos.y - 32}px) scale(${slowCursorScale})`
+    }, 200);
+  })
+  window.addEventListener("mousemove", (event) => {
+    document.getElementById('__cursor-wraper')!.style.display = 'block';
+    mousePos = { x: event.clientX, y: event.clientY }
+    cursor!.style.transform = `translate(${mousePos.x - 4}px, ${mousePos.y - 4}px)`
+    slowCursor!.style.transform = `translate(${mousePos.x - 32}px, ${mousePos.y - 32}px) scale(${slowCursorScale})`
+    cursorSpan!.style.transform = `scale(${cursorScale})`
+  })
+})
 </script>
 
 <template>
-  <NuxtLayout>
+  <NuxtLayout class="overflow-x-hidden">
     <Navbar />
     <NuxtPage />
     <div id="__cursor-wraper" class="hidden sm:block">
@@ -15,6 +60,40 @@
 </template>
 
 <style>
+#__cursor-wraper {
+  display: none;
+  inset: 0;
+  z-index: 9999;
+  position: fixed;
+  mix-blend-mode: difference;
+  pointer-events: none;
+}
+#__cursor-wraper #__cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  transition: .05s;
+  pointer-events: none;
+}
+#__cursor-wraper #__cursor span {
+  display: block;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: .2s;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: difference;
+}
+#__cursor-wraper #__slow-cursor {
+  transition: .15s;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+}
+
 .page-enter-active,
 .page-leave-active {
   transition: all 0.4s;

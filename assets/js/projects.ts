@@ -3,9 +3,9 @@ import {  } from "@/types/index"
 export const projects: project[] = [
   {
     title: "Message App",
-    img: "",
+    img: "/images/messages_app_messages.png",
     publishDate: new Date('11/01/2023'),
-    lastUpdateDate: new Date('11/01/2023'),
+    lastUpdateDate: new Date('01/24/2024'),
     url: "https://messages-app-beta.vercel.app/",
     github: "https://github.com/ErwanDecoster/MessagesApp",
     shortDesc: "Développement d'un site d'échange de messages instantanés.",
@@ -25,7 +25,20 @@ export const projects: project[] = [
       "Figma",
     ],
     screens: {
-      desktop: [],
+      desktop: [
+        {
+          name: "accueil",
+          asset: "/images/messages_app_accueil.png"
+        },
+        {
+          name: "inscription",
+          asset: "/images/messages_app_inscription.png"
+        },
+        {
+          name: "messages",
+          asset: "/images/messages_app_messages.png"
+        },
+      ],
       mobile: [],
     }
   },
@@ -290,7 +303,7 @@ export const projects: project[] = [
     title: "Domaine de Pipangaille",
     img: "/images/domaine_de_pipangaille_mockup_2.png",
     publishDate: new Date('12/01/2022'),
-    lastUpdateDate: new Date('01/16/2024'),
+    lastUpdateDate: new Date('01/25/2024'),
     url: "https://domaine-de-pipangaille.fr/",
     github: "https://github.com/ErwanDecoster/Domaine-de-Pipangaille",
     shortDesc: "Création de l'identité visuelle et développement du site vitrine de l'entreprise Domaine de Pipangaille.",

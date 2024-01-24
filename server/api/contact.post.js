@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
 					from: `${config.MAILUSER}`,
 					replyTo: data.email,
 					to: config.CONTACTMAIL,
-					subject: `Site Web | ${data.given_name} ${data.family_name}`,
+					subject: `Site Web | ${data.name}`,
 					text: data.message,
 					html: `
 					<body style="font-family: Arial;">
@@ -29,7 +29,7 @@ export default defineEventHandler(async (event) => {
 							<h1 style="font-weight: bold; font-size: 24px;">Formulaire Erwan Decoster</h1>
 							<p style="border-bottom: solid 1px; padding: 4px 0px;">
 								<span style="font-weight: bold;">Nom : </span>
-								${data.given_name} ${data.family_name}
+								${data.name}
 							</p>
 							<p style="border-bottom: solid 1px; padding: 4px 0px;">
 								<span style="font-weight: bold;">Téléphone : </span>
@@ -66,9 +66,7 @@ export default defineEventHandler(async (event) => {
 async function isValid(body) {
 	const errors = [];
 
-	if (body.given_name.length === 0)
-    errors.push({type: 'error', content: 'Le champ Prénom est requi.'})
-  if (body.family_name.length === 0)
+	if (body.name.length === 0)
     errors.push({type: 'error', content: 'Le champ Nom est requi.'})
   if (body.phone.length === 0)
     errors.push({type: 'error', content: 'Le champ Téléphone est requi.'})
@@ -83,8 +81,7 @@ async function isValid(body) {
 		return Promise.reject(errors);
 	} else {
 		return Promise.resolve({
-			given_name: validator.escape(body.given_name),
-			family_name: validator.escape(body.family_name),
+			name: validator.escape(body.name),
 			phone: validator.escape(body.phone),
 			email: validator.normalizeEmail(body.email),
 			message: validator.escape(body.message),

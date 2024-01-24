@@ -1,7 +1,6 @@
 <script setup lang="ts">
 const form = ref ({
-  given_name: "",
-  family_name: "",
+  name: "",
   phone: "",
   email: "",
   message: ""
@@ -23,9 +22,7 @@ const ValidEmail = ((email: string) => {
 
 const CheckForm = (() => {
   messages.value = [];
-  if (form.value.given_name.length === 0)
-    messages.value.push({type: 'error', content: 'Le champ Prénom est requi.'})
-  if (form.value.family_name.length === 0)
+  if (form.value.name.length === 0)
     messages.value.push({type: 'error', content: 'Le champ Nom est requi.'})
   if (form.value.phone.length === 0)
     messages.value.push({type: 'error', content: 'Le champ Téléphone est requi.'})
@@ -48,8 +45,7 @@ const EmailSended = ((response: string) => {
     waiting.value = false;
     success.value = true;
     form.value = {
-      given_name: "",
-      family_name: "",
+      name: "",
       phone: "",
       email: "",
       message: ""
@@ -124,30 +120,17 @@ const SendForm = (() => {
         </div>
         <div>
           <div class="py-2.5 relative z-10">
-            <label class="dark:bg-white pr-2" for="given-name">Prénom :</label>
+            <label class="dark:bg-white pr-2" for="name">Nom :</label>
             <input 
-              class="py-2.5 absolute indent-[104px] inset-0 -z-10 bg-transparent peer focus:outline-none" 
-              v-model="form.given_name" 
+              class="py-2.5 absolute indent-[74px] inset-0 -z-10 bg-transparent peer focus:outline-none" 
+              v-model="form.name" 
               type="text" 
-              name="given-name" 
-              id="given-name" 
-              autocomplete="given-name"
+              name="name" 
+              id="name"
+              autocomplete="name"
               required
             >
             <span class="absolute inset-x-0 bottom-0 h-px rounded-full bg-white dark:bg-black peer-focus:peer-invalid:bg-super-red peer-focus:peer-valid:bg-green duration-150 origin-bottom peer-focus:scale-y-200" />
-          </div>
-          <div class="py-2.5 relative z-10">
-            <label class="dark:bg-white pr-2" for="family-name">Nom :</label>
-            <input 
-              class="py-2.5 absolute indent-[70px] inset-0 -z-10 bg-transparent peer focus:outline-none" 
-              v-model="form.family_name" 
-              type="text" 
-              name="family-name" 
-              id="family-name"
-              autocomplete="family-name"
-              required
-            >
-            <span class="absolute inset-x-0 bottom-0 h-px rounded-full bg-white dark:bg-black peer-focus:peer-invalid:bg-super-red peer-focus:peer-valid:bg-green duration-150 peer-focus:scale-y-200" />
           </div>
           <div class="py-2.5 relative z-10">
             <label class="dark:bg-white pr-2" for="phone">Téléphone :</label>
@@ -182,6 +165,7 @@ const SendForm = (() => {
               v-model="form.message" 
               name="message" 
               id="message" 
+              placeholder="Mon projet en quelques mots..."
               autocomplete="off"
               minlength="21"
               required
@@ -190,7 +174,7 @@ const SendForm = (() => {
           </div>
         </div>
         <button 
-          class="px-4 py-2 ml-auto border rounded-full hover:bg-black hover:text-white hover:border-black duration-150" 
+          class="px-4 py-2 ml-auto border rounded-full hover:bg-white dark:hover:bg-black hover:text-black dark:hover:text-white hover:border-white dark:hover:border-black duration-150" 
           type="submit"
         >
           <template v-if="waiting">

@@ -34,12 +34,31 @@ useSeoMeta({
 onMounted(() => {
   const header = document.querySelector<HTMLElement>('#__header')
   const divider = 2
+  const headerH = header?.getBoundingClientRect().height
+  const about = document.querySelector<HTMLElement>('#about')
+  const pp = document.querySelector<HTMLElement>('#pp')
+  
   document.addEventListener('scroll', () => {
-    if (window.scrollY > window.screen.height / divider) {
+    if (window.scrollY > window.innerHeight - headerH) {
       if (header) {
-        header.style.transform = `translateY(-${window.scrollY - window.screen.height / divider}px)`
+        header.style.transform = `translateY(${window.innerHeight - headerH - window.scrollY}px)`
       }
     }
+    if (window.scrollY > window.innerHeight / 2) {
+      pp.style.opacity = 0
+    }
+  })
+  
+  about?.addEventListener('mouseenter', (e) => {
+    if (window.scrollY <= window.innerHeight / 2) {
+      pp.style.opacity = 100
+    }
+  })
+  about?.addEventListener('mousemove', (e) => {
+    pp.style.transform = `translate(calc(${e.screenX / 12}px - 100%), calc(${e.clientY / 4}px - 100%))`
+  })
+  about?.addEventListener('mouseleave', (e) => {
+    pp.style.opacity = 0
   })
 })
 
@@ -48,11 +67,12 @@ onMounted(() => {
 <template>
   <div 
     id="__index-page"
-    class="grid gap-24 max-w-screen-2xl mx-auto"  
+    class="grid gap-24 max-w-screen-2xl mx-auto "  
   >
+    <img id="pp" class="opacity-0 pointer-events-none fixed top-1/3 left-2/3 -translate-x-1/2 -translate-y-1/2 size-96 bg-dark-purple rounded-full duration-150" src="/images/photo_erwan_decoster.jpg" alt="">
     <header
       id="__header"
-      class="sticky top-0 pt-48 h-screen"
+      class="fixed top-0 pt-64 pb-8"
     >
       <div class="text-4xl sm:text-6xl md:text-8xl">
         <h2>Erwan Decoster</h2>
@@ -61,10 +81,10 @@ onMounted(() => {
       </div>
     </header>
     <section
-      id="about"
-      class="pb-4 scroll-m-28"
+    
+    class="pb-4 scroll-m-28 pt-[100vh]"
     >
-      <div class="w-full py-8 sm:py-16 px-4 rounded-2xl border flex flex-wrap sm:flex-nowrap items-center gap-y-8 gap-24 md:gap-x-48">
+      <div id="about" class="w-full py-8 sm:py-16 px-4 rounded-2xl border flex flex-wrap sm:flex-nowrap items-center gap-y-8 gap-24 md:gap-x-48">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eaque voluptate ipsa dolorum, saepe, accusamus dolorem quae aperiam eveniet corporis id quos praesentium, vitae sit officiis fugiat officia doloremque assumenda.</p>
         <ButtonBig class="ml-auto sm:ml-0" to="/#about2">
           Scroll
@@ -85,7 +105,7 @@ onMounted(() => {
             <svg class="fill-navy-blue" width="143" height="139" viewBox="0 0 143 139" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M71.5 0L78.0855 39.6676L100.582 6.05182L90.1178 44.9124L124.635 23.1609L98.9309 54.495L139.501 48.3688L103.001 66.7586L142.608 77.317L101.624 79.5826L133.421 105L95.0387 90.7497L113.527 126.631L84.3832 98.329L86.3657 138.47L71.5 101.01L56.6343 138.47L58.6168 98.329L29.4734 126.631L47.9613 90.7497L9.57919 105L41.3758 79.5826L0.391685 77.317L39.999 66.7586L3.49946 48.3688L44.0691 54.495L18.3651 23.1609L52.8822 44.9124L42.4183 6.05182L64.9145 39.6676L71.5 0Z" />
             </svg>
-            <ButtonDefault class="text-navy-blue text-2xl">
+            <ButtonDefault :a="true" href="/documents/CV_dev_front_Decoster_Erwan.pdf" download class="text-navy-blue text-2xl">
               Télécharger mon CV
             </ButtonDefault>
           </div>

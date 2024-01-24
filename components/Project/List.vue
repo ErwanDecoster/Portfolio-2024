@@ -27,7 +27,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="grid sm:grid-cols-2 gap-8 md:gap-14 items-center overflow-visible">
+  <div class="grid xl:grid-cols-2 gap-8 md:gap-14 items-center overflow-visible">
     <div class="relative border h-full p-9 rounded-2xl flex justify-end overflow-hidden">
       <div class="__backdrop-unblur absolute bg-black inset-0" />
       <ButtonBig 
