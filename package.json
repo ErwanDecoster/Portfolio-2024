@@ -19,8 +19,6 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@studio-freight/lenis": "^1.0.34",
-    "gsap": "^3.12.5",
-    "locomotive-scroll": "^5.0.0-beta.11"
+    "gsap": "^3.12.5"
   }
 }

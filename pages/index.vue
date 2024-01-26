@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const route = useRoute()
 const runtimeConfig = useRuntimeConfig()
 
@@ -33,33 +36,45 @@ useSeoMeta({
 
 onMounted(() => {
   const header = document.querySelector<HTMLElement>('#__header')
-  const divider = 2
   const headerH = header?.getBoundingClientRect().height
   const about = document.querySelector<HTMLElement>('#about')
   const pp = document.querySelector<HTMLElement>('#pp')
+
   
-  document.addEventListener('scroll', () => {
-    if (window.scrollY > window.innerHeight - headerH) {
-      if (header) {
-        header.style.transform = `translateY(${window.innerHeight - headerH - window.scrollY}px)`
-      }
-    }
-    if (window.scrollY > window.innerHeight / 2) {
-      pp.style.opacity = 0
-    }
+  // about?.addEventListener('mouseenter', (e) => {
+  //   if (window.scrollY <= window.innerHeight / 2) {
+  //     pp.style.opacity = 100
+  //   }
+  // })
+  // about?.addEventListener('mousemove', (e) => {
+  //   pp.style.transform = `translate(calc(${e.screenX / 12}px - 100%), calc(${e.clientY / 4}px - 100%))`
+  // })
+  // about?.addEventListener('mouseleave', (e) => {
+  //   pp.style.opacity = 0
+  // })
+  gsap.registerPlugin(ScrollTrigger)
+  gsap.to('#__header', { 
+    scrollTrigger: {
+      trigger: '#about',
+      start: `top ${headerH}px`,
+      end: 'top top',
+      markers: true,
+      scrub: true,
+    },
+    ease: 'none',
+    y: -headerH, 
   })
-  
-  about?.addEventListener('mouseenter', (e) => {
-    if (window.scrollY <= window.innerHeight / 2) {
-      pp.style.opacity = 100
-    }
-  })
-  about?.addEventListener('mousemove', (e) => {
-    pp.style.transform = `translate(calc(${e.screenX / 12}px - 100%), calc(${e.clientY / 4}px - 100%))`
-  })
-  about?.addEventListener('mouseleave', (e) => {
-    pp.style.opacity = 0
-  })
+
+  gsap.set("#pp", {xPercent: -50, yPercent: -150});
+
+  let xTo = gsap.quickTo("#pp", "x", {duration: 0.6, ease: "power"}),
+      yTo = gsap.quickTo("#pp", "y", {duration: 0.6, ease: "power"});
+
+  about?.addEventListener("mousemove", e => {
+    xTo(e.clientX);
+    yTo(e.clientY);
+});
+
 })
 
 </script>
@@ -69,7 +84,8 @@ onMounted(() => {
     id="__index-page"
     class="grid gap-24 max-w-screen-2xl mx-auto "  
   >
-    <img id="pp" class="opacity-0 pointer-events-none fixed top-1/3 left-2/3 -translate-x-1/2 -translate-y-1/2 size-96 bg-dark-purple rounded-full duration-150" src="/images/photo_erwan_decoster.jpg" alt="">
+    <!-- <img id="pp" class="opacity-0 pointer-events-none fixed top-1/3 left-2/3 -translate-x-1/2 -translate-y-1/2 size-96 bg-dark-purple rounded-full duration-150" src="/images/photo_erwan_decoster.jpg" alt=""> -->
+    <img id="pp" class="pointer-events-none fixed size-96 rounded-full" src="/images/photo_erwan_decoster.jpg" alt="">
     <header
       id="__header"
       class="fixed top-0 pt-64 pb-8"
@@ -82,7 +98,7 @@ onMounted(() => {
     </header>
     <section
     
-    class="pb-4 scroll-m-28 pt-[100vh]"
+      class="pb-4 scroll-m-28 pt-[100vh]"
     >
       <div id="about" class="w-full py-8 sm:py-16 px-4 rounded-2xl border flex flex-wrap sm:flex-nowrap items-center gap-y-8 gap-24 md:gap-x-48">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eaque voluptate ipsa dolorum, saepe, accusamus dolorem quae aperiam eveniet corporis id quos praesentium, vitae sit officiis fugiat officia doloremque assumenda.</p>
