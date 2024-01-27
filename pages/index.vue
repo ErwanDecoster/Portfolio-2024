@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+const mounths = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre','décembre']
 
 const route = useRoute()
 const runtimeConfig = useRuntimeConfig()
@@ -40,269 +41,259 @@ onMounted(() => {
   const about = document.querySelector<HTMLElement>('#about')
   const pp = document.querySelector<HTMLElement>('#pp')
 
-  
-  // about?.addEventListener('mouseenter', (e) => {
-  //   if (window.scrollY <= window.innerHeight / 2) {
-  //     pp.style.opacity = 100
-  //   }
-  // })
-  // about?.addEventListener('mousemove', (e) => {
-  //   pp.style.transform = `translate(calc(${e.screenX / 12}px - 100%), calc(${e.clientY / 4}px - 100%))`
-  // })
-  // about?.addEventListener('mouseleave', (e) => {
-  //   pp.style.opacity = 0
-  // })
   gsap.registerPlugin(ScrollTrigger)
-  gsap.to('#__header', { 
-    scrollTrigger: {
-      trigger: '#about',
-      start: `top ${headerH}px`,
-      end: 'top top',
-      markers: true,
-      scrub: true,
-    },
-    ease: 'none',
-    y: -headerH, 
-  })
+  if (headerH) {
+    gsap.to('#__header', { 
+      scrollTrigger: {
+        trigger: '#about',
+        start: `top ${headerH}px`,
+        end: 'top top',
+        markers: true,
+        scrub: true,
+      },
+      ease: 'none',
+      y: -headerH, 
+    })
+  }
 
-  gsap.set("#pp", {xPercent: -50, yPercent: -150});
+  gsap.set(pp, {
+    xPercent: -50, 
+    yPercent: -150 
+  });
 
-  let xTo = gsap.quickTo("#pp", "x", {duration: 0.6, ease: "power"}),
-      yTo = gsap.quickTo("#pp", "y", {duration: 0.6, ease: "power"});
+  let xTo = gsap.quickTo(pp, "x", {duration: 0.6, ease: "power"}),
+      yTo = gsap.quickTo(pp, "y", {duration: 0.6, ease: "power"});
 
   about?.addEventListener("mousemove", e => {
     xTo(e.clientX);
     yTo(e.clientY);
-});
-
+  });
+  about?.addEventListener('mouseenter', (e) => {
+    gsap.to(pp, {
+      opacity: 1,
+    })
+  })
+  about?.addEventListener('mouseleave', (e) => {
+    gsap.to(pp, {
+      opacity: 0,
+    })
+  })
 })
 
+let interactiveDesign = ref([ 
+  false, false, false, false,
+  true, false, false, false,
+  false, true, true, false,
+  true, true, false, false,
+  false, true, false, false,
+  false, true, false, false,
+])
+
+const skills = ref([ 
+  'Javascript', 'TypeScrypt', 'Nuxt',
+  'VueJs', 'PostgreSQL', 'Supabase', 
+  'TailwindCSS', 'HTML', 'CSS',
+  'SASS', 'PHP', 'SQL',
+])
+
+const socials = ref([
+  {
+    name: 'X',
+    url: 'https://twitter.com/erwan_decoster',
+  },
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/erwan_decoster/',
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/erwan-decoster/',
+  },
+  {
+    name: 'Github',
+    url: 'https://github.com/ErwanDecoster',
+  },
+])
 </script>
 
 <template>
-  <div 
-    id="__index-page"
-    class="grid gap-24 max-w-screen-2xl mx-auto "  
-  >
-    <!-- <img id="pp" class="opacity-0 pointer-events-none fixed top-1/3 left-2/3 -translate-x-1/2 -translate-y-1/2 size-96 bg-dark-purple rounded-full duration-150" src="/images/photo_erwan_decoster.jpg" alt=""> -->
-    <img id="pp" class="pointer-events-none fixed size-96 rounded-full" src="/images/photo_erwan_decoster.jpg" alt="">
-    <header
-      id="__header"
-      class="fixed top-0 pt-64 pb-8"
-    >
-      <div class="text-4xl sm:text-6xl md:text-8xl">
-        <h2>Erwan Decoster</h2>
-        <h1>Développeur Front-End</h1>
-        <p class="text-lg">Lyon, France</p>
-      </div>
-    </header>
-    <section
-    
-      class="pb-4 scroll-m-28 pt-[100vh]"
-    >
-      <div id="about" class="w-full py-8 sm:py-16 px-4 rounded-2xl border flex flex-wrap sm:flex-nowrap items-center gap-y-8 gap-24 md:gap-x-48">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eaque voluptate ipsa dolorum, saepe, accusamus dolorem quae aperiam eveniet corporis id quos praesentium, vitae sit officiis fugiat officia doloremque assumenda.</p>
-        <ButtonBig class="ml-auto sm:ml-0" to="/#about2">
-          Scroll
-        </ButtonBig>
-      </div>
-    </section>
-    <section 
-      id="about2"
-      class="scroll-m-28"
-    >
-      <SectionSeparator>
-        <span>02</span>
-        <h3>À propos</h3>
-      </SectionSeparator>
-      <div class="grid gap-7">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-7">
-          <div class="h-[450px] sm:h-[480px] overflow-hidden bg-light-purple rounded-2xl flex flex-col justify-evenly items-center">
-            <svg class="fill-navy-blue" width="143" height="139" viewBox="0 0 143 139" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M71.5 0L78.0855 39.6676L100.582 6.05182L90.1178 44.9124L124.635 23.1609L98.9309 54.495L139.501 48.3688L103.001 66.7586L142.608 77.317L101.624 79.5826L133.421 105L95.0387 90.7497L113.527 126.631L84.3832 98.329L86.3657 138.47L71.5 101.01L56.6343 138.47L58.6168 98.329L29.4734 126.631L47.9613 90.7497L9.57919 105L41.3758 79.5826L0.391685 77.317L39.999 66.7586L3.49946 48.3688L44.0691 54.495L18.3651 23.1609L52.8822 44.9124L42.4183 6.05182L64.9145 39.6676L71.5 0Z" />
-            </svg>
-            <ButtonDefault :a="true" href="/documents/CV_dev_front_Decoster_Erwan.pdf" download class="text-navy-blue text-2xl">
-              Télécharger mon CV
-            </ButtonDefault>
-          </div>
-          <div class="h-[450px] sm:h-[480px] overflow-hidden group relative px-4 rounded-2xl border border-black dark:border-white duration-300 bg-navy-blue sm:bg-transparent sm:hover:bg-navy-blue text-pink">
-            <p class="
-              w-full pl-4 absolute top-8 sm:opacity-0 duration-300
-              before:absolute before:left-0.5 before:top-1/2 before:-translate-y-1/2 before:size-2 before:bg-pink before:rounded-full
-              sm:group-hover:opacity-100
-            ">
-              Compétences
-            </p>
-            <p class="
-              absolute sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 text-2xl sm:text-center sm:text-black sm:dark:text-white duration-300 
-              text-left left-4 top-20 translate-x-0 translate-y-0
-              sm:group-hover:text-left sm:group-hover:text-pink sm:group-hover:left-4 sm:group-hover:top-20 sm:group-hover:translate-x-0 sm:group-hover:translate-y-0
-            ">
-              DÉVELOPPEMENT<br>
-              WEB ET MOBILE
-            </p>
-            <p class="
-              absolute top-44 inset-x-4 sm:opacity-0 duration-300
-              sm:group-hover:opacity-100
-            ">
-              Developpement d'interface responsive, rapide, optimisé et instalable en PWA.
-            </p>
-            <div class="
-              absolute top-72 inset-x-4 grid gap-2 grid-cols-4 text-xs sm:opacity-0 duration-300
-              sm:group-hover:opacity-100
-            ">
-              <span class="__pointer rounded-full py-1 duration-300 text-center border border-pink hover:bg-pink hover:text-navy-blue">Javascript</span>
-              <span class="__pointer rounded-full py-1 duration-300 text-center border border-pink hover:bg-pink hover:text-navy-blue">TypeScrypt</span>
-              <span class="__pointer rounded-full py-1 duration-300 text-center border border-pink hover:bg-pink hover:text-navy-blue">Nuxt</span>
-              <span class="__pointer rounded-full py-1 duration-300 text-center border border-pink hover:bg-pink hover:text-navy-blue">VueJs</span>
-              <span class="__pointer rounded-full py-1 duration-300 text-center border border-pink hover:bg-pink hover:text-navy-blue">PostgreSQL</span>
-              <span class="__pointer rounded-full py-1 duration-300 text-center border border-pink hover:bg-pink hover:text-navy-blue">Supabase</span>
-              <span class="__pointer rounded-full py-1 duration-300 text-center border border-pink hover:bg-pink hover:text-navy-blue">TailwindCSS</span>
-              <span class="__pointer rounded-full py-1 duration-300 text-center border border-pink hover:bg-pink hover:text-navy-blue">HTML</span>
-              <span class="__pointer rounded-full py-1 duration-300 text-center border border-pink hover:bg-pink hover:text-navy-blue">CSS</span>
-              <span class="__pointer rounded-full py-1 duration-300 text-center border border-pink hover:bg-pink hover:text-navy-blue">SASS</span>
-              <span class="__pointer rounded-full py-1 duration-300 text-center border border-pink hover:bg-pink hover:text-navy-blue">PHP</span>
-              <span class="__pointer rounded-full py-1 duration-300 text-center border border-pink hover:bg-pink hover:text-navy-blue">SQL</span>
+  <div id="__index-page">
+    <div class="max-w-screen-2xl mx-auto grid gap-24 px-2 sm:px-8">
+      <img id="pp" class="pointer-events-none fixed size-96 rounded-full opacity-0" src="/images/photo_erwan_decoster.jpg" alt="">
+      <header id="__header" class="fixed top-0 pt-64 pb-8">
+        <div class="text-4xl sm:text-6xl md:text-8xl">
+          <h2>Erwan Decoster</h2>
+          <h1>Développeur Front-End</h1>
+          <p class="text-lg">Lyon, France</p>
+        </div>
+      </header>
+      <section class="pb-4 scroll-m-28 pt-[100vh]">
+        <div id="about" class="w-full py-8 sm:py-16 px-4 rounded-2xl border flex flex-wrap sm:flex-nowrap items-center gap-y-8 gap-24 md:gap-x-48">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eaque voluptate ipsa dolorum, saepe, accusamus dolorem quae aperiam eveniet corporis id quos praesentium, vitae sit officiis fugiat officia doloremque assumenda.</p>
+          <ButtonBig class="ml-auto sm:ml-0" to="/#about2">
+            Scroll
+          </ButtonBig>
+        </div>
+      </section>
+      <section id="about2" class="scroll-m-28">
+        <SectionSeparator>
+          <span>02</span>
+          <h3>À propos</h3>
+        </SectionSeparator>
+        <div class="grid gap-7">
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-7">
+            <div class="h-[450px] sm:h-[480px] overflow-hidden bg-light-purple rounded-2xl flex flex-col justify-evenly items-center">
+              <svg class="fill-navy-blue" width="143" height="139" viewBox="0 0 143 139" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M71.5 0L78.0855 39.6676L100.582 6.05182L90.1178 44.9124L124.635 23.1609L98.9309 54.495L139.501 48.3688L103.001 66.7586L142.608 77.317L101.624 79.5826L133.421 105L95.0387 90.7497L113.527 126.631L84.3832 98.329L86.3657 138.47L71.5 101.01L56.6343 138.47L58.6168 98.329L29.4734 126.631L47.9613 90.7497L9.57919 105L41.3758 79.5826L0.391685 77.317L39.999 66.7586L3.49946 48.3688L44.0691 54.495L18.3651 23.1609L52.8822 44.9124L42.4183 6.05182L64.9145 39.6676L71.5 0Z" />
+              </svg>
+              <ButtonDefault :a="true" href="/documents/CV_dev_front_Decoster_Erwan.pdf" download class="text-navy-blue text-2xl">
+                Télécharger mon CV
+              </ButtonDefault>
+            </div>
+            <div class="h-[450px] sm:h-[480px] overflow-hidden group relative px-4 rounded-2xl border border-black dark:border-white duration-300 bg-navy-blue sm:bg-transparent sm:hover:bg-navy-blue text-pink">
+              <p class="
+                w-full pl-4 absolute top-8 sm:opacity-0 duration-300
+                before:absolute before:left-0.5 before:top-1/2 before:-translate-y-1/2 before:size-2 before:bg-pink before:rounded-full
+                sm:group-hover:opacity-100
+              ">
+                Compétences
+              </p>
+              <p class="
+                absolute sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 text-2xl sm:text-center sm:text-black sm:dark:text-white duration-300 
+                text-left left-4 top-20 translate-x-0 translate-y-0
+                sm:group-hover:text-left sm:group-hover:text-pink sm:group-hover:left-4 sm:group-hover:top-20 sm:group-hover:translate-x-0 sm:group-hover:translate-y-0
+              ">
+                DÉVELOPPEMENT<br>
+                WEB ET MOBILE
+              </p>
+              <p class="
+                absolute top-44 inset-x-4 sm:opacity-0 duration-300
+                sm:group-hover:opacity-100
+              ">
+                Developpement d'interface responsive, rapide, optimisé et instalable en PWA.
+              </p>
+              <div class="
+                absolute top-72 inset-x-4 grid gap-2 grid-cols-4 text-xs sm:opacity-0 duration-300
+                sm:group-hover:opacity-100
+              ">
+                <span 
+                v-for="skill in skills" 
+                class="__pointer grow rounded-full py-1 duration-300 text-center border border-pink hover:bg-pink hover:text-navy-blue">{{ skill }}</span>
+              </div>
+            </div>
+            <div class="h-[450px] sm:h-[480px] overflow-hidden group relative px-4 rounded-2xl border border-black dark:border-white duration-300 bg-pink sm:bg-transparent sm:hover:bg-pink text-navy-blue">
+              <p class="
+                w-full pl-4 absolute top-8 sm:opacity-0 duration-300
+                before:absolute before:left-0.5 before:top-1/2 before:-translate-y-1/2 before:size-2 before:bg-navy-blue before:rounded-full
+                sm:group-hover:opacity-100
+              ">
+                Compétences
+              </p>
+              <p class="
+                absolute sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 text-2xl sm:text-center sm:text-black sm:dark:text-white duration-300 
+                text-left left-4 top-20 translate-x-0 translate-y-0
+                sm:group-hover:text-left sm:group-hover:text-navy-blue sm:group-hover:left-4 sm:group-hover:top-20 sm:group-hover:translate-x-0 sm:group-hover:translate-y-0
+              ">
+                DESIGN<br>
+                INTÉRACTIF
+              </p>
+              <p class="
+                absolute top-44 inset-x-4 sm:opacity-0 duration-300
+                sm:group-hover:opacity-100
+              ">
+                Designe intéractif, mise en place de micro interaction pour maintenir les utilisateurs et leurs offrire une experience unique.
+              </p>
+              <div class="
+                absolute top-72 left-1/2 -translate-x-1/2 place-items-center grid grid-cols-6 text-xs sm:opacity-0 w-max duration-300
+                sm:group-hover:opacity-100
+              ">
+                <span 
+                  v-for="(row, index) in interactiveDesign" 
+                  @click="interactiveDesign[index] = !interactiveDesign[index]"
+                  class="__pointer block size-7 m-1 rounded-full duration-100" 
+                  :class="{
+                    'bg-white hover:bg-navy-blue': row === false,
+                    'bg-navy-blue hover:bg-white': row === true
+                  }"
+                />
+              </div>
+            </div>
+            <div class="h-[450px] sm:h-[480px] overflow-hidden group relative px-4 rounded-2xl border border-black dark:border-white duration-300 bg-black sm:bg-transparent sm:hover:bg-black text-white">
+              <p class="
+                w-full pl-4 absolute top-8 sm:opacity-0 duration-300
+                before:absolute before:left-0.5 before:top-1/2 before:-translate-y-1/2 before:size-2 before:bg-white before:rounded-full
+                sm:group-hover:opacity-100
+              ">
+                Compétences
+              </p>
+              <p class="
+                absolute sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 text-2xl sm:text-center sm:text-black sm:dark:text-white duration-300 
+                text-left left-4 top-20 translate-x-0 translate-y-0
+                sm:group-hover:text-left sm:group-hover:text-white sm:group-hover:left-4 sm:group-hover:top-20 sm:group-hover:translate-x-0 sm:group-hover:translate-y-0
+              ">
+                DIRECTION<br>
+                ARTISTIQUE
+              </p>
+              <p class="
+                absolute top-44 inset-x-4 sm:opacity-0 duration-300
+                sm:group-hover:opacity-100
+              ">
+                Creation de design inovant a votre image.
+              </p>
+              <div class="
+                absolute top-72 text-xs inset-x-4 sm:opacity-0 duration-300
+                sm:group-hover:opacity-100
+              ">
+                <p class="__pointer underline-offset-2 hover:underline">CRÉATION DESIGN MAQUETTE WEB ET MOBILE</p>
+                <hr class="my-2">
+                <p class="__pointer underline-offset-2 hover:underline">CRÉATION DESIGN MAQUETTE WEB ET MOBILE</p>
+              </div>
             </div>
           </div>
-          <div class="h-[450px] sm:h-[480px] overflow-hidden group relative px-4 rounded-2xl border border-black dark:border-white duration-300 bg-pink sm:bg-transparent sm:hover:bg-pink text-navy-blue">
-            <p class="
-              w-full pl-4 absolute top-8 sm:opacity-0 duration-300
-              before:absolute before:left-0.5 before:top-1/2 before:-translate-y-1/2 before:size-2 before:bg-navy-blue before:rounded-full
-              sm:group-hover:opacity-100
-            ">
-              Compétences
-            </p>
-            <p class="
-              absolute sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 text-2xl sm:text-center sm:text-black sm:dark:text-white duration-300 
-              text-left left-4 top-20 translate-x-0 translate-y-0
-              sm:group-hover:text-left sm:group-hover:text-navy-blue sm:group-hover:left-4 sm:group-hover:top-20 sm:group-hover:translate-x-0 sm:group-hover:translate-y-0
-            ">
-              DESIGN<br>
-              INTÉRACTIF
-            </p>
-            <p class="
-              absolute top-44 inset-x-4 sm:opacity-0 duration-300
-              sm:group-hover:opacity-100
-            ">
-            Designe intéractif, mise en place de micro interaction pour maintenir les utilisateurs et leurs offrire une experience unique.
-            </p>
-            <div class="
-              absolute top-72 left-1/2 -translate-x-1/2 place-items-center grid grid-cols-6 text-xs sm:opacity-0 w-max duration-300
-              sm:group-hover:opacity-100
-            ">
-              <span class="block size-7 m-1 rounded-full duration-300 bg-white hover:bg-navy-blue" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-white hover:bg-navy-blue" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-white hover:bg-navy-blue" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-white hover:bg-navy-blue" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-navy-blue hover:bg-white" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-white hover:bg-navy-blue" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-white hover:bg-navy-blue" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-white hover:bg-navy-blue" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-white hover:bg-navy-blue" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-navy-blue hover:bg-white" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-navy-blue hover:bg-white" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-white hover:bg-navy-blue" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-navy-blue hover:bg-white" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-navy-blue hover:bg-white" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-white hover:bg-navy-blue" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-white hover:bg-navy-blue" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-white hover:bg-navy-blue" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-navy-blue hover:bg-white" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-white hover:bg-navy-blue" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-white hover:bg-navy-blue" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-white hover:bg-navy-blue" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-navy-blue hover:bg-white" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-white hover:bg-navy-blue" />
-              <span class="block size-7 m-1 rounded-full duration-300 bg-white hover:bg-navy-blue" />
-            </div>
-          </div>
-          <div class="h-[450px] sm:h-[480px] overflow-hidden group relative px-4 rounded-2xl border border-black dark:border-white duration-300 bg-black sm:bg-transparent sm:hover:bg-black text-white">
-            <p class="
-              w-full pl-4 absolute top-8 sm:opacity-0 duration-300
-              before:absolute before:left-0.5 before:top-1/2 before:-translate-y-1/2 before:size-2 before:bg-white before:rounded-full
-              sm:group-hover:opacity-100
-            ">
-              Compétences
-            </p>
-            <p class="
-              absolute sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 text-2xl sm:text-center sm:text-black sm:dark:text-white duration-300 
-              text-left left-4 top-20 translate-x-0 translate-y-0
-              sm:group-hover:text-left sm:group-hover:text-white sm:group-hover:left-4 sm:group-hover:top-20 sm:group-hover:translate-x-0 sm:group-hover:translate-y-0
-            ">
-              DIRECTION<br>
-              ARTISTIQUE
-            </p>
-            <p class="
-              absolute top-44 inset-x-4 sm:opacity-0 duration-300
-              sm:group-hover:opacity-100
-            ">
-              Creation de design inovant a votre image.
-            </p>
-            <div class="
-              absolute top-72 text-xs inset-x-4 sm:opacity-0 duration-300
-              sm:group-hover:opacity-100
-            ">
-              <p>CRÉATION DESIGN MAQUETTE WEB ET MOBILE</p>
-              <hr class="my-2">
-              <p>CRÉATION DESIGN MAQUETTE WEB ET MOBILE</p>
-            </div>
+          <div class="flex flex-wrap w-full gap-7">
+            <p class="border rounded-2xl py-4 sm:py-14 grow px-6">Erwan Decoster</p>
+            <NuxtLink 
+              v-for="social in socials"
+              :key="social.name"
+              :to="social.url"
+              class="w-32 border rounded-2xl px-6 py-4 sm:py-14 grow flex items-center justify-center hover:bg-white hover:text-black duration-200"
+            >
+              {{ social.name }}
+            </NuxtLink>
           </div>
         </div>
-        <div class="flex flex-wrap w-full gap-7">
-          <p class="border rounded-2xl py-4 sm:py-14 grow px-6">Erwan Decoster</p>
-          <NuxtLink 
-            to="https://twitter.com/erwan_decoster"
-            class="w-32 border rounded-2xl px-6 py-4 sm:py-14 grow flex items-center justify-center hover:bg-white hover:text-black duration-200"
-          >
-            X
-          </NuxtLink>
-          <NuxtLink 
-            to="https://www.instagram.com/erwan_decoster/"
-            class="w-32 border rounded-2xl px-6 py-4 sm:py-14 grow flex items-center justify-center hover:bg-white hover:text-black duration-200"
-          >
-            Imstagram
-          </NuxtLink>
-          <NuxtLink 
-            to="https://www.linkedin.com/in/erwan-decoster/"
-            class="w-32 border rounded-2xl px-6 py-4 sm:py-14 grow flex items-center justify-center hover:bg-white hover:text-black duration-200"
-          >
-            LinkedIn
-          </NuxtLink>
-          <NuxtLink 
-            to="https://github.com/ErwanDecoster"
-            class="w-32 border rounded-2xl px-6 py-4 sm:py-14 grow flex items-center justify-center hover:bg-white hover:text-black duration-200"
-          >
-            Github
-          </NuxtLink>
+      </section>
+      <section id="__primary-projects">
+        <SectionSeparator>
+          <span>03</span>
+          <h3>Mes projets</h3>
+        </SectionSeparator>
+        <ProjectCarousel
+          :projects="getLastProjects()" 
+        />
+      </section>
+      <section id="__other-projects" class="grid gap-20">
+        <ScrollingTexte>
+          explorer les archives 
+        </ScrollingTexte>
+        <ProjectList
+          :projects="getOtherProjects()"
+        />
+      </section>
+    </div>
+    <div class="bg-black dark:bg-white mt-24 text-white dark:text-black __invert-select __invert-scroll-bar relative rounded-t-[40px] sm:rounded-t-[75px]">
+      <div class="h-screen flex flex-col justify-around px-2 sm:px-8 max-w-screen-2xl mx-auto">
+        <p class="absolute uppercase top-8 left-1/2 -translate-x-1/2 text-center">
+          Disponible dès {{ mounths[(new Date).getMonth()] }} {{ (new Date).getFullYear() }}
+        </p>
+        <div class="grid justify-center place-items-center gap-1">
+          <p class="text-2xl font-medium text-center">Prochaine étape</p>
+          <h3 class="text-5xl sm:text-6xl md:text-8xl font-bold uppercase text-center" >Discutons !</h3>
         </div>
       </div>
-    </section>
-    <section
-      id="__primary-projects"
-    >
-      <SectionSeparator>
-        <span>03</span>
-        <h3>Mes projets</h3>
-      </SectionSeparator>
-      <ProjectCarousel
-        :projects="getLastProjects()" 
-      />
-    </section>
-    <section 
-      id="__other-projects"
-      class="grid gap-20"
-    >
-      <ScrollingTexte>
-        explorer les archives 
-      </ScrollingTexte>
-      <ProjectList
-        :projects="getOtherProjects()"
-      />
-    </section>
+      <div class="px-2 sm:px-8 max-w-screen-2xl mx-auto">
+        <ContactForm />
+      </div>
+    </div>
   </div>
 </template>
-
-<style lang="css">
-
-</style>~/composables/getLastProjects

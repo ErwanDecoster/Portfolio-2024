@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxtjs/sitemap": "^5.0.5",
     "@nuxtjs/tailwindcss": "^6.10.4",
     "nodemailer": "^6.9.8",
     "nuxt": "^3.9.0",

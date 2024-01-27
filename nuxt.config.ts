@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
   css: ['~/assets/css/styles.css'],
   app: {
-    layoutTransition: { name: 'layout', mode: 'out-in' },
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       charset: 'utf-8',

@@ -32,9 +32,6 @@ useSeoMeta({
   twitterDescription: desc,
   twitterImage: img,
 })
-definePageMeta({
-  layout: 'custom'
-})
 const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
 </script>
 

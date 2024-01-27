@@ -1,14 +1,19 @@
 <script setup lang="ts">
-
 useHead({
-     script: [ {children: `if (localStorage.theme === "dark" || (!('theme' in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-      document.documentElement.setAttribute("data-theme", "dark")
-    } else {
-      document.documentElement.removeAttribute("data-theme")
-    }`} ]
+  script: [ 
+    {
+      children: `
+        if (localStorage.theme === "dark" || (!('theme' in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.setAttribute("data-theme", "dark")
+        } else {
+          document.documentElement.removeAttribute("data-theme")
+        }
+      `
+    }
+  ]
 })
 
-const enabled = useState<boolean | null>('theme', ()=>null)
+const enabled = useState<boolean | null>('theme', () => null)
 
 onMounted(()=>{
   enabled.value = localStorage.getItem("theme") === "dark" ? false : true
@@ -24,11 +29,22 @@ const setTheme = () => {
   const theme = localStorage.getItem("theme")
   if (theme === "dark" || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
     document.documentElement.setAttribute("data-theme", "dark")
-  //   enabled.value = true
   } else {
     document.documentElement.removeAttribute("data-theme")
-  //   enabled.value = false
   }
+}
+
+const route = useRoute()
+const router = useRouter()
+
+const toCloserContactForm = () => {
+  if (route.name === 'index')
+    router.push("/#contact")
+  if (route.name === 'projects')
+    router.push({ path: '/projects#contact' })
+  else
+    router.push({ path: '/#contact' })
+
 }
 
 let visible = ref(false)
@@ -81,10 +97,17 @@ let visible = ref(false)
         </ButtonInline> 
         <ButtonInline to="/projects">
           Projets
-        </ButtonInline> 
-        <ButtonInline to="/#contact">
-          Contact
-        </ButtonInline> 
+        </ButtonInline>
+        <template v-if="route.name == 'projects' || route.name == 'projects-id'">
+          <ButtonInline to="/projects#contact">
+            Contact
+          </ButtonInline>
+        </template>
+        <template v-else>
+          <ButtonInline to="/#contact">
+            Contact
+          </ButtonInline>
+        </template>
       </div>
       <div class="flex justify-center items-center">
         <form action="">
@@ -108,7 +131,6 @@ let visible = ref(false)
               <path d="M8.5 3V1M14 8.5H16M8.5 14V16M3 8.5H1M4.5 4.5L3 3M12.5 4.5L14 3M12.5 12.5L14 14M4.5 12.5L3 14M8.5 5C6.567 5 5 6.567 5 8.5C5 10.433 6.567 12 8.5 12C10.433 12 12 10.433 12 8.5C12 6.567 10.433 5 8.5 5Z" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </label>
-          
         </form>
       </div>
     </nav>

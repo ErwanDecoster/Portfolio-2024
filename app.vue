@@ -5,49 +5,21 @@ onMounted(() => {
   const cursor = document.getElementById('__cursor');
   const slowCursor = document.getElementById('__slow-cursor');
   const cursorSpan = cursor!.querySelector('span');
-  let cursorScale = 1;
-  let slowCursorScale = 1;
-  let mousePos = { x: 0, y: 0 };
 
   document.querySelectorAll('a, button, input, textarea, label, .__pointer').forEach(actionElement => {
     actionElement.addEventListener('mouseenter', () => {
       if ((actionElement as HTMLButtonElement).disabled != true) {
-        gsap.to(cursorSpan, {
-          scale: 6,
-          ease: 'ease',
-        })
-        gsap.to(slowCursor, {
-          scale: .8,
-          ease: 'ease',
-        })
-      } else {
-
+        gsap.to(cursorSpan, { scale: 6, ease: 'ease'})
+        gsap.to(slowCursor, { scale: .8, ease: 'ease'})
       }
     })
     actionElement.addEventListener('mouseleave', () => {
       if ((actionElement as HTMLButtonElement).disabled != true) {
-        gsap.to(cursorSpan, {
-          scale: 1,
-        })
-        gsap.to(slowCursor, {
-          scale: 1,
-        })
+        gsap.to(cursorSpan, {scale: 1})
+        gsap.to(slowCursor, {scale: 1})
       }
     })
   });
-  
-  // document.addEventListener('click', (event) => {
-  //   cursorScale = 1
-  //   slowCursorScale = 0.2
-  //   slowCursor!.style.transform = `translate(${mousePos.x - 32}px, ${mousePos.y - 32}px) scale(${slowCursorScale})`
-  //   cursorSpan!.style.transform = `scale(${cursorScale})`
-  //   setTimeout(() => {
-  //     slowCursorScale = 1
-  //     cursorScale = 1
-  //     cursorSpan!.style.transform = `scale(${cursorScale})`
-  //     slowCursor!.style.transform = `translate(${mousePos.x - 32}px, ${mousePos.y - 32}px) scale(${slowCursorScale})`
-  //   }, 200);
-  // })
 
   gsap.set(cursor, {xPercent: -50, yPercent: -50});
   gsap.set(slowCursor, {xPercent: -50, yPercent: -50});
@@ -63,27 +35,21 @@ onMounted(() => {
     cursorSlowXTo(e.clientX);
     cursorSlowYTo(e.clientY);
   })
-  // window.addEventListener("mousemove", (event) => {
-  //   document.getElementById('__cursor-wraper')!.style.display = 'block';
-  //   mousePos = { x: event.clientX, y: event.clientY }
-  //   cursor!.style.transform = `translate(${mousePos.x - 4}px, ${mousePos.y - 4}px)`
-  //   slowCursor!.style.transform = `translate(${mousePos.x - 32}px, ${mousePos.y - 32}px) scale(${slowCursorScale})`
-  //   cursorSpan!.style.transform = `scale(${cursorScale})`
-  // })
 })
 </script>
 
 <template>
-  <NuxtLayout class="overflow-x-hidden">
+  <div class="overflow-x-hidden dark:text-white">
     <Navbar />
     <NuxtPage />
+    <Footer />
     <div id="__cursor-wraper" class="hidden sm:block">
       <div id="__cursor" class="hidden sm:block">
         <span></span>
       </div>
       <div id="__slow-cursor" class="hidden sm:block" />
     </div>
-  </NuxtLayout>
+  </div>
 </template>
 
 <style>
