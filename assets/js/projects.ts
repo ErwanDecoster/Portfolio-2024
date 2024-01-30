@@ -3,7 +3,7 @@ import {  } from "@/types/index"
 export const projects: project[] = [
   {
     title: "Message App",
-    img: "/images/messages_app_messages.png",
+    img: "/images/message_app_mockup_9.webp",
     publishDate: new Date('11/01/2023'),
     lastUpdateDate: new Date('01/24/2024'),
     url: "https://messages-app-beta.vercel.app/",
@@ -136,7 +136,7 @@ export const projects: project[] = [
   },
   {
     title: "Les Nuits de Fourvière",
-    img: "/images/les_nuits_de_fourviere_mockup_2.png",
+    img: "/images/les_nuits_de_fourviere_mockup_8.webp",
     publishDate: new Date('03/17/2023'),
     lastUpdateDate: new Date('03/20/2023'),
     url: "https://42-x-sup-de-pub.vercel.app/",
@@ -244,7 +244,7 @@ export const projects: project[] = [
   },
   {
     title: "Notes",
-    img: "/images/notes_mockup_2.png",
+    img: "/images/notes_mockup_7-2.webp",
     publishDate: new Date('03/07/2023'),
     lastUpdateDate: new Date('03/07/2023'),
     url: "https://notes-tawny-delta.vercel.app/",
@@ -301,7 +301,7 @@ export const projects: project[] = [
   },
   {
     title: "Domaine de Pipangaille",
-    img: "/images/domaine_de_pipangaille_mockup_2.png",
+    img: "/images/domaine_de_pipangaille_mockup_5.webp",
     publishDate: new Date('12/01/2022'),
     lastUpdateDate: new Date('01/25/2024'),
     url: "https://domaine-de-pipangaille.fr/",

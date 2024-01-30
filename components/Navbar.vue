@@ -13,16 +13,39 @@ useHead({
   ]
 })
 
+const route = useRoute()
 const enabled = useState<boolean | null>('theme', () => null)
 
 onMounted(()=>{
   enabled.value = localStorage.getItem("theme") === "dark" ? false : true
+  changeSizeOnScroll()
 })
 
 const toggleTheme = () => {
   enabled.value = !enabled.value
   localStorage.setItem("theme", enabled.value ? "light" : "dark")
   setTheme()
+}
+
+const changeSizeOnScroll = () => {
+  console.log('cc');
+  
+  const nav = document.querySelector('#navbar')
+  const navHeight = nav?.getBoundingClientRect().height
+  const linkContainer = nav?.querySelector('#link_container')
+  if (navHeight && linkContainer) {
+    document.addEventListener('scroll', () => {
+      console.log('scroll');
+      
+      if (window.scrollY > navHeight) {
+        linkContainer.classList.remove("py-5")
+        linkContainer.classList.add("py-2")
+      } else {
+        linkContainer.classList.remove("py-2")
+        linkContainer.classList.add("py-5")
+      }
+    })
+  }
 }
 
 const setTheme = () => {
@@ -34,25 +57,13 @@ const setTheme = () => {
   }
 }
 
-const route = useRoute()
-const router = useRouter()
-
-const toCloserContactForm = () => {
-  if (route.name === 'index')
-    router.push("/#contact")
-  if (route.name === 'projects')
-    router.push({ path: '/projects#contact' })
-  else
-    router.push({ path: '/#contact' })
-
-}
-
 let visible = ref(false)
 
 </script>
 
 <template>
   <div 
+    id="navbar"
     class="sm:border-b-2 fixed z-40 inset-x-0 top-0 bg-white dark:bg-black backdrop-blur-lg duration-200"
     :class="{ 'h-screen sm:h-auto': visible, 'h-0 sm:h-auto': !visible }"
   >
@@ -86,7 +97,8 @@ let visible = ref(false)
         </ButtonInline> 
       </div>
       <div 
-        class="col-span-4 md:col-span-3 sm:border-x-2 py-5 flex justify-center items-center gap-y-6 lg:gap-x-11"
+        id="link_container"
+        class="col-span-4 md:col-span-3 sm:border-x-2 py-5 flex justify-center items-center gap-y-6 lg:gap-x-11 duration-300"
         :class="{ 'flex-col sm:flex-row': visible }"
       >
         <ButtonInline to="/">

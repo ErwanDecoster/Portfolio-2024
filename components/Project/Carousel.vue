@@ -81,8 +81,8 @@ const GoToSlide = (slideId: number) => {
   </div>
     <div class="
       absolute z-30 top-0 bottom-16 pointer-events-none inset-0
-      before:absolute before:top-0 before:bottom-16 before:-left-2 before:sm:-left-8 before:2xl:-left-32 before:block before:w-2 before:sm:w-8 before:2xl:w-32 before:h-full before:bg-gradient-to-r before:from-[#000000dd]
-      after:absolute after:top-0 after:bottom-16 after:-right-2 after:sm:-right-8 after:2xl:-right-32 after:block after:w-2 after:sm:w-8 after:2xl:w-32 after:h-full after:bg-gradient-to-l after:from-[#000000dd]
+      before:absolute before:top-0 before:bottom-16 before:-left-2 before:sm:-left-8 before:2xl:-left-32 before:block before:w-2 before:sm:w-8 before:2xl:w-32 before:h-full before:bg-gradient-to-r before:from-[#ffffffdd] dark:before:from-[#000000dd]
+      after:absolute after:top-0 after:bottom-16 after:-right-2 after:sm:-right-8 after:2xl:-right-32 after:block after:w-2 after:sm:w-8 after:2xl:w-32 after:h-full after:bg-gradient-to-l after:from-[#ffffffdd] dark:after:from-[#000000dd]
     " />
     <div class="border flex h-11">
       <button 

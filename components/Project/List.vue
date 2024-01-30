@@ -51,7 +51,7 @@ onMounted(() => {
             class="h-full w-0 group-hover:w-full bottom-0 aspect-video group-hover:opacity-100 hidden sm:block duration-300 opacity-0 transition-opacity z-10 pointer-events-none object-cover" 
             :src="project.img"
           >
-          <span class="absolute z-10 sm:group-hover:bottom-2 sm:group-hover:left-2">
+          <span class="absolute z-10 sm:group-hover:bottom-2 sm:group-hover:left-2 group-hover:bg-white dark:group-hover:bg-black">
             {{ project.title }}
           </span>
           <span v-if="index" class="block border-b absolute -z-20 inset-x-0 top-0" />

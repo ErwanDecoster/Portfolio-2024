@@ -41,24 +41,24 @@ onMounted(() => {
   const about = document.querySelector<HTMLElement>('#about')
   const pp = document.querySelector<HTMLElement>('#pp')
 
-  gsap.registerPlugin(ScrollTrigger)
-  if (headerH) {
-    gsap.to('#__header', { 
-      scrollTrigger: {
-        trigger: '#about',
-        start: `top ${headerH}px`,
-        end: 'top top',
-        markers: true,
-        scrub: true,
-      },
-      ease: 'none',
-      y: -headerH, 
-    })
-  }
+  // gsap.registerPlugin(ScrollTrigger)
+  // if (headerH) {
+  //   gsap.to('#__header', { 
+  //     scrollTrigger: {
+  //       trigger: '#about',
+  //       start: `top ${headerH}px`,
+  //       end: 'top top',
+  //       markers: true,
+  //       scrub: true,
+  //     },
+  //     ease: 'none',
+  //     y: -headerH, 
+  //   })
+  // }
 
   gsap.set(pp, {
     xPercent: -50, 
-    yPercent: -150 
+    yPercent: -120 
   });
 
   let xTo = gsap.quickTo(pp, "x", {duration: 0.6, ease: "power"}),
@@ -120,15 +120,15 @@ const socials = ref([
   <div id="__index-page">
     <div class="max-w-screen-2xl mx-auto grid gap-24 px-2 sm:px-8">
       <img id="pp" class="pointer-events-none fixed size-96 rounded-full opacity-0" src="/images/photo_erwan_decoster.jpg" alt="">
-      <header id="__header" class="fixed top-0 pt-64 pb-8">
-        <div class="text-4xl sm:text-6xl md:text-8xl">
+      <header id="__header" class="-mb-24 pb-8 h-screen">
+        <div class="sticky top-[25vh] text-4xl sm:text-6xl md:text-8xl">
           <h2>Erwan Decoster</h2>
           <h1>Développeur Front-End</h1>
           <p class="text-lg">Lyon, France</p>
         </div>
       </header>
-      <section class="pb-4 scroll-m-28 pt-[100vh]">
-        <div id="about" class="w-full py-8 sm:py-16 px-4 rounded-2xl border flex flex-wrap sm:flex-nowrap items-center gap-y-8 gap-24 md:gap-x-48">
+      <section id="about" class="pb-4 scroll-m-28">
+        <div class="w-full py-8 sm:py-16 px-4 rounded-2xl border flex flex-wrap sm:flex-nowrap items-center gap-y-8 gap-24 md:gap-x-48">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eaque voluptate ipsa dolorum, saepe, accusamus dolorem quae aperiam eveniet corporis id quos praesentium, vitae sit officiis fugiat officia doloremque assumenda.</p>
           <ButtonBig class="ml-auto sm:ml-0" to="/#about2">
             Scroll
@@ -141,7 +141,7 @@ const socials = ref([
           <h3>À propos</h3>
         </SectionSeparator>
         <div class="grid gap-7">
-          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-7">
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
             <div class="h-[450px] sm:h-[480px] overflow-hidden bg-light-purple rounded-2xl flex flex-col justify-evenly items-center">
               <svg class="fill-navy-blue" width="143" height="139" viewBox="0 0 143 139" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M71.5 0L78.0855 39.6676L100.582 6.05182L90.1178 44.9124L124.635 23.1609L98.9309 54.495L139.501 48.3688L103.001 66.7586L142.608 77.317L101.624 79.5826L133.421 105L95.0387 90.7497L113.527 126.631L84.3832 98.329L86.3657 138.47L71.5 101.01L56.6343 138.47L58.6168 98.329L29.4734 126.631L47.9613 90.7497L9.57919 105L41.3758 79.5826L0.391685 77.317L39.999 66.7586L3.49946 48.3688L44.0691 54.495L18.3651 23.1609L52.8822 44.9124L42.4183 6.05182L64.9145 39.6676L71.5 0Z" />
@@ -173,12 +173,12 @@ const socials = ref([
                 Developpement d'interface responsive, rapide, optimisé et instalable en PWA.
               </p>
               <div class="
-                absolute top-72 inset-x-4 grid gap-2 grid-cols-4 text-xs sm:opacity-0 duration-300
+                absolute top-72 inset-x-4 grid gap-2 grid-cols-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 2xl:grid-cols-4 sm:opacity-0 duration-300
                 sm:group-hover:opacity-100
               ">
                 <span 
                 v-for="skill in skills" 
-                class="__pointer grow rounded-full py-1 duration-300 text-center border border-pink hover:bg-pink hover:text-navy-blue">{{ skill }}</span>
+                class="__pointer grow rounded-full py-1 duration-300 text-center text-xs border border-pink hover:bg-pink hover:text-navy-blue">{{ skill }}</span>
               </div>
             </div>
             <div class="h-[450px] sm:h-[480px] overflow-hidden group relative px-4 rounded-2xl border border-black dark:border-white duration-300 bg-pink sm:bg-transparent sm:hover:bg-pink text-navy-blue">
@@ -218,7 +218,7 @@ const socials = ref([
                 />
               </div>
             </div>
-            <div class="h-[450px] sm:h-[480px] overflow-hidden group relative px-4 rounded-2xl border border-black dark:border-white duration-300 bg-black sm:bg-transparent sm:hover:bg-black text-white">
+            <div class="h-[450px] lg:h-40 xl:h-[480px] lg:col-span-3 xl:col-span-1 sm:h-[480px] overflow-hidden group relative px-4 rounded-2xl border border-black dark:border-white duration-300 bg-black sm:bg-transparent sm:hover:bg-black text-white">
               <p class="
                 w-full pl-4 absolute top-8 sm:opacity-0 duration-300
                 before:absolute before:left-0.5 before:top-1/2 before:-translate-y-1/2 before:size-2 before:bg-white before:rounded-full
@@ -231,17 +231,21 @@ const socials = ref([
                 text-left left-4 top-20 translate-x-0 translate-y-0
                 sm:group-hover:text-left sm:group-hover:text-white sm:group-hover:left-4 sm:group-hover:top-20 sm:group-hover:translate-x-0 sm:group-hover:translate-y-0
               ">
-                DIRECTION<br>
+                DIRECTION<br class="lg:hidden xl:block">
                 ARTISTIQUE
               </p>
               <p class="
-                absolute top-44 inset-x-4 sm:opacity-0 duration-300
+                absolute top-44 sm:opacity-0 duration-300 lg:inset-x-4 
+                lg:top-10 lg:left-2/3 lg:-translate-x-1/2 
+                xl:top-44 xl:left-4 xl:-translate-x-0
                 sm:group-hover:opacity-100
               ">
                 Creation de design inovant a votre image.
               </p>
               <div class="
                 absolute top-72 text-xs inset-x-4 sm:opacity-0 duration-300
+                lg:top-20 lg:left-2/3 lg:-translate-x-1/2 
+                xl:top-72 xl:left-4 xl:-translate-x-0
                 sm:group-hover:opacity-100
               ">
                 <p class="__pointer underline-offset-2 hover:underline">CRÉATION DESIGN MAQUETTE WEB ET MOBILE</p>
@@ -256,7 +260,7 @@ const socials = ref([
               v-for="social in socials"
               :key="social.name"
               :to="social.url"
-              class="w-32 border rounded-2xl px-6 py-4 sm:py-14 grow flex items-center justify-center hover:bg-white hover:text-black duration-200"
+              class="w-32 border rounded-2xl px-6 py-4 sm:py-14 grow flex items-center justify-center hover:bg-white hover:text-black hover:font-bold hover:tracking-wide duration-200"
             >
               {{ social.name }}
             </NuxtLink>

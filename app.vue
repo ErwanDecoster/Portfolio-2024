@@ -39,7 +39,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="overflow-x-hidden dark:text-white">
+  <div class="dark:text-white">
     <Navbar />
     <NuxtPage />
     <Footer />
