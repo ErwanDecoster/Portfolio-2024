@@ -43,12 +43,16 @@ const props = defineProps<{
         :class="{ 'md:bottom-12 md:right-12': size == 1}"
       >
         <li 
-          v-for="(techno, index) in technos" 
+          v-for="(techno, index) in technos"
           :key="techno" 
-          class="px-4 py-2 border rounded-full hover:bg-white hover:text-black hover:border-white duration-200"
-          :class="{ 'hidden sm:block': index >= 3, 'md:px-7 md:py-2.5 md:text-xl': size == 1}"
+          class="relative group/word px-4 py-2 border rounded-full duration-300 overflow-hidden"
+          :class="`__contained_${toCssClass(techno)}`"
         >
+          <span
+            class="absolute inset-0 duration-200 -z-10"
+          />
           {{ techno }}
+
         </li>
       </ul>
     </div>

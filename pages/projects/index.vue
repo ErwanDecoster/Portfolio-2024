@@ -31,6 +31,7 @@ useSeoMeta({
   twitterImage: img,
 })
 
+
 const mounths = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre','décembre']
 const isBig = ((index: number) => {
   if (index == 2)
@@ -61,7 +62,7 @@ const isBig = ((index: number) => {
         />
       </div>
     </div>
-    <div class="bg-black dark:bg-white mt-24 text-white dark:text-black __invert-select __invert-scroll-bar relative rounded-t-[40px] sm:rounded-t-[75px]">
+    <div class="__white-bg bg-black dark:bg-white mt-24 text-white dark:text-black __invert-select __invert-scroll-bar relative rounded-t-[40px] sm:rounded-t-[75px]">
       <div class="h-screen flex flex-col justify-around px-2 sm:px-8 max-w-screen-2xl mx-auto">
         <p class="absolute uppercase top-8 left-1/2 -translate-x-1/2 text-center">
           Disponible dès {{ mounths[(new Date).getMonth()] }} {{ (new Date).getFullYear() }}

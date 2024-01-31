@@ -69,7 +69,14 @@ const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
               <h3 v-if="project.technos.length > 1">Technologies</h3>
               <h3 v-else>Technologie</h3>
               <div class="grid grid-cols-2 sm:grid-cols-1 gap-1">
-                <p class="opacity-50 text-base" v-for="techno in project?.technos" :key="techno">{{ techno }}</p>
+                <p 
+                v-for="techno in project?.technos" 
+                :key="techno"
+                class="opacity-50 hover:opacity-100 text-base duration-200 hover:font-black hover:tracking-widest" 
+                :class="'__text_' + toCssClass(techno)" 
+                >
+                  {{ techno }}
+                </p>
               </div>
             </div>
             <div class="grid gap-2" v-if="project?.industry">
@@ -84,6 +91,17 @@ const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
                   <ButtonInline :size="-1" class="text-base" :to="collaborator.url">
                     {{ collaborator.name }} 
                     <span>({{ collaborator.role }})</span>
+                  </ButtonInline>
+                </p>
+              </div>
+            </div>
+            <div class="grid gap-2" v-if="project?.links && project?.links.length">
+              <h3 v-if="project.links.length > 1">Liens</h3>
+              <h3 v-else>Lien</h3>
+              <div class="grid gap-1">
+                <p class="opacity-50 text-base" v-for="link in project?.links" :key="link.name">
+                  <ButtonInline :size="-1" class="text-base" :to="link.url">
+                    {{ link.name }}
                   </ButtonInline>
                 </p>
               </div>

@@ -7,5 +7,5 @@ export default function () {
     b.lastUpdateDate.getTime() - a.lastUpdateDate.getTime()
   )
 
-  return projects.slice(3, 8)
+  return projects.slice(3, 7)
 }

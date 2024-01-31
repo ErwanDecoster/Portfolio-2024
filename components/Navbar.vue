@@ -15,10 +15,10 @@ useHead({
 
 const route = useRoute()
 const enabled = useState<boolean | null>('theme', () => null)
-
 onMounted(()=>{
   enabled.value = localStorage.getItem("theme") === "dark" ? false : true
   changeSizeOnScroll()
+  updateBurgerColor()
 })
 
 const toggleTheme = () => {
@@ -27,21 +27,30 @@ const toggleTheme = () => {
   setTheme()
 }
 
+const updateBurgerColor = () => {
+  document.addEventListener('scroll', () => {
+    const whiteZone = document.querySelector('.__white-bg')
+    if (whiteZone) {
+      if (whiteZone?.getBoundingClientRect().y <= 0) {
+        invert.value = true
+      } else {
+        invert.value = false
+      }
+    }
+  })
+}
+
 const changeSizeOnScroll = () => {
-  console.log('cc');
-  
   const nav = document.querySelector('#navbar')
   const navHeight = nav?.getBoundingClientRect().height
   const linkContainer = nav?.querySelector('#link_container')
   if (navHeight && linkContainer) {
     document.addEventListener('scroll', () => {
-      console.log('scroll');
-      
       if (window.scrollY > navHeight) {
         linkContainer.classList.remove("py-5")
-        linkContainer.classList.add("py-2")
+        linkContainer.classList.add("sm:py-2")
       } else {
-        linkContainer.classList.remove("py-2")
+        linkContainer.classList.remove("sm:py-2")
         linkContainer.classList.add("py-5")
       }
     })
@@ -58,6 +67,7 @@ const setTheme = () => {
 }
 
 let visible = ref(false)
+let invert = ref(false)
 
 </script>
 
@@ -68,20 +78,22 @@ let visible = ref(false)
     :class="{ 'h-screen sm:h-auto': visible, 'h-0 sm:h-auto': !visible }"
   >
     <button 
+      id="navbar-burger"
       @click="visible = !visible"
-      class="sm:hidden fixed top-6 pl-4 py-4 right-6 w-14 h-16 flex flex-col justify-between"
+      class="sm:hidden fixed *:bg-black *:dark:bg-white top-6 pl-4 py-4 -my-4 right-6 w-14 h-16 flex flex-col justify-between"
+      :class="{'*:bg-white *:dark:bg-black': invert && !visible}"
     >
       <span 
-        class="block h-1 rounded-full w-full bg-black dark:bg-white origin-top-left duration-200" 
+      class="block h-1 rounded-full w-full origin-bottom-right duration-200 " 
+      :class="{ '-rotate-45 delay-150': visible }"
+      />
+      <span 
+      class="block h-1 rounded-full w-full origin-top-right duration-200 delay-150" 
+      :class="{ 'scale-x-0 delay-0': visible }"
+      />
+      <span 
+        class="block h-1 rounded-full w-full origin-top-right duration-200" 
         :class="{ 'rotate-45 delay-150': visible }"
-      />
-      <span 
-        class="block h-1 rounded-full w-full bg-black dark:bg-white origin-top-left duration-200 delay-150" 
-        :class="{ 'scale-x-0 delay-0': visible }"
-      />
-      <span 
-        class="block h-1 rounded-full w-full bg-black dark:bg-white origin-bottom-left duration-200 " 
-        :class="{ '-rotate-45 delay-150': visible }"
       />
     </button>
     <nav 
@@ -101,22 +113,22 @@ let visible = ref(false)
         class="col-span-4 md:col-span-3 sm:border-x-2 py-5 flex justify-center items-center gap-y-6 lg:gap-x-11 duration-300"
         :class="{ 'flex-col sm:flex-row': visible }"
       >
-        <ButtonInline to="/">
+        <ButtonInline @click="visible = false" to="/">
           Accueil
         </ButtonInline> 
-        <ButtonInline to="/#about">
+        <ButtonInline @click="visible = false" to="/#about">
           À propos
         </ButtonInline> 
-        <ButtonInline to="/projects">
+        <ButtonInline @click="visible = false" to="/projects">
           Projets
         </ButtonInline>
         <template v-if="route.name == 'projects' || route.name == 'projects-id'">
-          <ButtonInline to="/projects#contact">
+          <ButtonInline @click="visible = false" to="/projects#contact">
             Contact
           </ButtonInline>
         </template>
         <template v-else>
-          <ButtonInline to="/#contact">
+          <ButtonInline @click="visible = false" to="/#contact">
             Contact
           </ButtonInline>
         </template>

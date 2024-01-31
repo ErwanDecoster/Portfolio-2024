@@ -36,25 +36,8 @@ useSeoMeta({
 })
 
 onMounted(() => {
-  const header = document.querySelector<HTMLElement>('#__header')
-  const headerH = header?.getBoundingClientRect().height
   const about = document.querySelector<HTMLElement>('#about')
   const pp = document.querySelector<HTMLElement>('#pp')
-
-  // gsap.registerPlugin(ScrollTrigger)
-  // if (headerH) {
-  //   gsap.to('#__header', { 
-  //     scrollTrigger: {
-  //       trigger: '#about',
-  //       start: `top ${headerH}px`,
-  //       end: 'top top',
-  //       markers: true,
-  //       scrub: true,
-  //     },
-  //     ease: 'none',
-  //     y: -headerH, 
-  //   })
-  // }
 
   gsap.set(pp, {
     xPercent: -50, 
@@ -120,14 +103,14 @@ const socials = ref([
   <div id="__index-page">
     <div class="max-w-screen-2xl mx-auto grid gap-24 px-2 sm:px-8">
       <img id="pp" class="pointer-events-none fixed size-96 rounded-full opacity-0" src="/images/photo_erwan_decoster.jpg" alt="">
-      <header id="__header" class="-mb-24 pb-8 h-screen">
+      <header id="__header" class="-mb-12 pb-8 h-screen">
         <div class="sticky top-[25vh] text-4xl sm:text-6xl md:text-8xl">
           <h2>Erwan Decoster</h2>
           <h1>Développeur Front-End</h1>
           <p class="text-lg">Lyon, France</p>
         </div>
       </header>
-      <section id="about" class="pb-4 scroll-m-28">
+      <section id="about" class="pb-4 scroll-m-20 sm:scroll-m-28">
         <div class="w-full py-8 sm:py-16 px-4 rounded-2xl border flex flex-wrap sm:flex-nowrap items-center gap-y-8 gap-24 md:gap-x-48">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eaque voluptate ipsa dolorum, saepe, accusamus dolorem quae aperiam eveniet corporis id quos praesentium, vitae sit officiis fugiat officia doloremque assumenda.</p>
           <ButtonBig class="ml-auto sm:ml-0" to="/#about2">
@@ -260,8 +243,12 @@ const socials = ref([
               v-for="social in socials"
               :key="social.name"
               :to="social.url"
-              class="w-32 border rounded-2xl px-6 py-4 sm:py-14 grow flex items-center justify-center hover:bg-white hover:text-black hover:font-bold hover:tracking-wide duration-200"
+              class="relative overflow-hidden w-32 border group/word rounded-2xl px-6 py-4 sm:py-14 grow flex items-center justify-center hover:font-bold hover:tracking-wide duration-200"
+              :class="'__contained_' + toCssClass(social.name)" 
             >
+              <span
+                class="absolute inset-0 duration-200 -z-10"
+              />
               {{ social.name }}
             </NuxtLink>
           </div>
@@ -285,7 +272,7 @@ const socials = ref([
         />
       </section>
     </div>
-    <div class="bg-black dark:bg-white mt-24 text-white dark:text-black __invert-select __invert-scroll-bar relative rounded-t-[40px] sm:rounded-t-[75px]">
+    <div class="__white-bg bg-black dark:bg-white mt-24 text-white dark:text-black __invert-select __invert-scroll-bar relative rounded-t-[40px] sm:rounded-t-[75px]">
       <div class="h-screen flex flex-col justify-around px-2 sm:px-8 max-w-screen-2xl mx-auto">
         <p class="absolute uppercase top-8 left-1/2 -translate-x-1/2 text-center">
           Disponible dès {{ mounths[(new Date).getMonth()] }} {{ (new Date).getFullYear() }}

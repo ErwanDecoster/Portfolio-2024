@@ -20,6 +20,9 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-security',
+    '@nuxtjs/sitemap',
+    '@nuxt/image',
+    'nuxt-delay-hydration',
     // '@nuxtjs/i18n',
   ],
   runtimeConfig: {

@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 onMounted(() => {
   const cursor = document.getElementById('__cursor');
@@ -35,6 +37,21 @@ onMounted(() => {
     cursorSlowXTo(e.clientX);
     cursorSlowYTo(e.clientY);
   })
+
+
+
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
+  // gsap.to('#navbar-burger', { 
+  //   scrollTrigger: {
+  //     trigger: '.__white-bg',
+  //     start: `top top`,
+  //     end: 'top top',
+  //     markers: true,
+  //     scrub: true,
+  //   },
+  //   ease: 'none',
+  //   background: 'blue',
+  // })
 })
 </script>
 

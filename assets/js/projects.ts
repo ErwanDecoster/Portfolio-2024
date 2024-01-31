@@ -7,7 +7,12 @@ export const projects: project[] = [
     publishDate: new Date('11/01/2023'),
     lastUpdateDate: new Date('01/24/2024'),
     url: "https://messages-app-beta.vercel.app/",
-    github: "https://github.com/ErwanDecoster/MessagesApp",
+    links: [
+      {
+        name: "Github",
+        url:  "https://github.com/ErwanDecoster/MessagesApp",
+      }
+    ],
     shortDesc: "Développement d'un site d'échange de messages instantanés.",
     desc: [
       "Message App est un site web d'échange de messages instantanés entre différents utilisateurs. Les messages peuvent être envoyés, supprimés et modifiés. Les nouveaux messages apparaissent directement chez le destinataire sans nécessiter de rafraîchissement."
@@ -48,7 +53,12 @@ export const projects: project[] = [
     publishDate: new Date('07/15/2023'),
     lastUpdateDate: new Date('08/03/2023'),
     url: "https://who-s-coming.vercel.app/",
-    github: "https://github.com/ErwanDecoster/Who-s-coming",
+    links: [
+      {
+        name: "Github",
+        url:  "https://github.com/ErwanDecoster/Who-s-coming",
+      }
+    ],
     shortDesc: "Développement d'un site de gestion d'événements",
     desc: [
       "Il s'agit ici d'un site de gestion d'événements, permettant l'envoi d'invitations et l'ajout à l'événement de ce qui est nécessaire. Il s'agit là des choses manquantes pour la bonne organisation de l'événement. Cela peut être utilisé pour demander aux invités ce qu'ils doivent apporter. L'organisateur peut ainsi savoir ce qui lui manquera pour son événement.",
@@ -97,7 +107,12 @@ export const projects: project[] = [
     publishDate: new Date('05/01/2023'),
     lastUpdateDate: new Date('05/01/2023'),
     url: "",
-    github: "https://github.com/ErwanDecoster/42_so_long",
+    links: [
+      {
+        name: "Github",
+        url:  "https://github.com/ErwanDecoster/42_so_long",
+      }
+    ],
     shortDesc: "Création d'un jeu 2D au sein de l'école 42 Lyon",
     desc: [
       "So Long est un projet de l'école 42 Lyon Auvergne Rhône-Alpes. Il consiste à réaliser un jeu vidéo 2D en respectant les contraintes du sujet.",
@@ -140,7 +155,12 @@ export const projects: project[] = [
     publishDate: new Date('03/17/2023'),
     lastUpdateDate: new Date('03/20/2023'),
     url: "https://42-x-sup-de-pub.vercel.app/",
-    github: "https://github.com/ErwanDecoster/42_x_Sup_de_Pub",
+    links: [
+      {
+        name: "Github",
+        url:  "https://github.com/ErwanDecoster/42_x_Sup_de_Pub",
+      }
+    ],
     shortDesc: "Développement de la nouvelle identité du site en collaboration avec Sup de Pub Lyon.",
     desc: [
       "Il s'agit d'un projet réalisé entre l'école 42 Lyon Auvergne Rhône-Alpes et Sup de Pub Lyon. Le projet consiste à développer une maquette réalisée par les étudiants de l'école Sup de Pub. Les équipes de développeurs et de designers collaborent ensemble pour réaliser le site de la façon la plus conforme à la maquette en un temps défini d'une semaine. L'équipe des développeurs est libre sur le choix des technologies, seuls 2 des développeurs avaient déjà fait du web avant ce projet. Le développement du site Les Nuits de Fourvière fut un superbe moment d'échange de connaissances permettant à chacun de développer son savoir."
@@ -248,7 +268,12 @@ export const projects: project[] = [
     publishDate: new Date('03/07/2023'),
     lastUpdateDate: new Date('03/07/2023'),
     url: "https://notes-tawny-delta.vercel.app/",
-    github: "https://github.com/ErwanDecoster/Notes",
+    links: [
+      {
+        name: "Github",
+        url:  "https://github.com/ErwanDecoster/Notes",
+      }
+    ],
     shortDesc: "Développement d'un site de prise de notes.",
     desc: [
       "Il s'agit là d'un site de prise de notes rapide. L'expérience utilisateur était un point important du projet, c'est pour cette raison que la sauvegarde automatique a été utilisée sur l'ensemble du site. Les utilisateurs peuvent créer des notes de plusieurs types : liste, liste de cases à cocher, texte. Les notes peuvent changer de type une fois créées, rendant l'utilisation du site aussi simple que possible et sans aucune frustration."
@@ -262,7 +287,7 @@ export const projects: project[] = [
       "Javascript",
       "Tailwind",
       "Supabase",
-      "Postgress",
+      "Postgres",
       "HTML",
       "CSS",
       "Figma",
@@ -305,7 +330,12 @@ export const projects: project[] = [
     publishDate: new Date('12/01/2022'),
     lastUpdateDate: new Date('01/25/2024'),
     url: "https://domaine-de-pipangaille.fr/",
-    github: "https://github.com/ErwanDecoster/Domaine-de-Pipangaille",
+    links: [
+      {
+        name: "Github",
+        url:  "https://github.com/ErwanDecoster/Domaine-de-Pipangaille",
+      }
+    ],
     shortDesc: "Création de l'identité visuelle et développement du site vitrine de l'entreprise Domaine de Pipangaille.",
     desc: [
       "Développement du site vitrine de l'entreprise Domaine de Pipangaille. Le site présente les services, produits et informations pertinents liés à l'entreprise, offrant ainsi une vitrine en ligne pour les visiteurs.",
@@ -383,7 +413,12 @@ export const projects: project[] = [
     publishDate: new Date('08/26/2022'),
     lastUpdateDate: new Date('08/26/2022'),
     url: "https://www.phoenix-vetements.com/",
-    github: "https://github.com/ErwanDecoster/Phoenix-Vetements-et-Protection",
+    links: [
+      {
+        name: "Github",
+        url:  "https://github.com/ErwanDecoster/Phoenix-Vetements-et-Protection",
+      }
+    ],
     shortDesc: "Création de l'identité visuelle et développement du site vitrine de l'entreprise Phoenix Vêtements et Protection",
     desc: [
       "Création complète d'un site vitrine pour l'entreprise Phoenix Vêtements et Protection. Le projet inclut le développement du site, ainsi que la conception et la mise en place de l'identité visuelle, offrant une présentation complète et attrayante des produits et services de l'entreprise en ligne.",
@@ -451,6 +486,52 @@ export const projects: project[] = [
           name: "Contact",
           asset: "/images/m_phoenix_vetements_contact.png",
         },
+      ],
+    }
+  },
+  {
+    title: "Portfolio 2022",
+    img: "/images/portfolio_2022_mockup_5.webp",
+    publishDate: new Date('05/03/2022'),
+    lastUpdateDate: new Date('05/03/2022'),
+    url: "",
+    links: [
+      {
+        name: "Github",
+        url:  "https://github.com/ErwanDecoster/Phoenix-Vetements-et-Protection",
+      }
+    ],
+    shortDesc: "Remonter dans les archive et visualiser mon site personnel de ses dernire année.",
+    desc: [
+      "Portfilio 2022 est tous simplement comme son nom l'indique mon site personnel de l'année 2022 et ce jusqua ca nouvelle version en 2024.",
+    ],
+    customer: null,
+    industry: "Devellopement web",
+    collaborators: [],
+    technos: [
+      "VueJs",
+      "Javascript",
+      "Tailwind",
+      "HTML",
+      "CSS",
+      "Figma",
+    ],
+    screens: {
+      desktop: [
+        {
+          name: "Acceuil",
+          asset: "/images/portfolio_2022_accueil.png",
+        },
+        {
+          name: "Projet",
+          asset: "/images/portfolio_2022_projet.png",
+        },
+        {
+          name: "Entreprise",
+          asset: "/images/portfolio_2022_entreprise.png",
+        },
+      ],
+      mobile: [
       ],
     }
   },
