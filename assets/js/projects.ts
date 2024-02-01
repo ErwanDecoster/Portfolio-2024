@@ -57,7 +57,11 @@ export const projects: project[] = [
       {
         name: "Github",
         url:  "https://github.com/ErwanDecoster/Who-s-coming",
-      }
+      },
+      {
+        name: "Figma",
+        url:  "https://www.figma.com/file/O96sl8paur22MGavI9G9TT/Who%E2%80%99s-coming?type=design&node-id=0%3A1&mode=design&t=f71L1C0hymFNV7xa-1",
+      },
     ],
     shortDesc: "Développement d'un site de gestion d'événements",
     desc: [
@@ -111,7 +115,11 @@ export const projects: project[] = [
       {
         name: "Github",
         url:  "https://github.com/ErwanDecoster/42_so_long",
-      }
+      },
+      {
+        name: "Figma",
+        url:  "https://www.figma.com/file/cXiC447eX49ehafv1jZmVD/Untitled?type=design&mode=design&t=f71L1C0hymFNV7xa-1",
+      },
     ],
     shortDesc: "Création d'un jeu 2D au sein de l'école 42 Lyon",
     desc: [
@@ -273,6 +281,10 @@ export const projects: project[] = [
         name: "Github",
         url:  "https://github.com/ErwanDecoster/Notes",
       },
+      {
+        name: "Figma",
+        url:  "https://www.figma.com/file/67P9ZZh4fBWMF4wQQuwoTI/Notes?type=design&node-id=0%3A1&mode=design&t=f71L1C0hymFNV7xa-1",
+      },
     ],
     shortDesc: "Développement d'un site de prise de notes.",
     desc: [
@@ -334,6 +346,10 @@ export const projects: project[] = [
       {
         name: "Github",
         url:  "https://github.com/ErwanDecoster/Domaine-de-Pipangaille",
+      },
+      {
+        name: "Figma",
+        url:  "https://www.figma.com/file/BHaZm46N0kIMT2QY4ehNFE/Domaine-de-Pipangaille?type=design&node-id=59%3A3425&mode=design&t=f71L1C0hymFNV7xa-1",
       }
     ],
     shortDesc: "Création de l'identité visuelle et développement du site vitrine de l'entreprise Domaine de Pipangaille.",
@@ -499,7 +515,11 @@ export const projects: project[] = [
       {
         name: "Github",
         url:  "https://github.com/ErwanDecoster/Phoenix-Vetements-et-Protection",
-      }
+      },
+      {
+        name: "Figma",
+        url:  "https://www.figma.com/file/QVtNbHqqIeCu0HjKhejkCj/Portfolio-2022?type=design&node-id=0%3A1&mode=design&t=f71L1C0hymFNV7xa-1",
+      },
     ],
     shortDesc: "Remonter dans les archive et visualiser mon site personnel de ses dernire année.",
     desc: [
@@ -600,9 +620,17 @@ export const projects: project[] = [
     url: "",
     links: [
       {
-        name: "Github",
-        url:  "https://github.com/ErwanDecoster/Covoit",
-      }
+        name: "Github Front",
+        url:  "https://github.com/ErwanDecoster/Covoit-Front",
+      },
+      {
+        name: "Github Back",
+        url:  "https://github.com/ErwanDecoster/Covoit-Back",
+      },
+      {
+        name: "Figma",
+        url:  "https://www.figma.com/file/IlDMB37HhdRwhDEbAcXcsz/CoVoit?type=design&node-id=0%3A1&mode=design&t=f71L1C0hymFNV7xa-1",
+      },
     ],
     shortDesc: "Projet fictife de site de covoiturage.",
     desc: [
@@ -672,6 +700,10 @@ export const projects: project[] = [
     lastUpdateDate: new Date('05/28/2021'),
     url: "",
     links: [
+      {
+        name: "Figma",
+        url: "https://www.figma.com/file/obmVmdaFsRdahAhuJwnAo4/WaterCollect-Simulateur?type=design&mode=design&t=f71L1C0hymFNV7xa-1",
+      },
     ],
     shortDesc: "Ajout de diferents simulateurs interactif au site Wordpresse de l'entreprise WaterCollect.",
     desc: [

@@ -96,9 +96,9 @@ body {
 .__text_vuejs { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#42d392] to-[#647eff]  }
 
 .__contained_javascript { @apply hover:text-black }
-.__contained_javascript span { @apply opacity-0 bg-gradient-to-tr from-[#F7E025] to-[#F7E025] }
+.__contained_javascript span { @apply opacity-0 bg-gradient-to-tr from-[#F7E025] to-[#DAB92D] }
 .__contained_javascript:hover span { @apply opacity-100 }
-.__text_javascript { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#F7E025] to-[#F7E025]  }
+.__text_javascript { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#F7E025] to-[#DAB92D]  }
 
 .__contained_typescript { @apply hover:text-white }
 .__contained_typescript span { @apply opacity-0 bg-gradient-to-tr from-[#377CC8] to-[#377CC8] }
@@ -121,9 +121,9 @@ body {
 .__text_php { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#7A86B8] to-[#4E5A92]  }
 
 .__contained_mysql { @apply hover:text-white }
-.__contained_mysql span { @apply opacity-0 bg-gradient-to-tr from-[#E59208] to-[#08668E] }
+.__contained_mysql span { @apply opacity-0 bg-gradient-to-tr from-[#E59208] to-[#f5bb5e] }
 .__contained_mysql:hover span { @apply opacity-100 }
-.__text_mysql { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#E59208] to-[#08668E]  }
+.__text_mysql { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#E59208] to-[#f5bb5e]  }
 
 .__contained_wordpress { @apply hover:text-white }
 .__contained_wordpress span { @apply opacity-0 bg-gradient-to-tr from-[#2B8ACD] to-[#266299] }
@@ -165,10 +165,10 @@ body {
 .__contained_figma_dev:hover span { @apply opacity-100 }
 .__text_figma_dev { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#F24E1E] to-[#A259FF]  }
 
-.__contained_c_sharp { @apply hover:text-white }
-.__contained_c_sharp span { @apply opacity-0 bg-gradient-to-tr from-[#A47CDE] to-[#37008E] }
-.__contained_c_sharp:hover span { @apply opacity-100 }
-.__text_c_sharp { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#A47CDE] to-[#37008E]  }
+.__contained_csharp { @apply hover:text-white }
+.__contained_csharp span { @apply opacity-0 bg-gradient-to-tr from-[#A47CDE] to-[#37008E] }
+.__contained_csharp:hover span { @apply opacity-100 }
+.__text_csharp { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#A47CDE] to-[#37008E]  }
 
 .__contained_github { @apply hover:text-white dark:hover:text-black }
 .__contained_github span { @apply opacity-0 bg-black dark:bg-white }
@@ -189,5 +189,3 @@ body {
 .__contained_linkedin span { @apply opacity-0 bg-gradient-to-tr from-[#0A66C2] to-[#0A66C2] }
 .__contained_linkedin:hover span { @apply opacity-100 }
 .__text_linkdin { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#0A66C2] to-[#0A66C2]  }
-
-/* .__contained_c_sharp:hover { background: linear-gradient(90deg, #9C5096 0%, #67217A 100%); text-white; } */
