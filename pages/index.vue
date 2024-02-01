@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import gsap from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 const mounths = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre','décembre']
 
 const route = useRoute()
@@ -100,7 +99,7 @@ const socials = ref([
 </script>
 
 <template>
-  <div id="__index-page">
+  <div id="index">
     <div class="max-w-screen-2xl mx-auto grid gap-24 px-2 sm:px-8">
       <img id="pp" class="pointer-events-none fixed size-96 rounded-full opacity-0" src="/images/photo_erwan_decoster.jpg" alt="">
       <header id="__header" class="-mb-12 pb-8 h-screen">
@@ -195,8 +194,8 @@ const socials = ref([
                   @click="interactiveDesign[index] = !interactiveDesign[index]"
                   class="__pointer block size-7 m-1 rounded-full duration-100" 
                   :class="{
-                    'bg-white hover:bg-navy-blue': row === false,
-                    'bg-navy-blue hover:bg-white': row === true
+                    'bg-white sm:hover:bg-navy-blue': row === false,
+                    'bg-navy-blue sm:hover:bg-white': row === true
                   }"
                 />
               </div>

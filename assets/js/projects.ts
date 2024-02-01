@@ -134,15 +134,11 @@ export const projects: project[] = [
           asset: "/images/so_long_1.png",
         },
         {
-          name: "Classique",
-          asset: "/images/so_long_2.png",
-        },
-        {
           name: "Bonus",
           asset: "/images/so_long_bonus_1.png",
         },
         {
-          name: "Bonus",
+          name: "Bonus 2",
           asset: "/images/so_long_bonus_2.png",
         },
       ],
@@ -159,7 +155,11 @@ export const projects: project[] = [
       {
         name: "Github",
         url:  "https://github.com/ErwanDecoster/42_x_Sup_de_Pub",
-      }
+      },
+      {
+        name: "Figma",
+        url:  "https://www.figma.com/file/CqnNhX1CkzN8CF0V9uHEnO/les-nuits-de-fourvi%C3%A8res?type=design&node-id=1%3A83&mode=design&t=BWhHEfvoxlSc9Xdi-1",
+      },
     ],
     shortDesc: "Développement de la nouvelle identité du site en collaboration avec Sup de Pub Lyon.",
     desc: [
@@ -171,7 +171,7 @@ export const projects: project[] = [
       {
         name: "Hervé Dupuy",
         role: "Développeur",
-        url: "",
+        url: "https://www.linkedin.com/in/herv%C3%A9-dupuy-971789236/",
       },
       {
         name: "Aymeric Jakubczyk",
@@ -186,32 +186,32 @@ export const projects: project[] = [
       {
         name: "Maxime BRUEL",
         role: "Designer",
-        url: "",
+        url: "https://www.linkedin.com/in/maxime-bruel/",
       },
       {
         name: "Louis DEMANGE",
         role: "Designer",
-        url: "",
+        url: "https://www.linkedin.com/in/louis-demange/",
       },
       {
         name: "Léa NIETO",
         role: "Designer",
-        url: "",
+        url: "https://www.linkedin.com/in/leanieto/",
       },
       {
         name: "Ellora GUIGUET",
         role: "Designer",
-        url: "",
+        url: "https://www.linkedin.com/in/ellora-guiguet-2b1970196/",
       },
       {
         name: "Julie DA SILVA",
         role: "Designer",
-        url: "",
+        url: "https://www.linkedin.com/in/julie-da-silva-679a42188/",
       },
       {
         name: "Cécile LEMAITRE",
         role: "Designer",
-        url: "",
+        url: "https://www.linkedin.com/in/c%C3%A9cile-lemaitre-b94251160/",
       },
     ],
     technos: [
@@ -272,7 +272,7 @@ export const projects: project[] = [
       {
         name: "Github",
         url:  "https://github.com/ErwanDecoster/Notes",
-      }
+      },
     ],
     shortDesc: "Développement d'un site de prise de notes.",
     desc: [
@@ -506,7 +506,7 @@ export const projects: project[] = [
       "Portfilio 2022 est tous simplement comme son nom l'indique mon site personnel de l'année 2022 et ce jusqua ca nouvelle version en 2024.",
     ],
     customer: null,
-    industry: "Devellopement web",
+    industry: "Dévelopement web",
     collaborators: [],
     technos: [
       "VueJs",
@@ -529,6 +529,212 @@ export const projects: project[] = [
         {
           name: "Entreprise",
           asset: "/images/portfolio_2022_entreprise.png",
+        },
+      ],
+      mobile: [
+      ],
+    }
+  },
+  {
+    title: "Covoit Admin",
+    img: "/images/covoit_admin_mockup_11.webp",
+    publishDate: new Date('05/02/2022'),
+    lastUpdateDate: new Date('05/02/2022'),
+    url: "",
+    links: [
+      {
+        name: "Github",
+        url:  "https://github.com/ErwanDecoster/Covoit-Admin",
+      }
+    ],
+    shortDesc: "Application windows destiné au administrateur du projet covoit",
+    desc: [
+      "L'application Covoir Admin est un projet fictif elle permet de modifier la base de donnée Covoit, adeal pour les administateur et le support de Covoit.",
+    ],
+    customer: null,
+    industry: null,
+    collaborators: [
+      {
+        name: "Trsistan Boudra",
+        role: "Développeur",
+        url: "https://www.linkedin.com/in/tristan-boudra/"
+      }
+    ],
+    technos: [
+      "C#",
+      "WPF",
+      "MYSQL",
+    ],
+    screens: {
+      desktop: [
+        {
+          name: "Connection",
+          asset: "/images/covoit_admin_connection.png",
+        },
+        {
+          name: "Utilisateurs",
+          asset: "/images/covoit_admin_utilisateurs.png",
+        },
+        {
+          name: "Modification utilisateur",
+          asset: "/images/covoit_admin_edit_user.png",
+        },
+        {
+          name: "Ajout d'utilisateurs",
+          asset: "/images/covoit_admin_add_user.png",
+        },
+        {
+          name: "Motorisations",
+          asset: "/images/covoit_admin_motorisation.png",
+        },
+      ],
+      mobile: [
+      ],
+    }
+  },
+  {
+    title: "Covoit",
+    img: "/images/covoit_mockup_10.webp",
+    publishDate: new Date('04/28/2022'),
+    lastUpdateDate: new Date('04/28/2022'),
+    url: "",
+    links: [
+      {
+        name: "Github",
+        url:  "https://github.com/ErwanDecoster/Covoit",
+      }
+    ],
+    shortDesc: "Projet fictife de site de covoiturage.",
+    desc: [
+      "Covoit est directement lié avec c'application Covoir Admin ce sont tous deux des projets fictif.",
+      "Covoit est un site internet de covoiturage",
+    ],
+    customer: null,
+    industry: null,
+    collaborators: [
+      {
+        name: "Trsistan Boudra",
+        role: "Développeur",
+        url: "https://www.linkedin.com/in/tristan-boudra/"
+      }
+    ],
+    technos: [
+      "VueJs",
+      "Tailwind",
+      "CSS",
+      "PHP",
+      "MYSQL",
+      "Javascript",
+    ],
+    screens: {
+      desktop: [
+      ],
+      mobile: [
+        {
+          name: "Accueil",
+          asset: "/images/covoit_home.png",
+        },
+        {
+          name: "Recherche de trajets",
+          asset: "/images/covoit_search_trip.png",
+        },
+        {
+          name: "Trajet actuel",
+          asset: "/images/covoit_actual_trips.png",
+        },
+        {
+          name: "Crée un trajet",
+          asset: "/images/covoit_create_trip.png",
+        },
+        {
+          name: "Ajouter un vehicule",
+          asset: "/images/covoit_add_vehicul.png",
+        },
+        {
+          name: "Modifier un vehicule",
+          asset: "/images/covoit_edit_vehicul.png",
+        },
+        {
+          name: "Historique des voyages",
+          asset: "/images/covoit_trips_history.png",
+        },
+        {
+          name: "Suppresion du compte",
+          asset: "/images/covoit_delete_account.png",
+        },
+      ],
+    }
+  },
+  {
+    title: "WaterCollect - Simulateur",
+    img: "/images/watercollect_simulateur_mockup_7.webp",
+    publishDate: new Date('05/28/2021'),
+    lastUpdateDate: new Date('05/28/2021'),
+    url: "",
+    links: [
+    ],
+    shortDesc: "Ajout de diferents simulateurs interactif au site Wordpresse de l'entreprise WaterCollect.",
+    desc: [
+      "Mise en place sur le site Wordpress un simulateur d'économie d'eau réalisable grâce à l'installation des équipements WaterCollect.",
+      "Le simulateur permet au client de visualiser combien de mètres cube d'eau sont économisables par mois et par an le tout très facilement grâce à des Sliders pour définir certains paramètres.",
+    ],
+    customer: 'WaterCollect',
+    industry: null,
+    collaborators: [
+    ],
+    technos: [
+      "WordPress",
+      "HTML",
+      "CSS",
+      "Javascript",
+    ],
+    screens: {
+      desktop: [
+        {
+          name: "Maquette",
+          asset: "/images/watercollect_simulateur.png",
+        },
+      ],
+      mobile: [
+      ],
+    }
+  },
+  {
+    title: "WaterCollect - Dashboard",
+    img: "/images/watercollect_dashboard_mockup_4.webp",
+    publishDate: new Date('05/28/2021'),
+    lastUpdateDate: new Date('05/28/2021'),
+    url: "",
+    links: [
+    ],
+    shortDesc: "Création d'un dashboard avec une parti clientes et administrateurs.",
+    desc: [
+      "Créer pour les futures clients une plate-forme de visualisation de leurs économies réalisées ainsi que le nombre d'équipements installés et les équipements non installés ainsi que des proposition pour d'autres équipements.",
+    ],
+    customer: 'WaterCollect',
+    industry: null,
+    collaborators: [
+    ],
+    technos: [
+      "PHP",
+      "HTML",
+      "CSS",
+      "MYSQL",
+      "Javascript",
+    ],
+    screens: {
+      desktop: [
+        {
+          name: "Connection",
+          asset: "/images/watercollect_dashboard_connection.png",
+        },
+        {
+          name: "Dashboard",
+          asset: "/images/watercollect_dashboard_dashboard.png",
+        },
+        {
+          name: "Ajout utilisateur",
+          asset: "/images/watercollect_dashboard_ajout_utilisateur.png",
         },
       ],
       mobile: [

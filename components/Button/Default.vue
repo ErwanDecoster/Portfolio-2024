@@ -9,7 +9,7 @@ const props = defineProps<{
     class="relative group px-5 py-2 text-lg rounded-full border"
   >
     <span class="absolute inset-y-0 inset-x-5 overflow-hidden">
-      <span class="absolute py-2 -mt-0.5 group-hover:-translate-y-1/2 duration-200">
+      <span class="absolute py-2 group-hover:-translate-y-1/2 duration-200">
         <slot />
         <span class="h-4 block" />
         <slot />
@@ -24,7 +24,7 @@ const props = defineProps<{
     class="relative group px-5 py-2 text-lg rounded-full border"
   >
     <span class="absolute inset-y-0 inset-x-5 overflow-hidden">
-      <span class="absolute py-2 -mt-0.5 group-hover:-translate-y-1/2 duration-200">
+      <span class="absolute py-2 group-hover:-translate-y-1/2 duration-200">
         <slot />
         <span class="h-4 block" />
         <slot />

@@ -104,7 +104,7 @@ let invert = ref(false)
         class="hidden md:flex justify-center items-center"
         :class="{ 'hidden': visible }"
       >
-        <ButtonInline to="/">
+        <ButtonInline to="/#index">
           Erwan Decoster
         </ButtonInline> 
       </div>
@@ -113,7 +113,7 @@ let invert = ref(false)
         class="col-span-4 md:col-span-3 sm:border-x-2 py-5 flex justify-center items-center gap-y-6 lg:gap-x-11 duration-300"
         :class="{ 'flex-col sm:flex-row': visible }"
       >
-        <ButtonInline @click="visible = false" to="/">
+        <ButtonInline @click="visible = false" to="/#index">
           Accueil
         </ButtonInline> 
         <ButtonInline @click="visible = false" to="/#about">

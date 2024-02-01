@@ -1,13 +1,18 @@
-- Project carousel better logique for dotte
 ✔️ MESSAGE APP mockup
 ✔️ Add Portfolio 2022
-- img corectly sized
 ✔️ add hover colors (in texte ?) in about social
 ✔️ add hover colors (on bg) in techno links
 ✔️ close navbar on same bage link click
 ✔️ change mt-scroll on small screen
 ✔️ change navbar burger on white bg
-- add Covoit
-- add WaterCollect - Dashboard
-- add WaterCollect - Simulateur
-- add Covoit Admin
+- img corectly sized
+- Project carousel better logique for dotte
+- burger change color not working in prod
+- img pp should not work on touch device 
+✔️ add Covoit
+✔️ use mobile mockup for covoit
+✔️ add WaterCollect - Dashboard
+- change texts of WaterCollect - Dashboard captures
+✔️ add WaterCollect - Simulateur
+✔️ add Covoit Admin
+✔️ not all projets should by visible in projets page, a button to show more should be better

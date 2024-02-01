@@ -46,7 +46,7 @@ const props = defineProps<{
           v-for="(techno, index) in technos"
           :key="techno" 
           class="relative group/word px-4 py-2 border rounded-full duration-300 overflow-hidden"
-          :class="`__contained_${toCssClass(techno)}`"
+          :class="[{ 'hidden sm:block': index >= 3, 'md:px-7 md:py-2.5 md:text-xl': size == 1 }, (`__contained_${toCssClass(techno)} `)]"
         >
           <span
             class="absolute inset-0 duration-200 -z-10"

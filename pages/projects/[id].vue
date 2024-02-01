@@ -38,7 +38,7 @@ const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
 <template>
   <div>
     <div class="pt-48 grid gap-16 sm:gap-32 max-w-screen-2xl mx-auto px-2 sm:px-8">
-      <h1 class="py-5 sm:py-11 border-y mx-auto w-4/5 text-5xl sm:text-8xl flex justify-center items-center text-center">
+      <h1 class="py-5 sm:py-11 border-y mx-auto w-4/5 text-5xl sm:text-8xl flex justify-center items-center text-center text-balance">
         {{ project?.title }}
       </h1>
       <div class="grid gap-4 sm:gap-24">
@@ -117,12 +117,23 @@ const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
           </div>
         </div>
       </div>
-      <div class="grid gap-12" v-for="screen in project?.screens.desktop" :key="screen.name">
-        <div>
-          <h3>{{ screen.name }}</h3>
-          <p class="opacity-50 uppercase">desktop</p>
+      <div v-if="project?.screens.desktop.length" class="grid gap-16 sm:gap-32">
+        <div class="grid gap-12" v-for="screen in project?.screens.desktop" :key="screen.name">
+          <div>
+            <h3>{{ screen.name }}</h3>
+            <p class="opacity-50 uppercase">desktop</p>
+          </div>
+          <img class="border-2 border-black dark:border-white" :src="screen.asset" alt="">
         </div>
-        <img class="border-2 border-black dark:border-white" :src="screen.asset" alt="">
+      </div>
+      <div v-else class="grid sm:grid-cols-2 xl:grid-cols-3 gap-16 md:gap-32">
+        <div class="grid gap-12" v-for="screen in project?.screens.mobile" :key="screen.name">
+          <div>
+            <h3>{{ screen.name }}</h3>
+            <p class="opacity-50 uppercase">mobile</p>
+          </div>
+          <img class="border-2 border-black dark:border-white" :src="screen.asset" alt="">
+        </div>
       </div>
     </div>
     <div class="bg-black dark:bg-white mt-24 text-white dark:text-black py-36 __invert-select __invert-scroll-bar relative rounded-t-[40px] sm:rounded-t-[75px]">
