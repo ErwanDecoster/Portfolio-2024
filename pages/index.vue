@@ -101,7 +101,16 @@ const socials = ref([
 <template>
   <div id="index">
     <div class="max-w-screen-2xl mx-auto grid gap-24 px-2 sm:px-8">
-      <img id="pp" class="pointer-events-none fixed size-96 rounded-full opacity-0" src="/images/photo_erwan_decoster.jpg" alt="">
+      <NuxtImg
+        id="pp" 
+        class="pointer-events-none fixed size-96 rounded-full opacity-0" 
+        src="/images/photo_erwan_decoster.jpg"
+        placeholder
+        format="webp"
+        quality="70"
+        width="384"
+        height="384"
+      />
       <header id="__header" class="-mb-12 pb-8 h-screen">
         <div class="sticky top-[25vh] text-4xl sm:text-6xl md:text-8xl">
           <h2>Erwan Decoster</h2>

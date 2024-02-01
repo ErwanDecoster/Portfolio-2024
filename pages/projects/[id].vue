@@ -43,7 +43,23 @@ const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
       </h1>
       <div class="grid gap-4 sm:gap-24">
         <div class="grid gap-8">
-          <img v-if="project?.img" class="rounded-2xl aspect-video object-cover" :src="project?.img" alt="">
+          <NuxtImg 
+            v-if="project?.img"
+            class="rounded-2xl aspect-video object-cover w-full"
+            :src="project?.img"
+            placeholder
+            format="webp"
+            quality="70"
+            sizes="
+              xs:576px
+              sm:704px
+              md:960px
+              lg:1216px
+              xl:1472px
+              2xl:1472px
+            "
+          />
+          <!-- <img v-if="project?.img" class="rounded-2xl aspect-video object-cover" :src="project?.img" alt=""> -->
           <SectionSeparator>
             <h2 class="uppercase">À propos du projet</h2>
           </SectionSeparator>
@@ -123,7 +139,21 @@ const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
             <h3>{{ screen.name }}</h3>
             <p class="opacity-50 uppercase">desktop</p>
           </div>
-          <img class="border-2 border-black dark:border-white" :src="screen.asset" alt="">
+          <NuxtImg
+            class="border-2 border-black dark:border-white w-full"
+            :src="screen.asset"
+            placeholder
+            format="webp"
+            quality="70"
+            sizes="
+              xs:576px
+              sm:704px
+              md:960px
+              lg:1216px
+              xl:1472px
+              2xl:1472px
+            "
+          />
         </div>
       </div>
       <div v-else class="grid sm:grid-cols-2 xl:grid-cols-3 gap-16 md:gap-32">
@@ -132,7 +162,22 @@ const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
             <h3>{{ screen.name }}</h3>
             <p class="opacity-50 uppercase">mobile</p>
           </div>
-          <img class="border-2 border-black dark:border-white" :src="screen.asset" alt="">
+          <NuxtImg
+            class="border-2 border-black dark:border-white w-full"
+            :src="screen.asset"
+            placeholder
+            format="webp"
+            quality="70"
+            sizes="
+              xs:612px
+              sm:312px
+              md:416px
+              lg:534px
+              xl:405px
+              2xl:405px
+            "
+          />
+          <!-- <img class="border-2 border-black dark:border-white" :src="screen.asset" alt=""> -->
         </div>
       </div>
     </div>

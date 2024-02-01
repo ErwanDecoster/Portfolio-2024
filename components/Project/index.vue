@@ -18,7 +18,38 @@ const props = defineProps<{
     class="__project-card group relative snap-start flex flex-col text-white justify-end overflow-hidden rounded-2xl aspect-4/3 duration-100"
     :class="{ 'sm:text-2xl sm:aspect-video': size == 1}"
   >
-    <img class="absolute z-0 inset-0 w-full h-full bg-navy-blue object-cover duration-300 group-hover:scale-105" :src="imgUrl" alt="">
+    <NuxtImg 
+      v-if="size == 1"
+      class="absolute z-0 inset-0 w-full h-full bg-navy-blue object-cover duration-300 group-hover:scale-105"
+      :src="imgUrl"
+      placeholder
+      format="webp"
+      quality="70"
+      sizes="
+        xs:304px
+        sm:576px
+        md:704px
+        lg:960px
+        xl:1277px
+        2xl':1472px
+      "
+    />
+    <NuxtImg 
+      v-else
+      class="absolute z-0 inset-0 w-full h-full bg-navy-blue object-cover duration-300 group-hover:scale-105"
+      :src="imgUrl"
+      placeholder
+      format="webp"
+      quality="70"
+      sizes="
+        xs:304px
+        sm:576px
+        md:344px
+        lg:472px
+        xl:600px
+        2xl:728px
+      "
+    />
     <div 
       class="sticky w-full z-10 p-4 sm:p-7 bg-gradient-to-t from-[#000000ef]"
       :class="{ 'md:p-12': size == 1}"
