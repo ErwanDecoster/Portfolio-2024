@@ -88,6 +88,7 @@ const GoToSlide = (slideId: number) => {
       <button 
         id="__left-button"
         class="py-2.5 px-2 sm:px-4 group"
+        aria-label="Precedent"
         @click="ChangeSlide(-1)"
         disabled
       >
@@ -99,7 +100,7 @@ const GoToSlide = (slideId: number) => {
         <button 
           v-for="(project, index) in projects"
           :key="project.publishDate.toString()"
-          :id="(index + 1).toString()"
+          :aria-label="`Afficher a l'ecran le projet ${index + 1}`"
           @click="GoToSlide(index)"
           class="__scroll-indicator py-4 px-1" 
         >
@@ -112,6 +113,7 @@ const GoToSlide = (slideId: number) => {
       <button 
         id="__right-button"
         class="py-2.5 px-2 sm:px-4 group"
+        aria-label="Suivant"
         @click="ChangeSlide(1)"
       >
         <svg class="w-full h-full rotate-90 fill-black dark:fill-white group-disabled:opacity-30 duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="none">

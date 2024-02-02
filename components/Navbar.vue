@@ -80,6 +80,7 @@ let invert = ref(false)
     <button 
       id="navbar-burger"
       @click="visible = !visible"
+      aria-label="Ouvrire le menu"
       class="sm:hidden fixed *:bg-black *:dark:bg-white top-6 pl-4 py-4 -my-4 right-6 w-14 h-16 flex flex-col justify-between"
       :class="{'*:bg-white *:dark:bg-black': invert && !visible}"
     >

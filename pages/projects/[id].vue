@@ -73,13 +73,13 @@ const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
               <h3 v-if="project?.lastUpdateDate.getTime() !== project?.publishDate.getTime()">Dates clés</h3>
               <h3 v-else>Date clés</h3>
               <div class="grid gap-1">
-                <p v-if="project?.publishDate" class="opacity-50 text-base">Publication : {{ formatDate(project?.publishDate) }}</p>
-                <p v-if="project?.lastUpdateDate.getTime() != project?.publishDate.getTime()" class="opacity-50 text-base">Dernière mise à jour : {{ formatDate(project?.lastUpdateDate) }}</p>
+                <p v-if="project?.publishDate" class="opacity-60 text-base">Publication : {{ formatDate(project?.publishDate) }}</p>
+                <p v-if="project?.lastUpdateDate.getTime() != project?.publishDate.getTime()" class="opacity-60 text-base">Dernière mise à jour : {{ formatDate(project?.lastUpdateDate) }}</p>
               </div>
             </div>
             <div class="grid gap-2" v-if="project?.customer">
               <h3>Client</h3>
-              <p class="opacity-50 text-base">{{ project?.customer }}</p>
+              <p class="opacity-60 text-base">{{ project?.customer }}</p>
             </div>
             <div class="grid gap-2" v-if="project?.technos.length">
               <h3 v-if="project.technos.length > 1">Technologies</h3>
@@ -88,7 +88,7 @@ const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
                 <p 
                 v-for="techno in project?.technos" 
                 :key="techno"
-                class="opacity-50 hover:opacity-100 text-base duration-200 hover:font-black hover:tracking-widest" 
+                class="opacity-60 hover:opacity-100 text-base duration-200 hover:font-black hover:tracking-widest" 
                 :class="'__text_' + toCssClass(techno)" 
                 >
                   {{ techno }}
@@ -97,13 +97,13 @@ const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
             </div>
             <div class="grid gap-2" v-if="project?.industry">
               <h3>Industrie</h3>
-              <p class="opacity-50 text-base">{{ project?.industry }}</p>
+              <p class="opacity-60 text-base">{{ project?.industry }}</p>
             </div>
             <div class="grid gap-2" v-if="project?.collaborators.length">
               <h3 v-if="project.collaborators.length > 1">Colaborateurs</h3>
               <h3 v-else>Colaborateur</h3>
               <div class="grid gap-1">
-                <p class="opacity-50 text-base" v-for="collaborator in project?.collaborators" :key="collaborator.name">
+                <p class="opacity-60 text-base" v-for="collaborator in project?.collaborators" :key="collaborator.name">
                   <ButtonInline :size="-1" class="text-base" :to="collaborator.url">
                     {{ collaborator.name }} 
                     <span>({{ collaborator.role }})</span>
@@ -115,7 +115,7 @@ const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
               <h3 v-if="project.links.length > 1">Liens</h3>
               <h3 v-else>Lien</h3>
               <div class="grid gap-1">
-                <p class="opacity-50 text-base" v-for="link in project?.links" :key="link.name">
+                <p class="opacity-60 text-base" v-for="link in project?.links" :key="link.name">
                   <ButtonInline :size="-1" class="text-base" :to="link.url">
                     {{ link.name }}
                   </ButtonInline>
@@ -137,7 +137,7 @@ const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
         <div class="grid gap-12" v-for="screen in project?.screens.desktop" :key="screen.name">
           <div>
             <h3>{{ screen.name }}</h3>
-            <p class="opacity-50 uppercase">desktop</p>
+            <p class="opacity-60 uppercase">desktop</p>
           </div>
           <NuxtImg
             class="border-2 border-black dark:border-white w-full"
@@ -160,7 +160,7 @@ const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
         <div class="grid gap-12" v-for="screen in project?.screens.mobile" :key="screen.name">
           <div>
             <h3>{{ screen.name }}</h3>
-            <p class="opacity-50 uppercase">mobile</p>
+            <p class="opacity-60 uppercase">mobile</p>
           </div>
           <NuxtImg
             class="border-2 border-black dark:border-white w-full"

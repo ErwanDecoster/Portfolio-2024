@@ -35,7 +35,7 @@ const toTop = () => {
         Mentions légales
       </ButtonInline>
     </div>
-    <NuxtLink class="absolute group flex flex-col items-center gap-4 top-7 sm:bottom-7 right-7 sm:top-auto" @click="toTop()">
+    <button class="absolute group flex flex-col items-center gap-4 top-7 sm:bottom-7 right-7 sm:top-auto" @click="toTop()">
       <div class="relative size-20 border-2 p-4 dark:border-white rounded-full">
         <span class="absolute inset-y-0 inset-x-5 overflow-hidden">
           <span class="absolute py-5 group-hover:-translate-y-1/2 duration-200">
@@ -50,6 +50,6 @@ const toTop = () => {
         </span>
       </div>
       Haut de page
-    </NuxtLink>
+    </button>
   </footer>
 </template>

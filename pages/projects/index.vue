@@ -3,9 +3,9 @@ const route = useRoute()
 const runtimeConfig = useRuntimeConfig()
 
 const title = "Projets - Erwan Decoster";
-const desc = ""
-const img = ""
-const url = runtimeConfig.public.c + route.path
+const desc = "Decouvrer toute mes realisations et projeter vous dans notre future projet."
+const img = "/images/message_app_mockup_9.webp"
+const url = runtimeConfig.public.siteUrl + route.path
 useHead({
   link: [
     {

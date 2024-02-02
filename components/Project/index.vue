@@ -10,6 +10,8 @@ const props = defineProps<{
   size?: number;
 }>();
 
+const route = useRoute()
+
 </script>
 
 <template>
@@ -58,11 +60,19 @@ const props = defineProps<{
         <div class="grid gap-0.5">
           <p class="uppercase">{{ formatDate(date) }}</p>
           <h4 
+            v-if="route.name == 'index'"
             class="uppercase text-2xl"
             :class="{ 'text-4xl': size == 1}"
           >
             {{ title }}
           </h4>
+          <h2 
+            v-else
+            class="uppercase text-2xl"
+            :class="{ 'text-4xl': size == 1}"
+          >
+            {{ title }}
+          </h2>
         </div>
         <div class="grid gap-2 w-1/2">
           <p v-if="shortDesc" class="uppercase">Description</p>

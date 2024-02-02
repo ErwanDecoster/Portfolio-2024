@@ -110,6 +110,7 @@ const socials = ref([
         quality="70"
         width="384"
         height="384"
+        alt="Photo d'erwan decoster"
       />
       <header id="__header" class="-mb-12 pb-8 h-screen">
         <div class="sticky top-[25vh] text-4xl sm:text-6xl md:text-8xl">

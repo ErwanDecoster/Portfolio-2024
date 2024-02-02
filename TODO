@@ -11,8 +11,10 @@
 ✔️ add WaterCollect - Simulateur
 ✔️ add Covoit Admin
 ✔️ not all projets should by visible in projets page, a button to show more should be better
-- img corectly sized
+✔️ img corectly sized
 - Project carousel better logique for dotte
 - burger change color not working in prod
 - img pp should not work on touch device
-- change texts of WaterCollect - Dashboard captures
+- change texts of WaterCollect - Dashboard screen capture
+- project component should have an other img quality if in carousel
+- add alt text on all image

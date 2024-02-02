@@ -53,6 +53,20 @@ onMounted(() => {
   //   background: 'blue',
   // })
 })
+
+useHead({
+  title: "Erwan Decoster - Développeur Front-End",
+  htmlAttrs: {
+    lang: 'fr-FR',
+    // dir: head.value.htmlAttrs.dir
+  },
+  meta: [
+    { charset: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { name: 'robots', content: 'index, follow'},
+    { name: 'theme-color', content: '#ffffff'},
+  ],
+})
 </script>
 
 <template>
