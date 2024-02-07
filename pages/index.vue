@@ -7,8 +7,8 @@ const runtimeConfig = useRuntimeConfig()
 
 const title = "Erwan Decoster - Développeur Front-End";
 const desc = "Développement responsable de sites internet sur mesure, création de sites à votre image."
-const img = 'https://erwan-decoster.com' + "/images/minia.png"
-const url = runtimeConfig.public.c + route.path
+const img = runtimeConfig.public.siteUrl + "/images/minia.png"
+const url = runtimeConfig.public.siteUrl + route.path
 useHead({
   link: [
     {

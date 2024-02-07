@@ -8,6 +8,7 @@ const props = defineProps<{
   technos?: string[];
   imgUrl?: string;
   size?: number;
+  inCarousel?: number;
 }>();
 
 const route = useRoute()
@@ -54,6 +55,20 @@ const route = useRoute()
         lg:472px
         xl:600px
         2xl:728px
+      "
+    />
+    <NuxtImg 
+      v-if="inCarousel"
+      class="absolute z-0 inset-0 w-full h-full bg-navy-blue object-cover duration-300 group-hover:scale-105"
+      :src="imgUrl"
+      placeholder
+      format="webp"
+      loading="lazy"
+      quality="70"
+      :alt="`Image de présentation du projet ${title}.`"
+      sizes="
+        xs:500px
+        sm:700px
       "
     />
     <div 
