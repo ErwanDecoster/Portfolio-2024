@@ -81,8 +81,11 @@ let invert = ref(false)
       id="navbar-burger"
       @click="visible = !visible"
       aria-label="Ouvrire le menu"
-      class="sm:hidden fixed *:bg-black *:dark:bg-white top-6 pl-4 py-4 -my-4 right-6 w-14 h-16 flex flex-col justify-between"
-      :class="{'*:bg-white *:dark:bg-black': invert && !visible}"
+      class="sm:hidden fixed  top-6 pl-4 py-4 -my-4 right-6 w-14 h-16 flex flex-col justify-between"
+      :class="{
+        '*:bg-black *:dark:bg-white': !invert || visible,
+        '*:bg-white *:dark:bg-black': invert && !visible, 
+      }"
     >
       <span 
       class="block h-1 rounded-full w-full origin-bottom-right duration-200 " 

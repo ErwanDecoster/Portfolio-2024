@@ -49,7 +49,9 @@ const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
             :src="project?.img"
             placeholder
             format="webp"
+            loading="lazy"
             quality="70"
+            :alt="`Image de présentation du projet ${title}.`"
             sizes="
               xs:576px
               sm:704px
@@ -65,7 +67,7 @@ const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
           </SectionSeparator>
         </div>
         <div class="grid md:grid-cols-2 gap-8 sm:gap-36">
-          <div class="sm:text-2xl">
+          <div class="sm:text-xl">
             <p class="py-2" v-for="row in project?.desc">{{ row }}</p>
           </div>
           <div class="grid items-start sm:grid-cols-2 gap-14">
@@ -144,7 +146,9 @@ const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
             :src="screen.asset"
             placeholder
             format="webp"
+            loading="lazy"
             quality="70"
+            :alt="`Capture d'écran de ${screen.name} du projet ${title}.`"
             sizes="
               xs:576px
               sm:704px
@@ -167,7 +171,9 @@ const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
             :src="screen.asset"
             placeholder
             format="webp"
+            loading="lazy"
             quality="70"
+            :alt="`Capture d'écran de ${screen.name} du projet ${title}.`"
             sizes="
               xs:612px
               sm:312px
@@ -186,7 +192,7 @@ const nextProjectTitle = getNextProjectTitle(route.params.id as string)?.title
         <p class="text-2xl font-medium text-center">Prochain project</p>
         <NuxtLink 
           :to="`/projects/${toSlug(nextProjectTitle as string)}`"
-          class="text-5xl sm:text-5xl md:text-8xl md:mx-36 text-balance font-bold uppercase underline text-center">{{ nextProjectTitle }}</NuxtLink>
+          class="text-4xl sm:text-5xl md:text-8xl md:mx-36 text-balance font-bold uppercase underline text-center">{{ nextProjectTitle }}</NuxtLink>
       </div>
     </div>
   </div>

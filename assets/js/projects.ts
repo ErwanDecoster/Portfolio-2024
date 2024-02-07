@@ -15,7 +15,8 @@ export const projects: project[] = [
     ],
     shortDesc: "Développement d'un site d'échange de messages instantanés.",
     desc: [
-      "Message App est un site web d'échange de messages instantanés entre différents utilisateurs. Les messages peuvent être envoyés, supprimés et modifiés. Les nouveaux messages apparaissent directement chez le destinataire sans nécessiter de rafraîchissement."
+      "Message App est une plateforme en ligne dédiée à l'échange de messages instantanés entre utilisateurs. Elle permet l'envoi, la suppression et la modification des messages. L'interface est conçue de manière à ce que les nouveaux messages s'affichent instantanément chez le destinataire, sans nécessiter de rafraîchissement de la page.",
+      "Ce projet avait également pour objectif de me former sur l'utilisation de base de données en temps réel.",
     ],
     customer: null,
     industry: null,
@@ -63,11 +64,10 @@ export const projects: project[] = [
         url:  "https://www.figma.com/file/O96sl8paur22MGavI9G9TT/Who%E2%80%99s-coming?type=design&node-id=0%3A1&mode=design&t=f71L1C0hymFNV7xa-1",
       },
     ],
-    shortDesc: "Développement d'un site de gestion d'événements",
+    shortDesc: "Développement d'un site de gestion d'événements.",
     desc: [
-      "Il s'agit ici d'un site de gestion d'événements, permettant l'envoi d'invitations et l'ajout à l'événement de ce qui est nécessaire. Il s'agit là des choses manquantes pour la bonne organisation de l'événement. Cela peut être utilisé pour demander aux invités ce qu'ils doivent apporter. L'organisateur peut ainsi savoir ce qui lui manquera pour son événement.",
-      "Aucun compte n'est requis pour les invités. Ils recevront chacun une invitation par SMS qu'ils devront accepter ou décliner.",
-      "L'organisateur a la possibilité d'accepter les 'plus 1' et peut ainsi savoir exactement le nombre de participants à l'événement."
+      "Il s'agit d'une plateforme de gestion d'événements permettant d'envoyer des invitations et d'ajouter les éléments nécessaires à l'événement. Cela inclut les éléments manquants pour assurer une organisation optimale de l'événement, ainsi que la possibilité de demander aux invités ce qu'ils doivent apporter. Cela permet à l'organisateur de connaître les besoins de son événement.",
+      "Aucun compte n'est requis pour les invités, qui recevront chacun une invitation par SMS à accepter ou à décliner. L'organisateur a également la possibilité d'accepter les 'plus 1', lui permettant ainsi de connaître précisément le nombre de participants à l'événement.",
     ],
     customer: null,
     industry: null,
@@ -121,12 +121,12 @@ export const projects: project[] = [
         url:  "https://www.figma.com/file/cXiC447eX49ehafv1jZmVD/Untitled?type=design&mode=design&t=f71L1C0hymFNV7xa-1",
       },
     ],
-    shortDesc: "Création d'un jeu 2D au sein de l'école 42 Lyon",
+    shortDesc: "Création d'un jeu 2D au sein de l'école 42 Lyon.",
     desc: [
-      "So Long est un projet de l'école 42 Lyon Auvergne Rhône-Alpes. Il consiste à réaliser un jeu vidéo 2D en respectant les contraintes du sujet.",
-      "Le jeu doit être en 2D avec une vue de haut ou de devant. Le personnage doit pouvoir se déplacer sur l'ensemble de la carte sans passer au travers des murs. L'objectif est de ramasser tous les 'collectibles' pour débloquer la porte de sortie.",
-      "Lorsque l'utilisateur lance le jeu, il doit choisir la carte. Le programme se charge de vérifier la faisabilité de la carte en utilisant l'algorithme de propagation.",
-      "Il était possible de réaliser des bonus : ajout de patrouilles/ennemis, ajout d'animations et affichage du nombre de pas sur l'écran."
+      "So Long est un projet développé dans le cadre de l'école 42 Lyon Auvergne Rhône-Alpes. Il consiste à concevoir un jeu vidéo 2D en respectant les contraintes imposées par le sujet.",
+      "Le jeu doit offrir une perspective en 2D avec une vue de haut ou de face. Le personnage doit pouvoir se déplacer sur toute la carte sans traverser les murs, avec pour objectif de collecter tous les \"collectibles\" pour débloquer la sortie.",
+      "Au lancement du jeu, l'utilisateur doit choisir la carte. Le programme vérifie alors la faisabilité de la carte à l'aide de l'algorithme de propagation.",
+      "Des fonctionnalités supplémentaires pouvaient être implémentées, telles que l'ajout de patrouilles/ennemis, d'animations et l'affichage du nombre de pas sur l'écran.",
     ],
     customer: null,
     industry: null,
@@ -169,9 +169,10 @@ export const projects: project[] = [
         url:  "https://www.figma.com/file/CqnNhX1CkzN8CF0V9uHEnO/les-nuits-de-fourvi%C3%A8res?type=design&node-id=1%3A83&mode=design&t=BWhHEfvoxlSc9Xdi-1",
       },
     ],
-    shortDesc: "Développement de la nouvelle identité du site en collaboration avec Sup de Pub Lyon.",
+    shortDesc: "Projet fictif de développement d'une identité graphique, en collaboration avec Sup de Pub Lyon.",
     desc: [
-      "Il s'agit d'un projet réalisé entre l'école 42 Lyon Auvergne Rhône-Alpes et Sup de Pub Lyon. Le projet consiste à développer une maquette réalisée par les étudiants de l'école Sup de Pub. Les équipes de développeurs et de designers collaborent ensemble pour réaliser le site de la façon la plus conforme à la maquette en un temps défini d'une semaine. L'équipe des développeurs est libre sur le choix des technologies, seuls 2 des développeurs avaient déjà fait du web avant ce projet. Le développement du site Les Nuits de Fourvière fut un superbe moment d'échange de connaissances permettant à chacun de développer son savoir."
+      "Ce projet est le fruit d'une collaboration entre l'école 42 Lyon Auvergne Rhône-Alpes et Sup de Pub Lyon. Son objectif est de transformer la maquette conçue par les étudiants de Sup de Pub en un site web fonctionnel. Les équipes de développement et de design unissent leurs compétences pour concrétiser le projet dans un délai d'une semaine, en veillant à respecter fidèlement la conception initiale.",
+      "Les développeurs bénéficient d'une liberté totale dans le choix des technologies à utiliser, même si seuls deux d'entre eux avaient une expérience antérieure dans le domaine du développement web. Cette collaboration autour du développement du site pour Les Nuits de Fourvière a été une occasion enrichissante d'échange de connaissances, permettant à chaque participant de développer ses compétences et de contribuer au succès du projet.",
     ],
     customer: null,
     industry: null,
@@ -288,7 +289,7 @@ export const projects: project[] = [
     ],
     shortDesc: "Développement d'un site de prise de notes.",
     desc: [
-      "Il s'agit là d'un site de prise de notes rapide. L'expérience utilisateur était un point important du projet, c'est pour cette raison que la sauvegarde automatique a été utilisée sur l'ensemble du site. Les utilisateurs peuvent créer des notes de plusieurs types : liste, liste de cases à cocher, texte. Les notes peuvent changer de type une fois créées, rendant l'utilisation du site aussi simple que possible et sans aucune frustration."
+      "Notes est une plateforme de prise de notes rapide, où l'expérience utilisateur a été au cœur du développement. Pour garantir une expérience fluide, la fonction de sauvegarde automatique a été intégrée à l'ensemble du site. Les utilisateurs ont la possibilité de créer des notes de différents types, tels que des listes, des listes de cases à cocher ou simplement du texte. De plus, la flexibilité du système permet aux utilisateurs de changer le type de leurs notes une fois créées, offrant ainsi une utilisation intuitive et sans frustration."
     ],
     customer: null,
     industry: null,
@@ -354,7 +355,10 @@ export const projects: project[] = [
     ],
     shortDesc: "Création de l'identité visuelle et développement du site vitrine de l'entreprise Domaine de Pipangaille.",
     desc: [
-      "Développement du site vitrine de l'entreprise Domaine de Pipangaille. Le site présente les services, produits et informations pertinents liés à l'entreprise, offrant ainsi une vitrine en ligne pour les visiteurs.",
+      "Le Domaine de Pipangaille, établissement de chambres d'hôtes situé à Andancette, dans la Drôme en France, a souhaiter développé son site web dans le but de mieux présenter ses hébergements et de réduire les réservations via les Agences de Tourisme en Ligne (OTAs). L'objectif principal du site est de mettre en valeur le domaine et ses hébergements, tout en proposant des suggestions de lieux à visiter à proximité. Une page de réservation, avec un formulaire de recherche rapide de disponibilité, a été intégrée à la plateforme.",
+      "Plusieurs éléments clés ont été pris en compte dans le développement du site. Tout d'abord, un design responsive assure une expérience optimale sur toutes les tailles d'écran. Ensuite, l'utilisation de Nuxt a permis d'optimiser la vitesse du site en préchargeant le contenu des pages liées à l'écran.",
+      "L'accessibilité a été une priorité, avec l'ajout de textes alternatifs pour chaque image et des labels Aria pour tous les boutons sans texte visible. Des descriptions meta ont également été intégrées à chaque page pour améliorer le classement dans les moteurs de recherche et garantir une apparence attrayante lors du partage sur les réseaux sociaux ou via des messages.",
+      "Enfin, une attention particulière a été portée au confort visuel, avec le choix de couleurs assurant une lisibilité optimale du texte à tout moment. Des ombres ont été ajoutées pour faciliter la lecture du texte superposé sur les images, tout en maintenant un bon contraste.",
     ],
     customer: "Domaine de Pipangaille",
     industry: "Hôtellerie",
@@ -435,9 +439,9 @@ export const projects: project[] = [
         url:  "https://github.com/ErwanDecoster/Phoenix-Vetements-et-Protection",
       }
     ],
-    shortDesc: "Création de l'identité visuelle et développement du site vitrine de l'entreprise Phoenix Vêtements et Protection",
+    shortDesc: "Création de l'identité visuelle et développement du site vitrine de Phoenix Vêtements et Protection.",
     desc: [
-      "Création complète d'un site vitrine pour l'entreprise Phoenix Vêtements et Protection. Le projet inclut le développement du site, ainsi que la conception et la mise en place de l'identité visuelle, offrant une présentation complète et attrayante des produits et services de l'entreprise en ligne.",
+      "Réalisé de A à Z, le site vitrine de l'entreprise Phoenix Vêtements et Protection offre une expérience complète. Ce projet englobe le développement du site ainsi que la conception et l'implémentation de l'identité visuelle, garantissant une présentation en ligne attrayante et exhaustive des produits et services de l'entreprise.",
     ],
     customer: "Phoenix Vêtements et Protection",
     industry: "Vêtements de travail et EPI",
@@ -521,9 +525,9 @@ export const projects: project[] = [
         url:  "https://www.figma.com/file/QVtNbHqqIeCu0HjKhejkCj/Portfolio-2022?type=design&node-id=0%3A1&mode=design&t=f71L1C0hymFNV7xa-1",
       },
     ],
-    shortDesc: "Remonter dans les archive et visualiser mon site personnel de ses dernire année.",
+    shortDesc: "Remonter dans les archives et visualiser mon site personnel des dernières années.",
     desc: [
-      "Portfilio 2022 est tous simplement comme son nom l'indique mon site personnel de l'année 2022 et ce jusqua ca nouvelle version en 2024.",
+      "Portfolio 2022 est tout simplement, comme son nom l'indique, mon site personnel de l'année 2022 jusqu'à sa nouvelle version en 2024. Le projet avait pour objectif d'intégrer un certain nombre d'animations et d'interactions avec les utilisateurs afin de captiver leur attention.",
     ],
     customer: null,
     industry: "Dévelopement web",
@@ -634,8 +638,7 @@ export const projects: project[] = [
     ],
     shortDesc: "Projet fictife de site de covoiturage.",
     desc: [
-      "Covoit est directement lié avec c'application Covoir Admin ce sont tous deux des projets fictif.",
-      "Covoit est un site internet de covoiturage",
+      "Covoit est directement lié à l'application Covoir Admin, tous deux étant des projets fictifs. Covoit est un site internet de covoiturage.",
     ],
     customer: null,
     industry: null,
@@ -707,8 +710,7 @@ export const projects: project[] = [
     ],
     shortDesc: "Ajout de diferents simulateurs interactif au site Wordpresse de l'entreprise WaterCollect.",
     desc: [
-      "Mise en place sur le site Wordpress un simulateur d'économie d'eau réalisable grâce à l'installation des équipements WaterCollect.",
-      "Le simulateur permet au client de visualiser combien de mètres cube d'eau sont économisables par mois et par an le tout très facilement grâce à des Sliders pour définir certains paramètres.",
+      "Sur le site Wordpress de WaterCollect, nous avons mis en place un simulateur des économies d'eau réalisables grâce à l'installation des équipements WaterCollect. Ce simulateur permet aux clients de visualiser facilement le nombre de mètres cubes d'eau pouvant être économisés par mois et par an, le tout grâce à des sliders permettant de définir certains paramètres.",
     ],
     customer: 'WaterCollect',
     industry: null,
@@ -739,9 +741,9 @@ export const projects: project[] = [
     url: "",
     links: [
     ],
-    shortDesc: "Création d'un dashboard avec une parti clientes et administrateurs.",
+    shortDesc: "Création d'un dashboard avec une partie clients et administrateurs.",
     desc: [
-      "Créer pour les futures clients une plate-forme de visualisation de leurs économies réalisées ainsi que le nombre d'équipements installés et les équipements non installés ainsi que des proposition pour d'autres équipements.",
+      "Nous avons créé une plateforme de visualisation dédiée aux futurs clients, leur permettant de suivre leurs économies réalisées, le nombre d'équipements installés et ceux en attente d'installation, ainsi que des propositions pour d'autres équipements.",
     ],
     customer: 'WaterCollect',
     industry: null,

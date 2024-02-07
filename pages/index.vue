@@ -6,8 +6,8 @@ const route = useRoute()
 const runtimeConfig = useRuntimeConfig()
 
 const title = "Erwan Decoster - Développeur Front-End";
-const desc = ""
-const img = ""
+const desc = "Développement responsable de sites internet sur mesure, création de sites à votre image."
+const img = 'https://erwan-decoster.com' + "/images/minia.png"
 const url = runtimeConfig.public.c + route.path
 useHead({
   link: [
@@ -60,6 +60,9 @@ onMounted(() => {
       opacity: 0,
     })
   })
+  document.addEventListener('scroll', () => {
+    
+  })
 })
 
 let interactiveDesign = ref([ 
@@ -103,10 +106,11 @@ const socials = ref([
     <div class="max-w-screen-2xl mx-auto grid gap-24 px-2 sm:px-8">
       <NuxtImg
         id="pp" 
-        class="pointer-events-none fixed size-96 rounded-full opacity-0" 
+        class="pointer-events-none fixed size-64 2xl:size-96 rounded-full opacity-0 hidden sm:block" 
         src="/images/photo_erwan_decoster.jpg"
         placeholder
         format="webp"
+        loading="lazy"
         quality="70"
         width="384"
         height="384"
@@ -120,8 +124,8 @@ const socials = ref([
         </div>
       </header>
       <section id="about" class="pb-4 scroll-m-20 sm:scroll-m-28">
-        <div class="w-full py-8 sm:py-16 px-4 rounded-2xl border flex flex-wrap sm:flex-nowrap items-center gap-y-8 gap-24 md:gap-x-48">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eaque voluptate ipsa dolorum, saepe, accusamus dolorem quae aperiam eveniet corporis id quos praesentium, vitae sit officiis fugiat officia doloremque assumenda.</p>
+        <div class="w-full py-8 sm:py-16 px-4 rounded-2xl border flex flex-wrap sm:flex-nowrap items-center gap-y-8 gap-12 md:gap-24 lg:gap-x-48">
+          <p>En tant que développeur Front-end depuis plusieurs années, je suis désireux de partager avec vous les bénéfices de mon expertise en matière de conception de sites web durables. Mon objectif est de vous accompagner dans la réalisation d'un site sur mesure, adapté à tous les utilisateurs.</p>
           <ButtonBig class="ml-auto sm:ml-0" to="/#about2">
             Scroll
           </ButtonBig>
@@ -162,7 +166,7 @@ const socials = ref([
                 absolute top-44 inset-x-4 sm:opacity-0 duration-300
                 sm:group-hover:opacity-100
               ">
-                Developpement d'interface responsive, rapide, optimisé et instalable en PWA.
+                Développement d'interfaces réactives, rapides, optimisées et compatibles avec les Progressive Web Apps (PWA).
               </p>
               <div class="
                 absolute top-72 inset-x-4 grid gap-2 grid-cols-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 2xl:grid-cols-4 sm:opacity-0 duration-300
@@ -193,7 +197,7 @@ const socials = ref([
                 absolute top-44 inset-x-4 sm:opacity-0 duration-300
                 sm:group-hover:opacity-100
               ">
-                Designe intéractif, mise en place de micro interaction pour maintenir les utilisateurs et leurs offrire une experience unique.
+                Conception interactive avec l'intégration de micro-interactions afin de captiver les utilisateurs et leur offrir une expérience unique.
               </p>
               <div class="
                 absolute top-72 left-1/2 -translate-x-1/2 place-items-center grid grid-cols-6 text-xs sm:opacity-0 w-max duration-300
@@ -210,7 +214,7 @@ const socials = ref([
                 />
               </div>
             </div>
-            <div class="h-[450px] lg:h-40 xl:h-[480px] lg:col-span-3 xl:col-span-1 sm:h-[480px] overflow-hidden group relative px-4 rounded-2xl border border-black dark:border-white duration-300 bg-black sm:bg-transparent sm:hover:bg-black text-white">
+            <div class="h-[450px] __invert-select lg:h-40 xl:h-[480px] lg:col-span-3 xl:col-span-1 sm:h-[480px] overflow-hidden group relative px-4 rounded-2xl border border-black dark:border-white duration-300 bg-black sm:bg-transparent sm:hover:bg-black text-white">
               <p class="
                 w-full pl-4 absolute top-8 sm:opacity-0 duration-300
                 before:absolute before:left-0.5 before:top-1/2 before:-translate-y-1/2 before:size-2 before:bg-white before:rounded-full
@@ -232,7 +236,7 @@ const socials = ref([
                 xl:top-44 xl:left-4 xl:-translate-x-0
                 sm:group-hover:opacity-100
               ">
-                Creation de design inovant a votre image.
+                Création de designs innovants qui reflètent votre identité.
               </p>
               <div class="
                 absolute top-72 text-xs inset-x-4 sm:opacity-0 duration-300

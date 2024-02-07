@@ -26,7 +26,9 @@ const route = useRoute()
       :src="imgUrl"
       placeholder
       format="webp"
+      loading="lazy"
       quality="70"
+      :alt="`Image de présentation du projet ${title}.`"
       sizes="
         xs:304px
         sm:576px
@@ -42,7 +44,9 @@ const route = useRoute()
       :src="imgUrl"
       placeholder
       format="webp"
+      loading="lazy"
       quality="70"
+      :alt="`Image de présentation du projet ${title}.`"
       sizes="
         xs:304px
         sm:576px
