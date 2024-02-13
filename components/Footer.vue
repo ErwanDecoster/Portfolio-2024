@@ -6,7 +6,7 @@ const toTop = () => {
 </script>
 
 <template>
-  <footer class="max-w-screen-4xl mx-auto h-96 p-7 gap-2 flex flex-col relative">
+  <footer class="max-w-screen-4xl mx-auto min-h-96 p-7 gap-2 flex flex-col relative">
     <div class="flex flex-wrap-reverse justify-between items-baseline mt-auto mr-32 gap-4 sm:gap-0">
       <p class="text-4xl sm:text-6xl md:text-8xl">Erwan Decoster</p>
       <div class="flex flex-wrap-reverse sm:justify-end gap-2">
