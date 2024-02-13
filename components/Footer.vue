@@ -22,6 +22,9 @@ const toTop = () => {
         <ButtonDefault to="https://github.com/ErwanDecoster">
           Github
         </ButtonDefault>
+        <ButtonDefault to="https://bento.me/erwan-decoster">
+          Bento
+        </ButtonDefault>
       </div>
     </div>
     <div class="flex flex-wrap gap-x-1 sm:gap-10 items-center">
@@ -31,7 +34,7 @@ const toTop = () => {
           Amandine REYNAUD
         </ButtonInline>
       </p>
-      <ButtonInline to="">
+      <ButtonInline to="/legal_notice">
         Mentions légales
       </ButtonInline>
     </div>

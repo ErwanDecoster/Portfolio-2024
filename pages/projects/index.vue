@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import gsap from 'gsap';
 const route = useRoute()
 const runtimeConfig = useRuntimeConfig()
 
 const title = "Projets - Erwan Decoster";
-const desc = "Decouvrer toute mes realisations et projeter vous dans notre future projet."
-const img = "/images/message_app_mockup_9.webp"
+const desc = "Découvrez toutes mes réalisations et projetez-vous dans nos futurs projets."
+const img = runtimeConfig.public.siteUrl + "/images/domaine_de_pipangaille_mockup_5.webp"
 const url = runtimeConfig.public.siteUrl + route.path
 useHead({
   link: [
@@ -39,9 +40,23 @@ const updateNbVisible = (value: number) => {
 }
 
 onMounted(() => {
+  const bgBlur = document.querySelector<HTMLElement>('#bg-blur')
+
   if (localStorage.nbVisible) {
     nbVisible.value = localStorage.nbVisible
   }
+  document.addEventListener('scroll', () => {
+    if (scrollY > window.innerHeight / 2) {
+      gsap.to(bgBlur, {
+        opacity: 1
+      })
+    }
+    else {
+      gsap.to(bgBlur, {
+        opacity: 0
+      })
+    }
+  })
 })
 
 const mounths = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre','décembre']
@@ -56,6 +71,8 @@ const isBig = ((index: number) => {
 
 <template>
   <div id="__projects-page">
+    <div id="bg-blur" class="fixed inset-0 backdrop-blur-xl opacity-0 -z-40" />
+    <div id="bg-image" class="-z-50 fixed inset-0" />
     <div class="px-2 sm:px-8 pt-48 grid gap-32 max-w-screen-2xl mx-auto">
       <h1 class="py-5 sm:py-11 border-y mx-auto w-4/5 text-5xl sm:text-8xl flex justify-center items-center text-center">
         Tous les projets

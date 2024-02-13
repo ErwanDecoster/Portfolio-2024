@@ -15,6 +15,21 @@ body {
   width: 6px;
 }
 
+#bg-image, .__bg-image {
+  background-image: url(/images/bg_dark.svg);
+  background-repeat: no-repeat;
+  background-position: bottom -10vh left 20vw;
+  background-size: 120vw;
+  background-attachment: fixed;
+}
+
+@media screen and (min-width: 640px) {
+  #bg-image, .__bg-image {
+    background-position: bottom -50vh left 33vw;
+    background-size: 80vw;
+  }
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -58,32 +73,12 @@ body {
   }
 }
 
-
-#__blury-bg {
-  @apply bg-light dark:bg-dark;
-  position: fixed;
-  inset: 40vh 0px 0px 0px;
-  z-index: -50;
-  background-position: bottom; 
-  background-size: 1500px;
-  background-attachment: fixed;
-  background-repeat: repeat-x;
-}
-
-.__backdrop-unblur {
-  @apply bg-light bg-white dark:bg-dark dark:bg-black;
-  background-position: bottom; 
-  background-size: 1500px;
-  background-attachment: fixed;
-  background-repeat: repeat-x;
-}
-
-#__blury-bg #__blury-filter {
+/* #__blury-bg #__blury-filter {
   position: absolute;
   inset: -100px -100px -100px -100px;
   opacity: 0;
   backdrop-filter: blur(30px);
-}
+} */
 
 .__contained_nuxt { @apply hover:text-white }
 .__contained_nuxt span { @apply opacity-0 bg-gradient-to-tr from-[#00DC82] to-[#00DC82] }
@@ -188,4 +183,9 @@ body {
 .__contained_linkedin { @apply hover:text-white }
 .__contained_linkedin span { @apply opacity-0 bg-gradient-to-tr from-[#0A66C2] to-[#0A66C2] }
 .__contained_linkedin:hover span { @apply opacity-100 }
-.__text_linkdin { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#0A66C2] to-[#0A66C2]  }
+.__text_linkedin { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#0A66C2] to-[#0A66C2]  }
+
+.__contained_bento { @apply hover:text-white }
+.__contained_bento span { @apply opacity-0 bg-gradient-to-tr from-[#768CFF] to-[#768CFF] }
+.__contained_bento:hover span { @apply opacity-100 }
+.__text_bento { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#768CFF] to-[#768CFF]  }

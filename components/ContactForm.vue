@@ -95,7 +95,7 @@ const SendForm = (() => {
 <template>
   <div id="contact" class="grid sm:grid-cols-2 gap-2 pb-20 scroll-m-28">
     <div class="relative text-white border dark:border-black h-full p-9 rounded-2xl flex justify-end overflow-hidden">
-      <div class="__backdrop-unblur absolute bg-white dark:bg-black inset-0" />
+      <div class="__bg-image absolute bg-white dark:bg-black inset-0" />
       <ButtonBig 
         to="mailto:contact@erwan-decoster.com"
         class="mt-auto"

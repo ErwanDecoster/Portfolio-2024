@@ -4,7 +4,7 @@
 
 <template>
   <div class="h-28">
-    <div class="border-y absolute inset-x-0 overflow-hidden">
+    <div class="border-y absolute left-1/2 -translate-x-1/2 w-[100vw] overflow-hidden">
       <div class="h-28 text-6xl overflow-visible flex justify-center items-center">
         <p 
           v-for="index in 6"

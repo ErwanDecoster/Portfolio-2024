@@ -16,6 +16,9 @@
 ✔️ project component should have an other img quality if in carousel
 ✔️ add alt text on all image
 🟠 change texts of WaterCollect - Dashboard screen capture
-- add legale notice page
-- img pp should not work on touch device
+✔️ add background 
+✔️ use NuxtImg in ProjectList
+✔️ add legale notice page
+✔️ img pp should not work on mobile
 - Project carousel better logique for dotte
+- better color for svg bg in light theme

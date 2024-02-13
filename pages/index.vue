@@ -37,6 +37,7 @@ useSeoMeta({
 onMounted(() => {
   const about = document.querySelector<HTMLElement>('#about')
   const pp = document.querySelector<HTMLElement>('#pp')
+  const bgBlur = document.querySelector<HTMLElement>('#bg-blur')
 
   gsap.set(pp, {
     xPercent: -50, 
@@ -61,7 +62,25 @@ onMounted(() => {
     })
   })
   document.addEventListener('scroll', () => {
-    
+    if (about) {
+      if (scrollY > about.getBoundingClientRect().height) {
+        gsap.to(bgBlur, {
+          opacity: 1
+        })
+      }
+      else {
+        gsap.to(bgBlur, {
+          opacity: 0
+        })
+      }
+    }
+    if (pp) {
+      if (scrollY > window.innerHeight) {
+        gsap.to(pp, {
+          opacity: 0,
+        })
+      }
+    }
   })
 })
 
@@ -98,12 +117,18 @@ const socials = ref([
     name: 'Github',
     url: 'https://github.com/ErwanDecoster',
   },
+  {
+    name: 'Bento',
+    url: 'https://bento.me/erwan-decoster',
+  },
 ])
 </script>
 
 <template>
   <div id="index">
-    <div class="max-w-screen-2xl mx-auto grid gap-24 px-2 sm:px-8">
+    <div id="bg-blur" class="fixed inset-0 backdrop-blur-xl opacity-0 -z-40" />
+    <div id="bg-image" class="-z-50 fixed inset-0" />
+    <div class="max-w-screen-2xl mx-auto grid gap-24 px-2 sm:px-8 relative">
       <NuxtImg
         id="pp" 
         class="pointer-events-none fixed size-64 2xl:size-96 rounded-full opacity-0 hidden sm:block" 

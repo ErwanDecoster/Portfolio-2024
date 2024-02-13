@@ -70,7 +70,7 @@ useHead({
 </script>
 
 <template>
-  <div class="dark:text-white">
+  <div class="dark:text-white overflow-x-hidden">
     <Navbar />
     <NuxtPage />
     <Footer />

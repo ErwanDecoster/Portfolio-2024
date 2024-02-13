@@ -66,24 +66,19 @@ const GoToSlide = (slideId: number) => {
   <div class="grid gap-11 relative ">
     <div 
       id="__carousel"
-      class="-mx-2 px-2 sm:-mx-8 sm:px-8 2xl:-mx-32 2xl:px-32 scroll-pl-2 sm:scroll-pl-8 2xl:scroll-p-32 grid grid-flow-col auto-cols-[minmax(350px,60%)] sm:auto-cols-[minmax(500px,60%)] md:auto-cols-[minmax(700px,60%)] gap-4 overflow-auto no-scrollbar snap-x snap-proximity"
+      class="-mx-2 px-2 sm:-mx-8 sm:px-8 2xl:-mx-32 2xl:px-32 scroll-pl-2 sm:scroll-pl-8 2xl:scroll-p-32 grid grid-flow-col auto-cols-[minmax(350px,60%)] sm:auto-cols-[minmax(500px,60%)] md:auto-cols-[minmax(700px,60%)] gap-4 overflow-auto no-scrollbar snap-x snap-proximity rounded-2xl"
     >
-    <Project 
-      v-for="(project, index) in projects"
-      :key="project.publishDate.toString()"
-      :id="index"
-      :title="project.title"
-      :date="project.publishDate"
-      :shortDesc="project.shortDesc"
-      :technos="project.technos"
-      :imgUrl="project.img"
-    />
-  </div>
-    <div class="
-      absolute z-30 top-0 bottom-16 pointer-events-none inset-0
-      before:absolute before:top-0 before:bottom-16 before:-left-2 before:sm:-left-8 before:2xl:-left-32 before:block before:w-2 before:sm:w-8 before:2xl:w-32 before:h-full before:bg-gradient-to-r before:from-[#ffffffdd] dark:before:from-[#000000dd]
-      after:absolute after:top-0 after:bottom-16 after:-right-2 after:sm:-right-8 after:2xl:-right-32 after:block after:w-2 after:sm:w-8 after:2xl:w-32 after:h-full after:bg-gradient-to-l after:from-[#ffffffdd] dark:after:from-[#000000dd]
-    " />
+      <Project 
+        v-for="(project, index) in projects"
+        :key="project.publishDate.toString()"
+        :id="index"
+        :title="project.title"
+        :date="project.publishDate"
+        :shortDesc="project.shortDesc"
+        :technos="project.technos"
+        :imgUrl="project.img"
+      />
+    </div>
     <div class="border flex h-11">
       <button 
         id="__left-button"
