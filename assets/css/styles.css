@@ -16,6 +16,7 @@ body {
 }
 
 #bg-image, .__bg-image {
+  background: green;
   background-image: url(/images/bg_dark.svg);
   background-repeat: no-repeat;
   background-position: bottom -10vh left 20vw;
