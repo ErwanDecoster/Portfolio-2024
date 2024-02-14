@@ -19,21 +19,21 @@ body {
   background: green;
   background-image: url(/images/bg_dark.svg);
   background-repeat: no-repeat;
-  background-position: bottom -10vh left 20vw;
+  background-position: bottom -10dvh left 20vw;
   background-size: 120vw;
   background-attachment: fixed;
 }
 
 @media screen and (min-width: 640px) {
   #bg-image, .__bg-image {
-    background-position: bottom -20vh left 25vw;
+    background-position: bottom -20dvh left 25vw;
     background-size: 80vw;
   }
 }
 
 @media screen and (min-width: 1280px) {
   #bg-image, .__bg-image {
-    background-position: bottom -50vh left 33vw;
+    background-position: bottom -50dvh left 33vw;
     background-size: 80vw;
   }
 }
