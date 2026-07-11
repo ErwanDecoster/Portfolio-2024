@@ -36,7 +36,7 @@ const route = useRoute()
         md:704px
         lg:960px
         xl:1277px
-        2xl':1472px
+        2xl:1472px
       "
     />
     <NuxtImg 
