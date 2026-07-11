@@ -66,8 +66,7 @@ const SendEmail = (() => {
   } else if (CheckForm() && !waiting.value) {
     messages.value = [];
     waiting.value = true;
-    const url = 'https://erwan-decoster.com/api/contact'
-    // const url = 'http://localhost:3000/api/contact'
+    const url = '/api/contact'
     const response: any = $fetch(url, {
       method: 'POST',
       headers: {
