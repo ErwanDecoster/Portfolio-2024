@@ -59,7 +59,7 @@ onMounted(() => {
               md:704px
               lg:960px
               xl:580px
-              2xl':704px
+              2xl:704px
             "
           />
           <span class="absolute z-10 sm:group-hover:bottom-2 sm:group-hover:left-2 group-hover:bg-white dark:group-hover:bg-black">
