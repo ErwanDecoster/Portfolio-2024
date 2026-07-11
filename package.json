@@ -10,17 +10,17 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxtjs/sitemap": "^5.0.5",
+    "@nuxtjs/sitemap": "^8.2.2",
     "@nuxtjs/tailwindcss": "^6.14.0",
-    "nodemailer": "^6.9.8",
-    "nuxt": "^3.10.1",
-    "nuxt-security": "^1.0.1",
+    "nodemailer": "^9.0.3",
+    "nuxt": "^4.4.8",
+    "nuxt-security": "^2.6.0",
     "validator": "^13.15.35",
-    "vue": "^3.4.6",
-    "vue-router": "^4.2.5"
+    "vue": "^3.5.39",
+    "vue-router": "^5.1.0"
   },
   "dependencies": {
-    "@nuxt/image": "^1.3.0",
+    "@nuxt/image": "^2.0.0",
     "gsap": "^3.15.0",
     "nuxt-delay-hydration": "^1.3.8"
   }

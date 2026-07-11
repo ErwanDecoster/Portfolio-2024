@@ -59,7 +59,8 @@ export default defineEventHandler(async (event) => {
 		return 'send';
 	} catch (error) {
 		// console.log(error);
-		sendError(event, createError({ statusCode: 400, statusMessage: error }));
+		// h3 (Nuxt 4) exige un statusMessage de type string, le détail part dans data
+		sendError(event, createError({ statusCode: 400, statusMessage: 'Bad Request', data: error }));
 	}
 });
 
