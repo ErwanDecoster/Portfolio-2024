@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2026-07-11',
   css: ['~/assets/css/styles.css'],
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
