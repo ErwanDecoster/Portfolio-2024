@@ -7,7 +7,12 @@ export const projects: project[] = [
     publishDate: new Date('01/15/2026'),
     lastUpdateDate: new Date('07/01/2026'),
     url: "https://explorer.iex.ec/arbitrum-mainnet",
-    links: [],
+    links: [
+      {
+        name: "Github",
+        url:  "https://github.com/iExecBlockchainComputing/explorer-v2",
+      },
+    ],
     shortDesc: "Développement de l'explorateur blockchain du protocole iExec.",
     desc: [
       "L'explorateur iExec permet de visualiser en temps réel l'activité du protocole iExec : deals, tâches, applications, datasets et workerpools, sur plusieurs réseaux dont Arbitrum mainnet.",
@@ -15,7 +20,13 @@ export const projects: project[] = [
     ],
     customer: "iExec",
     industry: "Blockchain / Web3",
-    collaborators: [],
+    collaborators: [
+      {
+        name: "Samia Bresteau",
+        role: "UX/UI Designer",
+        url: "https://samia-bresteau.com/",
+      },
+    ],
     technos: [
       "React",
       "GraphQL",
@@ -26,7 +37,36 @@ export const projects: project[] = [
       "Typescript",
     ],
     screens: {
-      desktop: [],
+      desktop: [
+        {
+          name: "Accueil",
+          asset: "/images/explorer.iex.ec_arbitrum-mainnet.png",
+        },
+        {
+          name: "Deals",
+          asset: "/images/explorer.iex.ec_arbitrum-mainnet_deals.png",
+        },
+        {
+          name: "Datasets",
+          asset: "/images/explorer.iex.ec_arbitrum-sepolia-testnet_datasets.png",
+        },
+        {
+          name: "Détails d'un dataset",
+          asset: "/images/explorer.iex.ec_arbitrum-sepolia-testnet_dataset_details.png",
+        },
+        {
+          name: "Compte",
+          asset: "/images/explorer.iex.ec_arbitrum-sepolia-testnet_account_accountTab=Account.png",
+        },
+        {
+          name: "Activité du wallet",
+          asset: "/images/explorer.iex.ec_arbitrum-sepolia-testnet_account_accountTab=WalletActivity.png",
+        },
+        {
+          name: "Faucet",
+          asset: "/images/explorer.iex.ec_arbitrum-sepolia-testnet_account_accountTab=Faucet.png",
+        },
+      ],
       mobile: [],
     }
   },
@@ -36,7 +76,12 @@ export const projects: project[] = [
     publishDate: new Date('09/01/2025'),
     lastUpdateDate: new Date('05/01/2026'),
     url: "https://web3messaging.iex.ec/",
-    links: [],
+    links: [
+      {
+        name: "Github",
+        url:  "https://github.com/iExecBlockchainComputing/web3-messaging-usecase-demo",
+      },
+    ],
     shortDesc: "Développement de l'interface Web3Messaging du protocole iExec.",
     desc: [
       "Web3Messaging permet aux utilisateurs de recevoir des messages (email, Telegram) sans jamais révéler leurs coordonnées, grâce à la protection des données du protocole iExec. L'interface permet de gérer ses données protégées, les autorisations accordées aux dapps et les abonnements.",
@@ -44,7 +89,13 @@ export const projects: project[] = [
     ],
     customer: "iExec",
     industry: "Blockchain / Web3",
-    collaborators: [],
+    collaborators: [
+      {
+        name: "Samia Bresteau",
+        role: "UX/UI Designer",
+        url: "https://samia-bresteau.com/",
+      },
+    ],
     technos: [
       "React",
       "GraphQL",
@@ -55,7 +106,28 @@ export const projects: project[] = [
       "Typescript",
     ],
     screens: {
-      desktop: [],
+      desktop: [
+        {
+          name: "Accueil",
+          asset: "/images/web3messaging.png",
+        },
+        {
+          name: "Modale de bienvenue",
+          asset: "/images/web3messaging_welcome_modal.png",
+        },
+        {
+          name: "Mes données",
+          asset: "/images/web3messaging_myData.png",
+        },
+        {
+          name: "Protection d'une nouvelle donnée",
+          asset: "/images/web3messaging_myData_ProtectNewData.png",
+        },
+        {
+          name: "Ressources",
+          asset: "/images/web3messaging_resources.png",
+        },
+      ],
       mobile: [],
     }
   },
@@ -110,7 +182,7 @@ export const projects: project[] = [
     collaborators: [
       {
         name: "Anthony Clemenson",
-        role: "Idée design",
+        role: "Designer",
         url: "https://www.linkedin.com/in/anthonyclemenson/",
       },
       {
