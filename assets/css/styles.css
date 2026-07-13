@@ -172,6 +172,51 @@ body {
 .__contained_csharp:hover span { @apply opacity-100 }
 .__text_csharp { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#A47CDE] to-[#37008E]  }
 
+.__contained_react { @apply hover:text-black }
+.__contained_react span { @apply opacity-0 bg-gradient-to-tr from-[#61DAFB] to-[#61DAFB] }
+.__contained_react:hover span { @apply opacity-100 }
+.__text_react { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#61DAFB] to-[#61DAFB]  }
+
+.__contained_graphql { @apply hover:text-white }
+.__contained_graphql span { @apply opacity-0 bg-gradient-to-tr from-[#E10098] to-[#E10098] }
+.__contained_graphql:hover span { @apply opacity-100 }
+.__text_graphql { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#E10098] to-[#E10098]  }
+
+.__contained_clerk { @apply hover:text-white }
+.__contained_clerk span { @apply opacity-0 bg-gradient-to-tr from-[#6C47FF] to-[#6C47FF] }
+.__contained_clerk:hover span { @apply opacity-100 }
+.__text_clerk { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#6C47FF] to-[#6C47FF]  }
+
+.__contained_reown { @apply hover:text-white }
+.__contained_reown span { @apply opacity-0 bg-gradient-to-tr from-[#3B99FC] to-[#0F6FDE] }
+.__contained_reown:hover span { @apply opacity-100 }
+.__text_reown { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#3B99FC] to-[#0F6FDE]  }
+
+.__contained_rollbar { @apply hover:text-white }
+.__contained_rollbar span { @apply opacity-0 bg-gradient-to-tr from-[#3E63DD] to-[#2B4ACB] }
+.__contained_rollbar:hover span { @apply opacity-100 }
+.__text_rollbar { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#3E63DD] to-[#2B4ACB]  }
+
+.__contained_expo { @apply hover:text-white dark:hover:text-black }
+.__contained_expo span { @apply opacity-0 bg-black dark:bg-white }
+.__contained_expo:hover span { @apply opacity-100 }
+.__text_expo { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#000000] to-[#000000] dark:from-[#ffffff] dark:to-[#ffffff]  }
+
+.__contained_sentry { @apply hover:text-white }
+.__contained_sentry span { @apply opacity-0 bg-gradient-to-tr from-[#362D59] to-[#6C5FC7] }
+.__contained_sentry:hover span { @apply opacity-100 }
+.__text_sentry { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#362D59] to-[#6C5FC7]  }
+
+.__contained_astro { @apply hover:text-white }
+.__contained_astro span { @apply opacity-0 bg-gradient-to-tr from-[#FF5D01] to-[#BC52EE] }
+.__contained_astro:hover span { @apply opacity-100 }
+.__text_astro { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#FF5D01] to-[#BC52EE]  }
+
+.__contained_plausible { @apply hover:text-white }
+.__contained_plausible span { @apply opacity-0 bg-gradient-to-tr from-[#5850EC] to-[#4338CA] }
+.__contained_plausible:hover span { @apply opacity-100 }
+.__text_plausible { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#5850EC] to-[#4338CA]  }
+
 .__contained_github { @apply hover:text-white dark:hover:text-black }
 .__contained_github span { @apply opacity-0 bg-black dark:bg-white }
 .__contained_github:hover span { @apply opacity-100 }
