@@ -2,8 +2,167 @@ import {  } from "@/types/index"
 
 export const projects: project[] = [
   {
+    title: "Fidee App",
+    img: "/images/fidee_mockup_1.png",
+    publishDate: new Date('05/01/2026'),
+    lastUpdateDate: new Date('06/15/2026'),
+    url: "",
+    links: [],
+    shortDesc: "Développement d'une application mobile de gestion de comptes de fidélité.",
+    desc: [
+      "Fidee est une application mobile de gestion de comptes de fidélité. Elle permet de centraliser ses différents comptes de fidélité en un seul endroit et de rendre les programmes de fidélité accessibles aux petits commerçants.",
+      "L'application est développée avec Expo et React Native, et s'appuie sur Supabase pour l'authentification et la base de données. Le suivi des erreurs est assuré par Sentry et l'analyse d'audience, respectueuse de la vie privée, par Plausible.",
+    ],
+    customer: null,
+    industry: null,
+    collaborators: [
+      {
+        name: "Jean Colomina",
+        role: "Développeur",
+        url: "https://www.linkedin.com/in/jean-colomina-b1950b1a2/",
+      },
+    ],
+    technos: [
+      "Expo",
+      "React",
+      "Supabase",
+      "Sentry",
+      "Plausible",
+      "Typescript",
+    ],
+    screens: {
+      desktop: [],
+      mobile: [
+        {
+          name: "Accueil",
+          asset: "/images/fidee_home.png",
+        },
+        {
+          name: "Établissement",
+          asset: "/images/fidee_etablissement.png",
+        },
+        {
+          name: "Ajouter un établissement",
+          asset: "/images/fidee_ajouter_un_etablissement.png",
+        },
+        {
+          name: "Gérant",
+          asset: "/images/fidee_gerant.png",
+        },
+        {
+          name: "Profil QR",
+          asset: "/images/fidee_profilQR.png",
+        },
+        {
+          name: "Profil et paramètres",
+          asset: "/images/fidee_profil_parametres.png",
+        },
+      ],
+    }
+  },
+  {
+    title: "Domaine de Pipangaille V2",
+    img: "/images/domaine_de_pipangaille_mockup_1.jpg",
+    publishDate: new Date('02/01/2026'),
+    lastUpdateDate: new Date('02/01/2026'),
+    url: "https://domaine-de-pipangaille.fr/",
+    links: [],
+    shortDesc: "Refonte complète du site vitrine du Domaine de Pipangaille avec Astro.",
+    desc: [
+      "Nouvelle version du site vitrine du Domaine de Pipangaille, établissement de chambres d'hôtes situé à Andancette, dans la Drôme. Cette V2 est une refonte complète avec Astro, axée sur la performance : le site est généré statiquement, ne charge quasiment aucun JavaScript et obtient d'excellents scores Lighthouse.",
+      "L'analyse d'audience est assurée par Plausible, une alternative à Google Analytics respectueuse de la vie privée et sans cookies.",
+    ],
+    customer: "Domaine de Pipangaille",
+    industry: "Hôtellerie",
+    collaborators: [
+      {
+        name: "Anthony Clemenson",
+        role: "Designer",
+        url: "https://www.linkedin.com/in/anthonyclemenson/",
+      },
+      {
+        name: "Maëlle Berthier",
+        role: "Charte graphique",
+        url: "https://gokkosol.carrd.co/",
+      },
+    ],
+    technos: [
+      "Astro",
+      "Tailwind",
+      "Plausible",
+      "Typescript",
+      "HTML",
+      "CSS",
+    ],
+    screens: {
+      desktop: [],
+      mobile: [],
+    }
+  },
+  {
+    title: "Web3Messaging",
+    img: "/images/web3messaging_mockup_1.jpg",
+    publishDate: new Date('10/01/2025'),
+    lastUpdateDate: new Date('05/01/2026'),
+    url: "https://web3messaging.iex.ec/",
+    links: [
+      {
+        name: "Github",
+        url:  "https://github.com/iExecBlockchainComputing/web3-messaging-usecase-demo",
+      },
+    ],
+    shortDesc: "Développement de l'interface Web3Messaging du protocole iExec.",
+    desc: [
+      "Web3Messaging permet aux utilisateurs de recevoir des messages (email, Telegram) sans jamais révéler leurs coordonnées, grâce à la protection des données du protocole iExec. L'interface permet de gérer ses données protégées, les autorisations accordées aux dapps et les abonnements.",
+      "Les données sont consommées via une API GraphQL, l'authentification est gérée avec Clerk, la connexion des wallets avec Reown et le suivi des erreurs avec Rollbar.",
+    ],
+    customer: "iExec",
+    industry: "Blockchain / Web3",
+    collaborators: [
+      {
+        name: "Samia Bresteau",
+        role: "UX/UI Designer",
+        url: "https://samia-bresteau.com/",
+      },
+    ],
+    technos: [
+      "React",
+      "GraphQL",
+      "Clerk",
+      "Reown",
+      "Rollbar",
+      "Tailwind",
+      "Typescript",
+    ],
+    screens: {
+      desktop: [
+        {
+          name: "Accueil",
+          asset: "/images/web3messaging.png",
+        },
+        {
+          name: "Modale de bienvenue",
+          asset: "/images/web3messaging_welcome_modal.png",
+        },
+        {
+          name: "Mes données",
+          asset: "/images/web3messaging_myData.png",
+        },
+        {
+          name: "Protection d'une nouvelle donnée",
+          asset: "/images/web3messaging_myData_ProtectNewData.png",
+        },
+        {
+          name: "Ressources",
+          asset: "/images/web3messaging_resources.png",
+        },
+      ],
+      mobile: [],
+    }
+  },
+  {
     title: "iExec Explorer",
-    img: "/images/iexec_explorer_mockup.webp",
+    img: "/images/explorer.iex.ec_mockup_1.jpg",
     publishDate: new Date('07/01/2025'),
     lastUpdateDate: new Date('07/01/2026'),
     url: "https://explorer.iex.ec/arbitrum-mainnet",
@@ -67,140 +226,6 @@ export const projects: project[] = [
           asset: "/images/explorer.iex.ec_arbitrum-sepolia-testnet_account_accountTab=Faucet.png",
         },
       ],
-      mobile: [],
-    }
-  },
-  {
-    title: "Web3Messaging",
-    img: "/images/web3messaging_mockup.webp",
-    publishDate: new Date('10/01/2025'),
-    lastUpdateDate: new Date('05/01/2026'),
-    url: "https://web3messaging.iex.ec/",
-    links: [
-      {
-        name: "Github",
-        url:  "https://github.com/iExecBlockchainComputing/web3-messaging-usecase-demo",
-      },
-    ],
-    shortDesc: "Développement de l'interface Web3Messaging du protocole iExec.",
-    desc: [
-      "Web3Messaging permet aux utilisateurs de recevoir des messages (email, Telegram) sans jamais révéler leurs coordonnées, grâce à la protection des données du protocole iExec. L'interface permet de gérer ses données protégées, les autorisations accordées aux dapps et les abonnements.",
-      "Les données sont consommées via une API GraphQL, l'authentification est gérée avec Clerk, la connexion des wallets avec Reown et le suivi des erreurs avec Rollbar.",
-    ],
-    customer: "iExec",
-    industry: "Blockchain / Web3",
-    collaborators: [
-      {
-        name: "Samia Bresteau",
-        role: "UX/UI Designer",
-        url: "https://samia-bresteau.com/",
-      },
-    ],
-    technos: [
-      "React",
-      "GraphQL",
-      "Clerk",
-      "Reown",
-      "Rollbar",
-      "Tailwind",
-      "Typescript",
-    ],
-    screens: {
-      desktop: [
-        {
-          name: "Accueil",
-          asset: "/images/web3messaging.png",
-        },
-        {
-          name: "Modale de bienvenue",
-          asset: "/images/web3messaging_welcome_modal.png",
-        },
-        {
-          name: "Mes données",
-          asset: "/images/web3messaging_myData.png",
-        },
-        {
-          name: "Protection d'une nouvelle donnée",
-          asset: "/images/web3messaging_myData_ProtectNewData.png",
-        },
-        {
-          name: "Ressources",
-          asset: "/images/web3messaging_resources.png",
-        },
-      ],
-      mobile: [],
-    }
-  },
-  {
-    title: "Fidee App",
-    img: "/images/fidee_app_mockup.webp",
-    publishDate: new Date('05/01/2026'),
-    lastUpdateDate: new Date('06/15/2026'),
-    url: "",
-    links: [],
-    shortDesc: "Développement d'une application mobile de gestion de comptes de fidélité.",
-    desc: [
-      "Fidee est une application mobile de gestion de comptes de fidélité. Elle permet de centraliser ses différents comptes de fidélité en un seul endroit et de rendre les programmes de fidélité accessibles aux petits commerçants.",
-      "L'application est développée avec Expo et React Native, et s'appuie sur Supabase pour l'authentification et la base de données. Le suivi des erreurs est assuré par Sentry et l'analyse d'audience, respectueuse de la vie privée, par Plausible.",
-    ],
-    customer: null,
-    industry: null,
-    collaborators: [
-      {
-        name: "Jean Colomina",
-        role: "Développeur",
-        url: "https://www.linkedin.com/in/jean-colomina-b1950b1a2/",
-      },
-    ],
-    technos: [
-      "Expo",
-      "React",
-      "Supabase",
-      "Sentry",
-      "Plausible",
-      "Typescript",
-    ],
-    screens: {
-      desktop: [],
-      mobile: [],
-    }
-  },
-  {
-    title: "Domaine de Pipangaille V2",
-    img: "/images/domaine_de_pipangaille_v2_mockup.webp",
-    publishDate: new Date('02/01/2026'),
-    lastUpdateDate: new Date('02/01/2026'),
-    url: "https://domaine-de-pipangaille.fr/",
-    links: [],
-    shortDesc: "Refonte complète du site vitrine du Domaine de Pipangaille avec Astro.",
-    desc: [
-      "Nouvelle version du site vitrine du Domaine de Pipangaille, établissement de chambres d'hôtes situé à Andancette, dans la Drôme. Cette V2 est une refonte complète avec Astro, axée sur la performance : le site est généré statiquement, ne charge quasiment aucun JavaScript et obtient d'excellents scores Lighthouse.",
-      "L'analyse d'audience est assurée par Plausible, une alternative à Google Analytics respectueuse de la vie privée et sans cookies.",
-    ],
-    customer: "Domaine de Pipangaille",
-    industry: "Hôtellerie",
-    collaborators: [
-      {
-        name: "Anthony Clemenson",
-        role: "Designer",
-        url: "https://www.linkedin.com/in/anthonyclemenson/",
-      },
-      {
-        name: "Maëlle Berthier",
-        role: "Charte graphique",
-        url: "https://gokkosol.carrd.co/",
-      },
-    ],
-    technos: [
-      "Astro",
-      "Tailwind",
-      "Plausible",
-      "Typescript",
-      "HTML",
-      "CSS",
-    ],
-    screens: {
-      desktop: [],
       mobile: [],
     }
   },
