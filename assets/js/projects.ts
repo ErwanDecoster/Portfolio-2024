@@ -5,7 +5,7 @@ export const projects: project[] = [
     title: "Fidee App",
     img: "/images/fidee_mockup_1.png",
     publishDate: new Date('05/01/2026'),
-    lastUpdateDate: new Date('06/15/2026'),
+    lastUpdateDate: new Date('07/01/2026'),
     url: "",
     links: [],
     shortDesc: "Développement d'une application mobile de gestion de comptes de fidélité.",
@@ -64,7 +64,7 @@ export const projects: project[] = [
     title: "Domaine de Pipangaille V2",
     img: "/images/domaine_de_pipangaille_mockup_1.jpg",
     publishDate: new Date('02/01/2026'),
-    lastUpdateDate: new Date('02/01/2026'),
+    lastUpdateDate: new Date('06/01/2026'),
     url: "https://domaine-de-pipangaille.fr/",
     links: [],
     shortDesc: "Refonte complète du site vitrine du Domaine de Pipangaille avec Astro.",
@@ -103,7 +103,7 @@ export const projects: project[] = [
     title: "Web3Messaging",
     img: "/images/web3messaging_mockup_1.jpg",
     publishDate: new Date('10/01/2025'),
-    lastUpdateDate: new Date('05/01/2026'),
+    lastUpdateDate: new Date('01/01/2026'),
     url: "https://web3messaging.iex.ec/",
     links: [
       {
@@ -164,7 +164,7 @@ export const projects: project[] = [
     title: "iExec Explorer",
     img: "/images/explorer.iex.ec_mockup_1.jpg",
     publishDate: new Date('07/01/2025'),
-    lastUpdateDate: new Date('07/01/2026'),
+    lastUpdateDate: new Date('02/01/2026'),
     url: "https://explorer.iex.ec/arbitrum-mainnet",
     links: [
       {
