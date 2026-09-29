@@ -4,24 +4,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 onMounted(() => {
+  const cursorWrapper = document.getElementById('__cursor-wraper');
   const cursor = document.getElementById('__cursor');
   const slowCursor = document.getElementById('__slow-cursor');
   const cursorSpan = cursor!.querySelector('span');
-
-  document.querySelectorAll('a, button, input, textarea, label, .__pointer').forEach(actionElement => {
-    actionElement.addEventListener('mouseenter', () => {
-      if ((actionElement as HTMLButtonElement).disabled != true) {
-        gsap.to(cursorSpan, { scale: 6, ease: 'ease'})
-        gsap.to(slowCursor, { scale: .8, ease: 'ease'})
-      }
-    })
-    actionElement.addEventListener('mouseleave', () => {
-      if ((actionElement as HTMLButtonElement).disabled != true) {
-        gsap.to(cursorSpan, {scale: 1})
-        gsap.to(slowCursor, {scale: 1})
-      }
-    })
-  });
+  const actionSelector = 'a, button, input, textarea, select, label, .__pointer';
 
   gsap.set(cursor, {xPercent: -50, yPercent: -50});
   gsap.set(slowCursor, {xPercent: -50, yPercent: -50});
@@ -31,11 +18,47 @@ onMounted(() => {
   let cursorSlowXTo = gsap.quickTo(slowCursor, "x", {duration: 1, ease: "power4"}),
       cursorSlowYTo = gsap.quickTo(slowCursor, "y", {duration: 1, ease: "power4"});
 
+  // Le curseur reste masqué tant que la position de la souris est inconnue : sinon il
+  // apparaît dans le coin supérieur gauche puis glisse jusqu'à la souris.
+  let visible = false;
+  const hideCursor = () => {
+    visible = false;
+    gsap.to(cursorWrapper, { autoAlpha: 0, duration: 0.2, overwrite: 'auto' });
+  }
+
+  // Délégation depuis le document plutôt qu'un écouteur par élément : les liens et boutons
+  // rendus après le montage (changement de page, v-if…) sont aussi pris en compte.
+  let hovering = false;
+  const updateHover = (target: EventTarget | null) => {
+    const actionElement = target instanceof Element ? target.closest(actionSelector) : null;
+    const isHovering = !!actionElement && (actionElement as HTMLButtonElement).disabled !== true;
+    if (isHovering === hovering) return;
+    hovering = isHovering;
+    gsap.to(cursorSpan, { scale: isHovering ? 6 : 1, ease: 'power2.out', overwrite: 'auto' })
+    gsap.to(slowCursor, { scale: isHovering ? .8 : 1, ease: 'power2.out', overwrite: 'auto' })
+  }
+
   window.addEventListener("mousemove", e => {
-    cursorXTo(e.clientX);
-    cursorYTo(e.clientY);
-    cursorSlowXTo(e.clientX);
-    cursorSlowYTo(e.clientY);
+    if (!visible) {
+      // Première position connue : on part directement de la souris, sans animation.
+      visible = true;
+      cursorXTo(e.clientX, e.clientX);
+      cursorYTo(e.clientY, e.clientY);
+      cursorSlowXTo(e.clientX, e.clientX);
+      cursorSlowYTo(e.clientY, e.clientY);
+      gsap.to(cursorWrapper, { autoAlpha: 1, duration: 0.2, overwrite: 'auto' });
+    } else {
+      cursorXTo(e.clientX);
+      cursorYTo(e.clientY);
+      cursorSlowXTo(e.clientX);
+      cursorSlowYTo(e.clientY);
+    }
+    updateHover(e.target);
+  })
+  // Couvre les changements d'élément survolé sans mousemove (défilement, contenu qui change).
+  document.addEventListener("mouseover", e => updateHover(e.target))
+  document.addEventListener("mouseout", e => {
+    if (!e.relatedTarget) hideCursor();
   })
 
 
@@ -91,6 +114,9 @@ useHead({
   position: fixed;
   mix-blend-mode: difference;
   pointer-events: none;
+  /* Affiché au premier mouvement de souris (voir onMounted) */
+  opacity: 0;
+  visibility: hidden;
 }
 #__cursor-wraper #__cursor {
   position: absolute;
