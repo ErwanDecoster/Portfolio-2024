@@ -827,7 +827,7 @@ export const projects: project[] = [
     links: [
       {
         name: "Github",
-        url:  "https://github.com/ErwanDecoster/Phoenix-Vetements-et-Protection",
+        url:  "https://github.com/ErwanDecoster/Portfolio-2022",
       },
       {
         name: "Figma",
