@@ -63,15 +63,25 @@ export const projects: project[] = [
   },
   {
     title: "Fidee App",
-    img: "/images/fidee_mockup_1.png",
+    img: "/images/fidee_mockup_2.jpg",
     publishDate: new Date('05/01/2026'),
-    lastUpdateDate: new Date('07/01/2026'),
-    url: "",
-    links: [],
-    shortDesc: "Développement d'une application mobile de gestion de comptes de fidélité.",
+    lastUpdateDate: new Date('09/23/2026'),
+    url: "https://www.fidee.app/",
+    links: [
+      {
+        name: "App Store",
+        url:  "https://apps.apple.com/fr/app/fidee/id6761279817",
+      },
+      {
+        name: "Google Play",
+        url:  "https://play.google.com/store/apps/details?id=app.fidee.app",
+      },
+    ],
+    shortDesc: "Développement d'une application mobile de fidélité pour les commerces de proximité.",
     desc: [
-      "Fidee est une application mobile de gestion de comptes de fidélité. Elle permet de centraliser ses différents comptes de fidélité en un seul endroit et de rendre les programmes de fidélité accessibles aux petits commerçants.",
-      "L'application est développée avec Expo et React Native, et s'appuie sur Supabase pour l'authentification et la base de données. Le suivi des erreurs est assuré par Sentry et l'analyse d'audience, respectueuse de la vie privée, par Plausible.",
+      "Fidee est une application mobile de fidélité pensée pour les commerces de proximité. Les clients retrouvent toutes leurs cagnottes au même endroit, découvrent les commerces partenaires autour d'eux sur une liste ou une carte, et échangent leurs points contre des récompenses grâce à un QR code.",
+      "Côté commerçant, un espace gérant permet de configurer son programme de fidélité (en points, en visites ou dans une unité personnalisée) et ses paliers de récompenses, et de gérer son équipe, ses clients et l'historique des transactions. Les clients peuvent aussi valider eux-mêmes leur passage en scannant une affiche QR code en boutique, après vérification de leur position. Le commerçant peut enfin programmer des campagnes de notifications, complétées par des notifications automatiques de bienvenue, de relance et de rappel de récompense.",
+      "L'application est développée avec Expo et React Native, et TanStack Query pour la gestion des données. Supabase assure l'authentification (dont la connexion avec Apple et Google), la base de données Postgres et les fonctions Edge qui envoient les notifications push et les emails via Brevo. Le suivi des erreurs est assuré par Sentry et l'analyse d'audience, respectueuse de la vie privée, par Plausible. L'application est traduite en dix langues et disponible sur l'App Store et Google Play.",
     ],
     customer: null,
     industry: null,
@@ -84,8 +94,11 @@ export const projects: project[] = [
     ],
     technos: [
       "Expo",
-      "React",
+      "React Native",
+      "TanStack Query",
       "Supabase",
+      "Postgres",
+      "Brevo",
       "Sentry",
       "Plausible",
       "Typescript",
@@ -95,27 +108,39 @@ export const projects: project[] = [
       mobile: [
         {
           name: "Accueil",
-          asset: "/images/fidee_home.png",
+          asset: "/images/fidee_accueil.png",
+        },
+        {
+          name: "Carte",
+          asset: "/images/fidee_carte.png",
         },
         {
           name: "Établissement",
           asset: "/images/fidee_etablissement.png",
         },
         {
-          name: "Ajouter un établissement",
-          asset: "/images/fidee_ajouter_un_etablissement.png",
+          name: "Mes cagnottes",
+          asset: "/images/fidee_cagnottes.png",
         },
         {
-          name: "Gérant",
-          asset: "/images/fidee_gerant.png",
+          name: "QR code fidélité",
+          asset: "/images/fidee_qr_code_fidelite.png",
         },
         {
-          name: "Profil QR",
-          asset: "/images/fidee_profilQR.png",
+          name: "Espace gérant",
+          asset: "/images/fidee_espace_gerant.png",
         },
         {
-          name: "Profil et paramètres",
-          asset: "/images/fidee_profil_parametres.png",
+          name: "Programme de fidélité",
+          asset: "/images/fidee_programme_fidelite.png",
+        },
+        {
+          name: "QR code de self check-in",
+          asset: "/images/fidee_self_checkin.png",
+        },
+        {
+          name: "Campagnes",
+          asset: "/images/fidee_campagnes.png",
         },
       ],
     }

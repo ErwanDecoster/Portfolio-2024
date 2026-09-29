@@ -217,6 +217,21 @@ body {
 .__contained_plausible:hover span { @apply opacity-100 }
 .__text_plausible { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#5850EC] to-[#4338CA]  }
 
+.__contained_react_native { @apply hover:text-black }
+.__contained_react_native span { @apply opacity-0 bg-gradient-to-tr from-[#61DAFB] to-[#61DAFB] }
+.__contained_react_native:hover span { @apply opacity-100 }
+.__text_react_native { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#61DAFB] to-[#61DAFB]  }
+
+.__contained_tanstack_query { @apply hover:text-white }
+.__contained_tanstack_query span { @apply opacity-0 bg-gradient-to-tr from-[#FF4154] to-[#FF8A00] }
+.__contained_tanstack_query:hover span { @apply opacity-100 }
+.__text_tanstack_query { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#FF4154] to-[#FF8A00]  }
+
+.__contained_brevo { @apply hover:text-white }
+.__contained_brevo span { @apply opacity-0 bg-gradient-to-tr from-[#0B996E] to-[#0B996E] }
+.__contained_brevo:hover span { @apply opacity-100 }
+.__text_brevo { @apply bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-[#0B996E] to-[#0B996E]  }
+
 .__contained_swift { @apply hover:text-white }
 .__contained_swift span { @apply opacity-0 bg-gradient-to-tr from-[#F05138] to-[#FA7343] }
 .__contained_swift:hover span { @apply opacity-100 }
