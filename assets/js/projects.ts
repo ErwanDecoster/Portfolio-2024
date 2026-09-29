@@ -726,12 +726,8 @@ export const projects: project[] = [
           asset: "/images/m_domaine_de_pipangaille_hebergements.png",
         },
         {
-          name: "Chambre",
-          asset: "/images/m_domaine_de_pipangaille_chambre.png",
-        },
-        {
           name: "A proximiter",
-          asset: "/images/m_domaine_de_pipangaille_a_proximiter.png",
+          asset: "/images/m_domaine_de_pipangaille_a_proximite.png",
         },
         {
           name: "Contact",
