@@ -2,6 +2,66 @@ import {  } from "@/types/index"
 
 export const projects: project[] = [
   {
+    title: "Qui Mène ?",
+    img: "/images/qui_mene_mockup_1.jpg",
+    publishDate: new Date('07/30/2026'),
+    lastUpdateDate: new Date('09/29/2026'),
+    url: "https://quimene.vercel.app/",
+    links: [
+      {
+        name: "Github",
+        url:  "https://github.com/ErwanDecoster/QuiMene",
+      },
+    ],
+    shortDesc: "Développement d'une application iOS et Android de suivi de scores pour jeux de société.",
+    desc: [
+      "Qui Mène ? tient la feuille de marque des jeux de société : on saisit les scores de chaque manche, l'application applique les règles du jeu, détecte la fin de partie et raconte ce qui s'est passé avec un podium, des faits marquants et la courbe de la partie. Vingt jeux sont intégrés avec leurs règles (Tarot, Belote, Yams, Skyjo, Mölkky…), ainsi qu'un jeu libre pour tout le reste.",
+      "Une partie peut se suivre à plusieurs : un code à six chiffres ou un QR code suffit pour que chacun rejoigne le tableau sur son téléphone, iPhone et Android mélangés, et saisisse les manches. Sur iOS, le classement se met à jour sur l'écran verrouillé et dans la Dynamic Island. L'application fonctionne sans compte et hors ligne : seules les fonctions de partage passent par un serveur, avec des données supprimées automatiquement.",
+      "Il s'agit de deux applications natives, en SwiftUI sur iPhone et iPad, et en Kotlin avec Jetpack Compose sur Android. Le calcul des scores est isolé dans des fonctions pures, et les deux plateformes rejouent la même spécification JSON (règles des jeux et parties de référence), ce qui garantit qu'un score ne peut pas diverger de l'une à l'autre. Le partage en direct repose sur Supabase et le site vitrine est réalisé avec Astro.",
+    ],
+    customer: null,
+    industry: null,
+    collaborators: [],
+    technos: [
+      "Swift",
+      "SwiftUI",
+      "Kotlin",
+      "Jetpack Compose",
+      "Supabase",
+      "Postgres",
+      "Astro",
+    ],
+    screens: {
+      desktop: [],
+      mobile: [
+        {
+          name: "Partie en cours",
+          asset: "/images/qui_mene_partie.png",
+        },
+        {
+          name: "Résultats",
+          asset: "/images/qui_mene_resultats.png",
+        },
+        {
+          name: "Jeux",
+          asset: "/images/qui_mene_jeux.png",
+        },
+        {
+          name: "Profil",
+          asset: "/images/qui_mene_profil.png",
+        },
+        {
+          name: "Historique",
+          asset: "/images/qui_mene_historique.png",
+        },
+        {
+          name: "Joueurs",
+          asset: "/images/qui_mene_joueurs.png",
+        },
+      ],
+    }
+  },
+  {
     title: "Fidee App",
     img: "/images/fidee_mockup_1.png",
     publishDate: new Date('05/01/2026'),
